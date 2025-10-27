@@ -7,8 +7,16 @@ Interactive web application for exploring foundation AI research data
 from flask import Flask, render_template, jsonify, request
 import os
 import sys
+import logging
 from pathlib import Path
 from dotenv import load_dotenv
+
+# Configure logging
+logging.basicConfig(
+	level=logging.INFO,
+	format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 # Load environment variables from .env file
 load_dotenv()
@@ -102,28 +110,38 @@ def chat_interface():
 def api_chat():
     """API endpoint for processing natural language queries"""
     global chat_service
-    
+
     try:
         data = request.get_json()
         query = data.get('query', '').strip()
-        
+
         if not query:
             return jsonify({'error': 'Query is required'}), 400
-        
+
         # Initialize chat service lazily
         if chat_service is None:
             try:
+                logger.info("Initializing chat service...")
+                logger.info(f"ANTHROPIC_API_KEY present: {bool(os.getenv('ANTHROPIC_API_KEY'))}")
                 chat_service = FoundationChatService()
+                logger.info("Chat service initialized successfully")
             except ValueError as e:
+                logger.error(f"ValueError initializing chat service: {str(e)}")
                 return jsonify({'error': str(e)}), 500
-        
+            except Exception as e:
+                logger.error(f"Unexpected error initializing chat service: {str(e)}", exc_info=True)
+                return jsonify({'error': f'Failed to initialize chat service: {str(e)}'}), 500
+
         # Process query using map-reduce approach
+        logger.info(f"Processing query: {query[:50]}...")
         import asyncio
         result = asyncio.run(chat_service.process_query(query))
-        
+        logger.info("Query processed successfully")
+
         return jsonify(result)
-        
+
     except Exception as e:
+        logger.error(f"Error processing chat query: {str(e)}", exc_info=True)
         return jsonify({'error': f'Error processing query: {str(e)}'}), 500
 
 if __name__ == '__main__':
