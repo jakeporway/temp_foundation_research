@@ -36,7 +36,7 @@ class FoundationChatService:
         self.client = anthropic.Anthropic(api_key=self.api_key)
         self.base_dir = Path(__file__).parent.parent
         self.results_dir = self.base_dir / "results"
-        self.batch_size = 12  # Optimal batch size for context limits
+        self.batch_size = 20  # Larger batches = fewer API calls = faster processing
         
         # Load successful YAML files
         self.yaml_files = self._load_yaml_files()
