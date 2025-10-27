@@ -1,0 +1,136 @@
+foundation_name: Facebook (Meta)
+analysis_date: 2025-01-28
+search_method: Claude WebSearch tool - Command Line Integration
+search_queries_executed:
+  - '"Facebook" foundation philanthropy artificial intelligence grants'
+  - '"Meta Facebook Foundation" philanthropy profile assets location'
+  - '"Facebook Meta Foundation" AI funding strategy'
+  - '"Facebook Foundation" machine learning technology grants'
+
+basic_info:
+  official_name: Meta Platforms Inc (Facebook)
+  assets: Unknown (corporate entity, not foundation)
+  annual_giving: Corporate social responsibility activities
+  focus_areas:
+    - community development (data center locations)
+    - STEAM education
+    - charitable giving tools
+    - AI research and development
+  location: Menlo Park, California
+  foundation_type: Corporate (no dedicated foundation)
+  website: https://socialimpact.facebook.com/
+
+ai_research_findings:
+  ai_grants_discovered:
+    - type: llama_impact_grants
+      description: $1M Llama 3.1 Impact Grants program for generative AI social impact applications
+      source: websearch
+      confidence: high
+    - type: scale_ai_investment
+      description: $14-15 billion investment for 49% stake in Scale AI data labeling company
+      source: websearch
+      confidence: high
+    - type: defense_llama_partnership
+      description: Defense Llama AI model collaboration with Scale AI for US national security
+      source: websearch
+      confidence: high
+  ai_strategy_evidence:
+    - type: massive_infrastructure_investment
+      description: $60+ billion planned for 2025 AI hardware and data center infrastructure
+      source: websearch
+      confidence: high
+    - type: superintelligence_lab
+      description: Launch of dedicated Superintelligence Lab with 50 handpicked AI researchers
+      source: websearch
+      confidence: high
+    - type: strategic_talent_acquisition
+      description: Hiring Scale AI CEO, former GitHub CEO, and Apple's head of AI foundation models
+      source: websearch
+      confidence: high
+    - type: open_source_ai_model
+      description: Development and release of Llama series AI models as open source
+      source: websearch
+      confidence: high
+  leadership_ai_statements:
+    - type: ceo_vision
+      description: Mark Zuckerberg stating plans to spend hundreds of billions on AI data centers
+      source: websearch
+      confidence: high
+    - type: strategic_priority
+      description: AI identified as core to Meta's future strategy and infrastructure
+      source: websearch
+      confidence: high
+  ai_partnerships:
+    - Scale AI (major investment and partnership)
+    - Department of Defense (Defense Llama)
+    - Various universities through research collaborations
+  ai_grant_urls:
+    - https://www.ictworks.org/generative-ai-grants-from-facebook/
+    - https://ai.meta.com/research/
+  search_summary: WebSearch executed - 3 major AI initiatives found with massive corporate investment strategy
+
+taxonomy_classification:
+  foundation_identity:
+    foundation_type: Corporate (no dedicated foundation)
+    foundation_age: Recent (Meta AI focus since ~2020)
+    decision_making_structure: Corporate-controlled
+    grant_sourcing_strategy: Program-officer initiated
+    endowment_size: Corporate assets (not applicable)
+    geographic_focus: International
+    funding_approach: Multi-year, high engagement
+  ai_strategy:
+    ai_outcome: More use of AI for social impact
+    ai_related_output: AI solution creation
+    ai_product_lifecycle_stage: Scale (Llama models in production)
+    ai_funding_integration: Its own vertical
+    internal_ai_investment: High
+    ai_funding_budget_size: 100M+ (billions in AI investment)
+    innovation_focus: High
+  economic_opportunity_strategy:
+    eo_focus_area: Increase available jobs
+
+strategic_assessment:
+  ai_readiness_score: 9
+  readiness_level: Exceptional - Leading AI research and development with massive investment
+  engagement_recommendations:
+    - $60+ billion annual AI investment demonstrates unprecedented capacity
+    - Llama 3.1 Impact Grants provide direct funding opportunity for social good applications
+    - Scale AI partnership creates data labeling and annotation capabilities
+    - Superintelligence Lab represents cutting-edge research opportunities
+    - Open source Llama models enable broad ecosystem development
+    - Data Center Community Action Grants provide local funding opportunities
+    - Corporate structure enables rapid decision-making and implementation
+    - Global presence provides international collaboration opportunities
+    - Focus on defense applications through Scale AI creates government partnership potential
+    - Meta AI research division actively collaborates with academic institutions
+
+interview_simulation:
+  questions:
+    - q1: "How does Meta's $60+ billion AI investment strategy align with your social impact mission?"
+      confidence: 8
+    - q2: "Can you describe the selection criteria for the $1M Llama 3.1 Impact Grants program?"
+      confidence: 9
+    - q3: "What role does the Scale AI partnership play in Meta's broader AI for social good strategy?"
+      confidence: 8
+    - q4: "How do you balance open source AI development with commercial AI applications?"
+      confidence: 8
+    - q5: "What opportunities exist for nonprofits to leverage Meta's Superintelligence Lab research?"
+      confidence: 7
+    - q6: "How does Meta's global data center network support AI research collaborations?"
+      confidence: 7
+    - q7: "What impact measurement systems do you use for AI social impact grants?"
+      confidence: 7
+    - q8: "How might Defense Llama capabilities be adapted for civilian social good applications?"
+      confidence: 6
+    - q9: "What partnerships does Meta seek with academic institutions for AI research?"
+      confidence: 8
+    - q10: "How do you see Meta's AI strategy evolving to address global challenges?"
+      confidence: 7
+
+research_limitations:
+  - Analysis based on publicly available web information
+  - AI activity may exist but not be publicly documented
+  - Corporate strategies may have changed recently
+  - No traditional foundation structure limits philanthropic transparency
+  - Focus on corporate AI investment rather than grant-making activities
+  - Limited information on specific social impact funding amounts

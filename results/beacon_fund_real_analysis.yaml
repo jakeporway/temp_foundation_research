@@ -1,0 +1,66 @@
+foundation_name: Beacon Fund
+analysis_date: 2025-01-28
+search_method: Claude WebSearch tool - Command Line Integration
+search_queries_executed:
+  - '"Beacon Fund" foundation philanthropy artificial intelligence grants'
+  - '"Beacon Fund" foundation philanthropy profile assets location'
+  - '"Beacon Fund" philanthropy AI funding strategy'
+  - '"Beacon Fund" machine learning technology grants'
+
+basic_info:
+  official_name: Beacon Fund
+  assets: Unknown (multiple organizations with similar names found)
+  annual_giving: Unknown
+  focus_areas:
+    - gender equality (Vietnam-based fund)
+    - women-led businesses
+    - social impact investing
+  location: Vietnam (primary Beacon Fund found)
+  foundation_type: Unknown
+  website: https://beaconfund.com/
+
+ai_research_findings:
+  ai_grants_discovered: []
+  ai_strategy_evidence: []
+  leadership_ai_statements: []
+  ai_partnerships: []
+  ai_grant_urls: []
+  search_summary: WebSearch executed - 0 AI grants found. Multiple organizations with "Beacon" name but no clear AI philanthropy focus.
+
+taxonomy_classification:
+  foundation_identity:
+    foundation_type: Unknown
+    foundation_age: Recent (2020 for Vietnam fund)
+    decision_making_structure: Unknown
+    grant_sourcing_strategy: Unknown
+    endowment_size: Unknown
+    geographic_focus: Unknown
+    funding_approach: Unknown
+  ai_strategy:
+    ai_outcome: Unknown
+    ai_related_output: Unknown
+    ai_product_lifecycle_stage: Unknown
+    ai_funding_integration: Unknown
+    internal_ai_investment: Unknown
+    ai_funding_budget_size: Unknown
+    innovation_focus: Unknown
+  economic_opportunity_strategy:
+    eo_focus_area: Unknown
+
+strategic_assessment:
+  ai_readiness_score: 0
+  readiness_level: Unknown - Multiple organizations found, no clear AI focus
+  engagement_recommendations:
+    - Search revealed multiple organizations with "Beacon" in name
+    - Vietnam-based Beacon Fund focuses on women-led businesses and gender equality
+    - No clear AI philanthropy activities identified
+    - Several AI companies found (Beacon AI, Beacons AI) but these are startups, not foundations
+    - May need clarification on which specific "Beacon Fund" intended
+    - Organizations found include Beacon Foundation (Delta flight attendants), Beacon Collaborative (UK philanthropy growth)
+
+research_limitations:
+  - Analysis based on publicly available web information
+  - AI activity may exist but not be publicly documented
+  - Foundation strategies may have changed recently
+  - Multiple organizations with similar names create identification challenges
+  - No single clear "Beacon Fund" focused on AI philanthropy found in search results

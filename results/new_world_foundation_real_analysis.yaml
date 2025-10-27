@@ -1,0 +1,99 @@
+foundation_name: New World Foundation
+analysis_date: 2025-01-28
+search_method: Claude WebSearch tool - Command Line Integration
+search_queries_executed:
+  - '"New World Foundation" artificial intelligence AI grants'
+  - '"New World Foundation" philanthropy profile assets location'
+  - '"New World Foundation" AI funding strategy technology'
+  - '"New World Foundation" machine learning grants'
+
+basic_info:
+  official_name: New World Foundation
+  assets: Well-endowed (4/4 Star Charity Navigator rating, $15M spent since 2007, $100M Quality Jobs Fund)
+  annual_giving: $20K-$450K per grant (most $20K-$100K), no unsolicited proposals
+  focus_areas:
+    - workers' rights and labor organizing
+    - social justice and civil rights
+    - environmental justice and climate action
+    - economic inequality reduction
+    - immigration policy expansion
+    - voter access and democratic participation
+    - activist training and coalition building
+    - community organizing in underserved areas
+  location: New York, NY
+  foundation_type: Private (endowed public charity, founded 1954)
+  website: https://newwf.org/
+
+ai_research_findings:
+  ai_grants_discovered: []
+  ai_strategy_evidence: []
+  leadership_ai_statements: []
+  ai_partnerships: []
+  ai_grant_urls: []
+  search_summary: WebSearch executed - No AI grants found; foundation focused exclusively on social justice, labor organizing, and environmental activism
+
+taxonomy_classification:
+  foundation_identity:
+    foundation_type: Private (endowed public charity)
+    foundation_age: Established (1954)
+    decision_making_structure: Board-governed
+    grant_sourcing_strategy: Program-officer initiated (no unsolicited proposals)
+    endowment_size: Large (based on $100M Quality Jobs Fund and sustained giving)
+    geographic_focus: National (US-focused with some international labor connections)
+    funding_approach: Multi-year, high engagement
+  ai_strategy:
+    ai_outcome: Not applicable (no AI programming)
+    ai_related_output: Not applicable
+    ai_product_lifecycle_stage: Not applicable
+    ai_funding_integration: Not integrated (no AI focus)
+    internal_ai_investment: None
+    ai_funding_budget_size: None (no AI grants)
+    innovation_focus: Low (traditional social movement focus)
+  economic_opportunity_strategy:
+    eo_focus_area: Both (labor organizing for jobs + skill development through activist training)
+
+strategic_assessment:
+  ai_readiness_score: 1
+  readiness_level: Very Low - Social movement foundation with no AI focus or technology programming
+  engagement_recommendations:
+    - New World Foundation has no AI programming and is unlikely candidate for AI partnership
+    - $100M Quality Jobs Fund demonstrates significant financial capacity but focused on labor organizing
+    - Social justice mission could potentially intersect with AI ethics and algorithmic bias issues
+    - Environmental justice work could theoretically connect to AI applications for climate solutions
+    - Labor organizing focus might address AI's impact on workforce displacement and automation
+    - No unsolicited proposals accepted, making outreach challenging without existing connections
+    - 4/4 Star Charity Navigator rating indicates strong organizational management and transparency
+    - Colin Greer's 40-year leadership (since 1985) suggests stable institutional approach
+    - Coalition-building expertise could be valuable for AI governance and policy advocacy
+    - Focus on underserved communities addresses important equity considerations in AI development
+
+interview_simulation:
+  questions:
+    - q1: "Could AI bias and algorithmic discrimination align with your civil rights advocacy work?"
+      confidence: 3
+    - q2: "What role might AI play in addressing economic inequality through your Quality Jobs Fund?"
+      confidence: 2
+    - q3: "How do you view AI's impact on the labor organizing and workers' rights you support?"
+      confidence: 3
+    - q4: "Could environmental justice work incorporate AI applications for climate solutions?"
+      confidence: 2
+    - q5: "What criteria determine which social justice issues receive New World Foundation support?"
+      confidence: 4
+    - q6: "How might AI governance issues fit within your democratic participation priorities?"
+      confidence: 3
+    - q7: "Could coalition-building expertise inform AI policy advocacy and stakeholder engagement?"
+      confidence: 3
+    - q8: "What partnerships could address AI's impact on underserved communities you serve?"
+      confidence: 2
+    - q9: "How do you evaluate emerging issues for their alignment with your social justice mission?"
+      confidence: 4
+    - q10: "What role might AI play in the activist training and organizing work you fund?"
+      confidence: 2
+
+research_limitations:
+  - Analysis based on publicly available web information
+  - AI activity may exist but not be publicly documented
+  - Foundation strategies may have changed recently
+  - No unsolicited proposals policy limits transparency into potential new programming areas
+  - Strong social movement focus suggests AI programming highly unlikely
+  - Traditional activist and labor organizing mission may not align with technology innovation funding

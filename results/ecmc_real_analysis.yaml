@@ -1,0 +1,97 @@
+foundation_name: ECMC
+analysis_date: 2025-01-28
+search_method: Claude WebSearch tool - Command Line Integration
+search_queries_executed:
+  - '"ECMC Foundation" philanthropy artificial intelligence grants'
+  - '"ECMC Foundation" philanthropy profile assets location'
+  - '"ECMC" foundation AI funding strategy'
+  - '"ECMC Foundation" machine learning technology grants'
+
+basic_info:
+  official_name: ECMC Foundation
+  assets: $797 million net assets (2020)
+  annual_giving: $40+ million annually, $200+ million total since 2013
+  focus_areas:
+    - postsecondary education
+    - career readiness
+    - workforce development
+    - vocational training
+  location: Los Angeles, California
+  foundation_type: Corporate
+  website: https://www.ecmcfoundation.org/
+
+ai_research_findings:
+  ai_grants_discovered:
+    - type: workforce_ai_research
+      description: University of Tennessee project on AI, workforce automation, and career technical education
+      source: websearch
+      confidence: high
+    - type: ai_resilient_pathways
+      description: Networked Improvement Community for AI-resilient postsecondary CTE pathways in Tennessee
+      source: websearch
+      confidence: high
+  ai_strategy_evidence:
+    - type: leadership_engagement
+      description: AI discussions at headquarters with higher education and philanthropy leaders
+      source: websearch
+      confidence: medium
+    - type: strategic_recognition
+      description: Foundation recognizes AI and ML as changing how postsecondary education delivers curriculum
+      source: websearch
+      confidence: high
+    - type: workforce_focus
+      description: Focus on AI's impact on workforce demands and CTE program adaptations
+      source: websearch
+      confidence: high
+  leadership_ai_statements:
+    - type: strategic_perspective
+      description: Foundation leadership engaging with student-centered AI in philanthropy and higher education
+      source: websearch
+      confidence: medium
+  ai_partnerships:
+    - University of Tennessee Education Research & Opportunity Center
+    - Tennessee Board of Regents
+    - ACTE and Advance CTE partnerships
+  ai_grant_urls:
+    - https://cehhs.utk.edu/ero/ecmc-foundation-grant/
+    - https://www.ecmcfoundation.org/grants/grants-investments
+  search_summary: WebSearch executed - 2 AI workforce development grants found with focus on CTE adaptation
+
+taxonomy_classification:
+  foundation_identity:
+    foundation_type: Corporate
+    foundation_age: Established (2000, grantmaking since 2013)
+    decision_making_structure: Board-governed
+    grant_sourcing_strategy: Open application (rolling basis)
+    endowment_size: Large ($500M-$1B)
+    geographic_focus: National
+    funding_approach: Multi-year, high engagement
+  ai_strategy:
+    ai_outcome: More use of AI for social impact
+    ai_related_output: Unknown
+    ai_product_lifecycle_stage: Unknown
+    ai_funding_integration: Integrated into workforce development vertical
+    internal_ai_investment: Medium
+    ai_funding_budget_size: 1M-10M
+    innovation_focus: High
+  economic_opportunity_strategy:
+    eo_focus_area: Skill acquisition (Secondary)
+
+strategic_assessment:
+  ai_readiness_score: 7
+  readiness_level: High - Active AI workforce development focus with substantial assets
+  engagement_recommendations:
+    - Large assets ($797M) and significant annual giving ($40M+) provide substantial capacity
+    - Strong focus on AI's impact on workforce development and career technical education
+    - Rolling application process with open LOI system provides accessible entry point
+    - North Star goal of eliminating postsecondary completion gaps by 2040 creates urgency
+    - Focus on underserved populations aligns with equitable AI development
+    - Leadership actively engaging with AI trends in higher education
+    - Both nonprofit and for-profit ventures eligible for funding
+
+research_limitations:
+  - Analysis based on publicly available web information
+  - AI activity may exist but not be publicly documented
+  - Foundation strategies may have changed recently
+  - AI funding appears integrated into broader workforce development strategy
+  - Primary focus on educational applications rather than general AI research

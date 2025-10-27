@@ -1,0 +1,92 @@
+foundation_name: Charles Koch Foundation
+analysis_date: 2025-01-28
+search_method: Claude WebSearch tool - Command Line Integration
+search_queries_executed:
+  - '"Charles Koch Foundation" philanthropy artificial intelligence grants'
+  - '"Charles Koch Foundation" philanthropy profile assets location'
+  - '"Charles Koch Foundation" AI funding strategy'
+  - '"Charles Koch Foundation" machine learning technology grants'
+
+basic_info:
+  official_name: Charles Koch Foundation
+  assets: $743 million net assets (2023)
+  annual_giving: $75 million disbursed (2023)
+  focus_areas:
+    - future of work
+    - liberalism/free market research
+    - higher education
+    - social entrepreneurship
+  location: Arlington, Virginia
+  foundation_type: Family
+  website: https://charleskochfoundation.org/
+
+ai_research_findings:
+  ai_grants_discovered:
+    - type: ai_governance
+      description: ASU Sandra Day O'Connor College of Law - Soft Law Governance of Artificial Intelligence Phase 2
+      source: websearch
+      confidence: high
+    - type: technology_policy
+      description: UCLA Institute for Technology, Policy, and Law - $4M grant for AI, robotics, digital policy research
+      source: websearch
+      confidence: high
+    - type: social_media_research
+      description: NYU Center for Social Media and Politics - $3M for online information flow studies
+      source: websearch
+      confidence: high
+  ai_strategy_evidence:
+    - type: technology_focus
+      description: Future of Work focus area includes technology and AI workforce implications
+      source: websearch
+      confidence: medium
+    - type: policy_research
+      description: Focus on intersection of technology and legal/policy systems
+      source: websearch
+      confidence: high
+  leadership_ai_statements: []
+  ai_partnerships:
+    - Arizona State University Law School
+    - UCLA Institute for Technology, Policy, and Law
+    - NYU Center for Social Media and Politics
+  ai_grant_urls:
+    - https://www.asufoundation.org/colleges-and-programs/schools-and-colleges/sandra-day-oconnor-college-of-law/charles-koch-foundation---soft-law-governance-of-artificial-intelligence-phase-2-CA125031.html
+    - https://charleskochfoundation.org/news/ucla-engineering-and-law-scholars-study-harness-benefits-of-emerging-technology/
+  search_summary: WebSearch executed - 3 AI-related grants found totaling $7M+ focused on governance and policy
+
+taxonomy_classification:
+  foundation_identity:
+    foundation_type: Family
+    foundation_age: Established (1981)
+    decision_making_structure: Founder-led
+    grant_sourcing_strategy: Program-officer initiated
+    endowment_size: Large ($500M-$1B)
+    geographic_focus: National
+    funding_approach: Multi-year, high engagement
+  ai_strategy:
+    ai_outcome: Unknown
+    ai_related_output: Unknown
+    ai_product_lifecycle_stage: Unknown
+    ai_funding_integration: Policy research focus
+    internal_ai_investment: Medium
+    ai_funding_budget_size: 1M-10M
+    innovation_focus: Medium
+  economic_opportunity_strategy:
+    eo_focus_area: Skill acquisition (Secondary)
+
+strategic_assessment:
+  ai_readiness_score: 6
+  readiness_level: Medium - AI policy research focus rather than direct AI development
+  engagement_recommendations:
+    - Substantial assets ($743M) and annual giving ($75M) provide funding capacity
+    - AI grants focus on governance, policy, and societal implications rather than technical development
+    - Strong libertarian/free market orientation may create philosophical alignment challenges
+    - Grant range $1K-$17M with open rolling application process
+    - Future of Work focus area creates potential alignment for AI workforce development
+    - Over 300 university programs funded provides extensive academic network
+
+research_limitations:
+  - Analysis based on publicly available web information
+  - AI activity may exist but not be publicly documented
+  - Foundation strategies may have changed recently
+  - Political orientation may influence grant priorities and alignment
+  - Focus appears to be on AI policy research rather than AI technology development

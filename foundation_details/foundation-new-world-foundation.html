@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New World Foundation - Foundation Detail</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            padding: 3rem 0;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: white;
+        }
+
+        .foundation-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .foundation-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .readiness-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .overview-main {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .overview-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .info-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card h3 {
+            color: #1e293b;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .info-value {
+            color: #1e293b;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .taxonomy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .taxonomy-category {
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            background: #f8fafc;
+        }
+
+        .taxonomy-category h4 {
+            color: #3b82f6;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .ai-grants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .grant-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+        }
+
+        .grant-type {
+            color: #7c3aed;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .grant-description {
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        .partnerships-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .partnership-tag {
+            background: #3b82f6;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .recommendations-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .recommendations-list li {
+            background: #f0f9ff;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .interview-questions {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .question-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .question-text {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .question-confidence {
+            font-size: 0.85rem;
+            color: #059669;
+            font-weight: 500;
+        }
+
+        .focus-areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .focus-area {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 0.75rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .search-summary {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .search-summary-text {
+            color: #92400e;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .taxonomy-grid,
+            .ai-grants-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .foundation-title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <a href="enhanced_dashboard_normalized.html" class="back-link">← Back to Dashboard</a>
+            <h1 class="foundation-title">New World Foundation</h1>
+            <p class="foundation-subtitle">New World Foundation</p>
+            <div class="readiness-badge">
+                🎯 AI Readiness Score: 1/10
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Overview Section -->
+        <div class="overview-grid">
+            <div class="overview-main">
+                <h2 class="section-title">📋 Foundation Overview</h2>
+                <p><strong>Location:</strong> New York, NY</p>
+                <p><strong>Assets:</strong> Well-endowed (4/4 Star Charity Navigator rating, $15M spent since 2007, $100M Quality Jobs Fund)</p>
+                <p><strong>Annual Giving:</strong> $20K-$450K per grant (most $20K-$100K), no unsolicited proposals</p>
+                
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Focus Areas</h3>
+                <div class="focus-areas-grid">
+                    <div class="focus-area">workers' rights and labor organizing</div>
+<div class="focus-area">social justice and civil rights</div>
+<div class="focus-area">environmental justice and climate action</div>
+<div class="focus-area">economic inequality reduction</div>
+<div class="focus-area">immigration policy expansion</div>
+<div class="focus-area">voter access and democratic participation</div>
+<div class="focus-area">activist training and coalition building</div>
+<div class="focus-area">community organizing in underserved areas</div>
+                </div>
+
+                
+                <p style="margin-top: 2rem;"><strong>Website:</strong> <a href="https://newwf.org/" target="_blank">https://newwf.org/</a></p>
+                
+            </div>
+
+            <div class="overview-sidebar">
+                <div class="info-card">
+                    <h3>📊 Key Metrics</h3>
+                    <div class="info-item">
+                        <span class="info-label">AI Grants Found</span>
+                        <span class="info-value">0</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">AI Partnerships</span>
+                        <span class="info-value">0</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Readiness Level</span>
+                        <span class="info-value">Very Low - Social movement foundation with no AI focus or technology programming</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>🏛️ Foundation Profile</h3>
+                    <div class="info-item">
+                        <span class="info-label">Type</span>
+                        <span class="info-value">Private (endowed public charity)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Age</span>
+                        <span class="info-value">Established (1954)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Endowment</span>
+                        <span class="info-value">Large (based on $100M Quality Jobs Fund and sustained giving)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Taxonomy Classification -->
+        <div class="section">
+            <h2 class="section-title">🏷️ Taxonomy Classification</h2>
+            <div class="taxonomy-grid">
+                <div class="taxonomy-category">
+                    <h4>Foundation Identity</h4>
+                    <div class="info-item">
+                        <span class="info-label">Foundation Type</span>
+                        <span class="info-value">Private (endowed public charity)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Foundation Age</span>
+                        <span class="info-value">Established (1954)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Decision Making</span>
+                        <span class="info-value">Board-governed</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Grant Sourcing</span>
+                        <span class="info-value">Program-officer initiated (no unsolicited proposals)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Geographic Focus</span>
+                        <span class="info-value">National (US-focused with some international labor connections)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Funding Approach</span>
+                        <span class="info-value">Multi-year, high engagement</span>
+                    </div>
+                </div>
+
+                <div class="taxonomy-category">
+                    <h4>AI Strategy</h4>
+                    <div class="info-item">
+                        <span class="info-label">AI Outcome</span>
+                        <span class="info-value">Not applicable (no AI programming)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">AI Output</span>
+                        <span class="info-value">Not applicable</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Lifecycle Stage</span>
+                        <span class="info-value">Not applicable</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">AI Integration</span>
+                        <span class="info-value">Not integrated (no AI focus)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Internal Investment</span>
+                        <span class="info-value">None</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Budget Size</span>
+                        <span class="info-value">None (no AI grants)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Innovation Focus</span>
+                        <span class="info-value">Low (traditional social movement focus)</span>
+                    </div>
+                </div>
+
+                <div class="taxonomy-category">
+                    <h4>Economic Opportunity Strategy</h4>
+                    <div class="info-item">
+                        <span class="info-label">EO Focus Area</span>
+                        <span class="info-value">Both (labor organizing for jobs + skill development through activist training)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Grants Discovered -->
+        <div class="section">
+            <h2 class="section-title">🎯 AI Grants & Initiatives</h2>
+            <div class="ai-grants-grid">
+                <div class="grant-card"><div class="grant-type">No AI grants found</div><div class="grant-description">This foundation does not currently have documented AI grants or initiatives.</div></div>
+            </div>
+            
+            
+            <div class="search-summary">
+                <div class="search-summary-text">WebSearch executed - No AI grants found; foundation focused exclusively on social justice, labor organizing, and environmental activism</div>
+            </div>
+            
+        </div>
+
+        <!-- AI Partnerships -->
+        
+        <div class="section">
+            <h2 class="section-title">🤝 AI Partnerships</h2>
+            <div class="partnerships-list">
+                
+            </div>
+        </div>
+        
+
+        <!-- Engagement Recommendations -->
+        <div class="section">
+            <h2 class="section-title">💡 Engagement Recommendations</h2>
+            <ul class="recommendations-list">
+                <li>New World Foundation has no AI programming and is unlikely candidate for AI partnership</li>
+<li>$100M Quality Jobs Fund demonstrates significant financial capacity but focused on labor organizing</li>
+<li>Social justice mission could potentially intersect with AI ethics and algorithmic bias issues</li>
+<li>Environmental justice work could theoretically connect to AI applications for climate solutions</li>
+<li>Labor organizing focus might address AI's impact on workforce displacement and automation</li>
+<li>No unsolicited proposals accepted, making outreach challenging without existing connections</li>
+<li>4/4 Star Charity Navigator rating indicates strong organizational management and transparency</li>
+<li>Colin Greer's 40-year leadership (since 1985) suggests stable institutional approach</li>
+<li>Coalition-building expertise could be valuable for AI governance and policy advocacy</li>
+<li>Focus on underserved communities addresses important equity considerations in AI development</li>
+            </ul>
+        </div>
+
+        <!-- Interview Simulation Questions -->
+        
+        <div class="section">
+            <h2 class="section-title">❓ Interview Simulation Questions</h2>
+            <div class="interview-questions">
+                
+            </div>
+        </div>
+        
+
+        <!-- Research Analysis Details -->
+        <div class="section">
+            <h2 class="section-title">🔍 Research Analysis Details</h2>
+            <p><strong>Analysis Date:</strong> 2025-01-28</p>
+            <p><strong>Search Method:</strong> Claude WebSearch tool - Command Line Integration</p>
+            
+            <h3 style="margin-top: 1.5rem; margin-bottom: 1rem;">Search Queries Executed</h3>
+            <ul style="margin-left: 1.5rem;">
+                <li>""New World Foundation" artificial intelligence AI grants"</li>
+<li>""New World Foundation" philanthropy profile assets location"</li>
+<li>""New World Foundation" AI funding strategy technology"</li>
+<li>""New World Foundation" machine learning grants"</li>
+            </ul>
+
+            
+            <h3 style="margin-top: 1.5rem; margin-bottom: 1rem;">Research Limitations</h3>
+            <ul style="margin-left: 1.5rem;">
+                <li>Analysis based on publicly available web information</li>
+<li>AI activity may exist but not be publicly documented</li>
+<li>Foundation strategies may have changed recently</li>
+<li>No unsolicited proposals policy limits transparency into potential new programming areas</li>
+<li>Strong social movement focus suggests AI programming highly unlikely</li>
+<li>Traditional activist and labor organizing mission may not align with technology innovation funding</li>
+            </ul>
+            
+        </div>
+    </div>
+</body>
+</html>

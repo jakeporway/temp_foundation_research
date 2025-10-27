@@ -1,0 +1,79 @@
+foundation_name: Crankstart
+analysis_date: 2025-01-28
+search_method: Claude WebSearch tool - Command Line Integration
+search_queries_executed:
+  - '"Crankstart Foundation" philanthropy artificial intelligence grants'
+  - '"Crankstart Foundation" philanthropy profile assets location'
+  - '"Crankstart" philanthropy AI funding strategy'
+  - '"Crankstart Foundation" machine learning technology grants'
+
+basic_info:
+  official_name: Crankstart Foundation
+  assets: $4.2 billion (2020)
+  annual_giving: $250 million (2021) across 348 organizations
+  focus_areas:
+    - education
+    - democracy
+    - housing security
+    - environment
+    - medical science and innovation
+  location: San Francisco, California
+  foundation_type: Family
+  website: https://crankstart.org/
+
+ai_research_findings:
+  ai_grants_discovered: []
+  ai_strategy_evidence:
+    - type: basic_science_support
+      description: Medical Science & Innovation program supports basic science research
+      source: websearch
+      confidence: medium
+    - type: fast_grants_participation
+      description: Supported Fast Grants program for COVID-19 research including tech solutions
+      source: websearch
+      confidence: medium
+  leadership_ai_statements: []
+  ai_partnerships:
+    - Fast Grants program (COVID-19 research technology)
+    - Oxford University research funding
+  ai_grant_urls: []
+  search_summary: WebSearch executed - 0 specific AI grants found, but some technology research support through medical science program
+
+taxonomy_classification:
+  foundation_identity:
+    foundation_type: Family
+    foundation_age: Established (2000)
+    decision_making_structure: Founder-led
+    grant_sourcing_strategy: Invitation only (no unsolicited proposals)
+    endowment_size: Mega ($1B+)
+    geographic_focus: Regional (Bay Area focus)
+    funding_approach: Multi-year, high engagement
+  ai_strategy:
+    ai_outcome: Unknown
+    ai_related_output: Unknown
+    ai_product_lifecycle_stage: Unknown
+    ai_funding_integration: Unknown
+    internal_ai_investment: Unknown
+    ai_funding_budget_size: Unknown
+    innovation_focus: Medium
+  economic_opportunity_strategy:
+    eo_focus_area: Unknown
+
+strategic_assessment:
+  ai_readiness_score: 3
+  readiness_level: Low - No clear AI focus despite massive assets and tech founder background
+  engagement_recommendations:
+    - Massive assets ($4.2B) and annual giving ($250M) provide substantial capacity
+    - Founder Michael Moritz is Sequoia Capital partner with deep tech expertise
+    - Medical Science & Innovation program could be natural fit for AI health applications
+    - Does not accept unsolicited proposals - requires strategic approach
+    - Grant range $100K-$1M typical, but can go up to $50M
+    - Bay Area location and tech background suggest potential AI interest
+    - Focus on basic science research could include AI/ML applications
+
+research_limitations:
+  - Analysis based on publicly available web information
+  - AI activity may exist but not be publicly documented
+  - Foundation strategies may have changed recently
+  - Does not accept unsolicited proposals, limiting information availability
+  - Despite tech founder background, no clear AI philanthropy strategy identified

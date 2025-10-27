@@ -1,0 +1,2500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Schultz Family Foundation - Interactive Profile</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+			line-height: 1.6;
+			color: #374151;
+			background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+			min-height: 100vh;
+		}
+
+		.container {
+			max-width: 1400px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+
+		/* Header */
+		header {
+			background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+			color: white;
+			padding: 40px;
+			border-radius: 20px;
+			margin-bottom: 30px;
+			box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
+			position: relative;
+			overflow: hidden;
+		}
+
+		header::before {
+			content: '';
+			position: absolute;
+			top: -50%;
+			right: -10%;
+			width: 500px;
+			height: 500px;
+			background: rgba(255, 255, 255, 0.1);
+			border-radius: 50%;
+		}
+
+		.header-content {
+			position: relative;
+			z-index: 1;
+		}
+
+		.foundation-name {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-bottom: 10px;
+		}
+
+		.tagline {
+			font-size: 1.2rem;
+			opacity: 0.9;
+			margin-bottom: 20px;
+		}
+
+		.ai-score-badge {
+			display: inline-block;
+			background: #fbbf24;
+			color: #1e3a8a;
+			padding: 10px 30px;
+			border-radius: 50px;
+			font-size: 1.5rem;
+			font-weight: 700;
+			box-shadow: 0 5px 15px rgba(251, 191, 36, 0.4);
+		}
+
+		/* Quick Stats */
+		.quick-stats {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 20px;
+			margin-bottom: 30px;
+		}
+
+		.stat-card {
+			background: white;
+			padding: 25px;
+			border-radius: 15px;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+			transition: transform 0.3s, box-shadow 0.3s;
+		}
+
+		.stat-card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+		}
+
+		.stat-label {
+			font-size: 0.9rem;
+			color: #6b7280;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+			margin-bottom: 5px;
+		}
+
+		.stat-value {
+			font-size: 1.8rem;
+			font-weight: 700;
+			color: #1e3a8a;
+		}
+
+		/* Navigation Tabs */
+		.tabs {
+			display: flex;
+			gap: 10px;
+			margin-bottom: 30px;
+			flex-wrap: wrap;
+		}
+
+		.tab {
+			background: white;
+			padding: 15px 30px;
+			border: none;
+			border-radius: 10px;
+			font-size: 1rem;
+			font-weight: 600;
+			color: #6b7280;
+			cursor: pointer;
+			transition: all 0.3s;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		.tab:hover {
+			background: #f3f4f6;
+			transform: translateY(-2px);
+		}
+
+		.tab.active {
+			background: #1e3a8a;
+			color: white;
+			box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+		}
+
+		/* Content Sections */
+		.content-section {
+			display: none;
+			animation: fadeIn 0.5s;
+		}
+
+		.content-section.active {
+			display: block;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+				transform: translateY(20px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		.card {
+			background: white;
+			padding: 30px;
+			border-radius: 15px;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+			margin-bottom: 30px;
+		}
+
+		.card-title {
+			font-size: 1.8rem;
+			font-weight: 700;
+			color: #1e3a8a;
+			margin-bottom: 20px;
+			border-bottom: 3px solid #14b8a6;
+			padding-bottom: 10px;
+		}
+
+		.card-subtitle {
+			font-size: 1.3rem;
+			font-weight: 600;
+			color: #3b82f6;
+			margin-top: 25px;
+			margin-bottom: 15px;
+		}
+
+		/* Timeline */
+		.timeline {
+			position: relative;
+			padding-left: 40px;
+		}
+
+		.timeline::before {
+			content: '';
+			position: absolute;
+			left: 15px;
+			top: 0;
+			bottom: 0;
+			width: 3px;
+			background: linear-gradient(180deg, #14b8a6 0%, #3b82f6 100%);
+		}
+
+		.timeline-item {
+			position: relative;
+			margin-bottom: 30px;
+			padding-left: 20px;
+		}
+
+		.timeline-item::before {
+			content: '';
+			position: absolute;
+			left: -27px;
+			top: 5px;
+			width: 15px;
+			height: 15px;
+			background: #14b8a6;
+			border: 3px solid white;
+			border-radius: 50%;
+			box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.3);
+		}
+
+		.timeline-year {
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: #1e3a8a;
+			margin-bottom: 10px;
+		}
+
+		.timeline-content {
+			background: #f0f9ff;
+			padding: 15px;
+			border-radius: 10px;
+			border-left: 4px solid #14b8a6;
+		}
+
+		/* AI Investments Grid */
+		.investment-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 20px;
+			margin-bottom: 30px;
+		}
+
+		.investment-card {
+			background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+			padding: 25px;
+			border-radius: 15px;
+			border: 2px solid #14b8a6;
+			transition: all 0.3s;
+		}
+
+		.investment-card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 10px 30px rgba(20, 184, 166, 0.3);
+		}
+
+		.investment-title {
+			font-size: 1.3rem;
+			font-weight: 700;
+			color: #1e3a8a;
+			margin-bottom: 10px;
+		}
+
+		.investment-org {
+			font-size: 1rem;
+			color: #14b8a6;
+			font-weight: 600;
+			margin-bottom: 15px;
+		}
+
+		.investment-description {
+			color: #4b5563;
+			margin-bottom: 15px;
+		}
+
+		.investment-features {
+			list-style: none;
+			padding-left: 0;
+		}
+
+		.investment-features li {
+			padding: 5px 0 5px 25px;
+			position: relative;
+			color: #374151;
+		}
+
+		.investment-features li::before {
+			content: '✓';
+			position: absolute;
+			left: 0;
+			color: #10b981;
+			font-weight: 700;
+		}
+
+		/* Taxonomy Grid */
+		.taxonomy-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 15px;
+			margin-bottom: 30px;
+		}
+
+		.taxonomy-item {
+			background: white;
+			padding: 20px;
+			border-radius: 10px;
+			border-left: 5px solid #14b8a6;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		.taxonomy-label {
+			font-size: 0.85rem;
+			color: #6b7280;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+			margin-bottom: 8px;
+		}
+
+		.taxonomy-value {
+			font-size: 1.1rem;
+			font-weight: 600;
+			color: #1e3a8a;
+		}
+
+		/* Quote Box */
+		.quote-box {
+			background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+			color: white;
+			padding: 30px;
+			border-radius: 15px;
+			margin: 30px 0;
+			position: relative;
+			box-shadow: 0 8px 25px rgba(30, 58, 138, 0.3);
+		}
+
+		.quote-box::before {
+			content: '"';
+			font-size: 5rem;
+			position: absolute;
+			top: 10px;
+			left: 20px;
+			opacity: 0.2;
+			font-family: Georgia, serif;
+		}
+
+		.quote-text {
+			font-size: 1.3rem;
+			font-style: italic;
+			margin-bottom: 15px;
+			padding-left: 40px;
+		}
+
+		.quote-author {
+			font-size: 1rem;
+			font-weight: 600;
+			text-align: right;
+			opacity: 0.9;
+		}
+
+		/* Engagement Opportunities */
+		.opportunity-card {
+			background: white;
+			padding: 25px;
+			border-radius: 15px;
+			margin-bottom: 20px;
+			border: 2px solid transparent;
+			transition: all 0.3s;
+			cursor: pointer;
+		}
+
+		.opportunity-card:hover {
+			border-color: #14b8a6;
+			box-shadow: 0 8px 25px rgba(20, 184, 166, 0.2);
+		}
+
+		.opportunity-number {
+			display: inline-block;
+			background: #fbbf24;
+			color: #1e3a8a;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			text-align: center;
+			line-height: 40px;
+			font-weight: 700;
+			font-size: 1.2rem;
+			margin-right: 15px;
+		}
+
+		.opportunity-title {
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: #1e3a8a;
+			margin-bottom: 10px;
+		}
+
+		.opportunity-rationale {
+			color: #4b5563;
+			margin-bottom: 15px;
+		}
+
+		.opportunity-approach {
+			background: #f0f9ff;
+			padding: 15px;
+			border-radius: 10px;
+			border-left: 4px solid #14b8a6;
+		}
+
+		/* Tags */
+		.tag {
+			display: inline-block;
+			background: #e0f2fe;
+			color: #1e3a8a;
+			padding: 5px 15px;
+			border-radius: 20px;
+			font-size: 0.9rem;
+			font-weight: 600;
+			margin: 5px 5px 5px 0;
+		}
+
+		.tag.primary {
+			background: #14b8a6;
+			color: white;
+		}
+
+		.tag.secondary {
+			background: #f59e0b;
+			color: white;
+		}
+
+		/* Partnership Grid */
+		.partner-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 15px;
+		}
+
+		.partner-card {
+			background: white;
+			padding: 20px;
+			border-radius: 10px;
+			text-align: center;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+			transition: all 0.3s;
+		}
+
+		.partner-card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+		}
+
+		.partner-name {
+			font-weight: 700;
+			color: #1e3a8a;
+			margin-bottom: 5px;
+		}
+
+		.partner-role {
+			font-size: 0.85rem;
+			color: #6b7280;
+		}
+
+		/* Progress Bar */
+		.progress-container {
+			background: #e5e7eb;
+			border-radius: 10px;
+			height: 30px;
+			margin-bottom: 20px;
+			overflow: hidden;
+		}
+
+		.progress-bar {
+			background: linear-gradient(90deg, #14b8a6 0%, #3b82f6 100%);
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+			font-weight: 600;
+			transition: width 1s ease-in-out;
+		}
+
+		/* List Styling */
+		.styled-list {
+			list-style: none;
+			padding-left: 0;
+		}
+
+		.styled-list li {
+			padding: 10px 0 10px 30px;
+			position: relative;
+			border-bottom: 1px solid #e5e7eb;
+		}
+
+		.styled-list li:last-child {
+			border-bottom: none;
+		}
+
+		.styled-list li::before {
+			content: '→';
+			position: absolute;
+			left: 0;
+			color: #14b8a6;
+			font-weight: 700;
+			font-size: 1.2rem;
+		}
+
+		/* Responsive */
+		@media (max-width: 768px) {
+			.foundation-name {
+				font-size: 2rem;
+			}
+
+			.tabs {
+				flex-direction: column;
+			}
+
+			.tab {
+				width: 100%;
+			}
+
+			.quick-stats {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		/* Print Styles */
+		@media print {
+			body {
+				background: white;
+			}
+
+			.tabs {
+				display: none;
+			}
+
+			.content-section {
+				display: block !important;
+				page-break-before: always;
+			}
+
+			.content-section:first-of-type {
+				page-break-before: auto;
+			}
+		}
+
+		/* Accordion */
+		.accordion-item {
+			margin-bottom: 15px;
+		}
+
+		.accordion-header {
+			background: #f3f4f6;
+			padding: 15px 20px;
+			border-radius: 10px;
+			cursor: pointer;
+			font-weight: 600;
+			color: #1e3a8a;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			transition: all 0.3s;
+		}
+
+		.accordion-header:hover {
+			background: #e5e7eb;
+		}
+
+		.accordion-header.active {
+			background: #1e3a8a;
+			color: white;
+		}
+
+		.accordion-icon {
+			font-size: 1.2rem;
+			transition: transform 0.3s;
+		}
+
+		.accordion-header.active .accordion-icon {
+			transform: rotate(180deg);
+		}
+
+		.accordion-content {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.3s ease-out;
+			background: #f9fafb;
+			border-radius: 0 0 10px 10px;
+		}
+
+		.accordion-content.active {
+			max-height: 2000px;
+			padding: 20px;
+		}
+
+		/* Evidence Section */
+		.evidence-toggle {
+			background: #f9fafb;
+			border: 1px solid #e5e7eb;
+			border-radius: 8px;
+			padding: 12px 15px;
+			margin-top: 15px;
+			cursor: pointer;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font-weight: 600;
+			color: #6b7280;
+			transition: all 0.3s;
+		}
+
+		.evidence-toggle:hover {
+			background: #f3f4f6;
+			border-color: #14b8a6;
+		}
+
+		.evidence-toggle.active {
+			background: #ecfdf5;
+			border-color: #14b8a6;
+			color: #14b8a6;
+		}
+
+		.evidence-icon {
+			font-size: 1rem;
+			transition: transform 0.3s;
+		}
+
+		.evidence-toggle.active .evidence-icon {
+			transform: rotate(180deg);
+		}
+
+		.evidence-content {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.3s ease-out;
+		}
+
+		.evidence-content.active {
+			max-height: 1500px;
+			padding: 15px;
+			background: #f9fafb;
+			border-radius: 0 0 8px 8px;
+			border: 1px solid #e5e7eb;
+			border-top: none;
+		}
+
+		.evidence-item {
+			margin-bottom: 15px;
+			padding-left: 20px;
+			border-left: 3px solid #14b8a6;
+		}
+
+		.evidence-label {
+			font-size: 0.85rem;
+			font-weight: 700;
+			color: #14b8a6;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+			margin-bottom: 5px;
+		}
+
+		.evidence-text {
+			font-size: 0.95rem;
+			color: #4b5563;
+			line-height: 1.5;
+		}
+
+		.confidence-badge {
+			display: inline-block;
+			padding: 3px 10px;
+			border-radius: 12px;
+			font-size: 0.75rem;
+			font-weight: 600;
+			margin-top: 5px;
+		}
+
+		.confidence-high {
+			background: #d1fae5;
+			color: #065f46;
+		}
+
+		.confidence-medium-high {
+			background: #fef3c7;
+			color: #92400e;
+		}
+
+		.confidence-medium {
+			background: #fed7aa;
+			color: #9a3412;
+		}
+
+		.source-link {
+			display: inline-block;
+			margin-top: 8px;
+			color: #3b82f6;
+			font-size: 0.85rem;
+			text-decoration: none;
+		}
+
+		.source-link:hover {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- Header -->
+		<header>
+			<div class="header-content">
+				<h1 class="foundation-name">Schultz Family Foundation</h1>
+				<p class="tagline">Creating Pathways of Opportunity Through AI-Driven Workforce Innovation</p>
+				<div class="ai-score-badge">AI Readiness Score: 9/10</div>
+			</div>
+		</header>
+
+		<!-- Quick Stats -->
+		<div class="quick-stats">
+			<div class="stat-card">
+				<div class="stat-label">Founded</div>
+				<div class="stat-value">1996</div>
+			</div>
+			<div class="stat-card">
+				<div class="stat-label">Assets</div>
+				<div class="stat-value">$225M</div>
+			</div>
+			<div class="stat-card">
+				<div class="stat-label">Annual Giving</div>
+				<div class="stat-value">$14.6M</div>
+			</div>
+			<div class="stat-card">
+				<div class="stat-label">Foundation Type</div>
+				<div class="stat-value">Family</div>
+			</div>
+			<div class="stat-card">
+				<div class="stat-label">Recent AI Investment</div>
+				<div class="stat-value">$8M+</div>
+			</div>
+			<div class="stat-card">
+				<div class="stat-label">Target Population</div>
+				<div class="stat-value">4.6M Youth</div>
+			</div>
+		</div>
+
+		<!-- Navigation Tabs -->
+		<div class="tabs">
+			<button class="tab active" onclick="showSection('overview')">Overview</button>
+			<button class="tab" onclick="showSection('timeline')">Timeline</button>
+			<button class="tab" onclick="showSection('ai-strategy')">AI Strategy</button>
+			<button class="tab" onclick="showSection('taxonomy')">Taxonomy</button>
+			<button class="tab" onclick="showSection('engagement')">Engagement</button>
+			<button class="tab" onclick="showSection('leadership')">Leadership</button>
+			<button class="tab" onclick="showSection('interview')">Mock Interview</button>
+		</div>
+
+		<!-- Overview Section -->
+		<div id="overview" class="content-section active">
+			<div class="card">
+				<h2 class="card-title">Foundation Overview</h2>
+				<p style="font-size: 1.1rem; color: #4b5563; margin-bottom: 20px;">
+					The Schultz Family Foundation, founded in 1996 by Howard D. Schultz (former Starbucks CEO) and Sheri Schultz,
+					creates pathways of opportunity for populations facing barriers to success. With $225 million in assets and
+					$14.6 million in annual giving, the foundation focuses strategically on opportunity youth (ages 16-24) and
+					veterans transitioning to civilian careers.
+				</p>
+
+				<h3 class="card-subtitle">Mission & Focus</h3>
+				<div class="styled-list">
+					<ul>
+						<li><strong>Economic Mobility & Career Navigation:</strong> AI-driven workforce development tools</li>
+						<li><strong>Opportunity Youth (Ages 16-24):</strong> 4.6 million young adults out of school and work</li>
+						<li><strong>Veterans & Military Transition:</strong> 250,000 annual military-to-civilian transitions</li>
+						<li><strong>Entrepreneurship & Business Equity:</strong> $100 million commitment for diverse businesses</li>
+						<li><strong>Educational Technology:</strong> AI-native engineering education and career advancement tools</li>
+						<li><strong>National Service:</strong> State-led civilian service programs as opportunity pathways</li>
+					</ul>
+				</div>
+
+				<h3 class="card-subtitle">Why Schultz Stands Out</h3>
+				<div class="progress-container">
+					<div class="progress-bar" style="width: 90%;">Top 15% Nationally in AI Readiness</div>
+				</div>
+				<p style="color: #4b5563; margin-bottom: 15px;">
+					The Schultz Family Foundation is exceptionally positioned at the intersection of AI innovation and economic opportunity.
+					Unlike most family foundations, they demonstrate:
+				</p>
+				<div class="investment-grid">
+					<div class="investment-card">
+						<div class="investment-title">Technical Sophistication</div>
+						<div class="investment-description">
+							Deep understanding of LLMs, AI benchmarking, and competitive algorithm development
+						</div>
+					</div>
+					<div class="investment-card">
+						<div class="investment-title">Strategic Focus</div>
+						<div class="investment-description">
+							Concentrated investment in workforce development AI, not scattered across all programs
+						</div>
+					</div>
+					<div class="investment-card">
+						<div class="investment-title">Proven Execution</div>
+						<div class="investment-description">
+							Multiple successful AI partnerships moving from pilots to production (200K+ hires)
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="quote-box">
+				<div class="quote-text">
+					AI's influence and technology is rapidly transforming the way each of us work and live and we believe
+					there is a significant opportunity to leverage this technology to address the gaps in career navigation.
+				</div>
+				<div class="quote-author">— Vivek Varma, CEO</div>
+			</div>
+		</div>
+
+		<!-- Timeline Section -->
+		<div id="timeline" class="content-section">
+			<div class="card">
+				<h2 class="card-title">Foundation Evolution & AI Journey</h2>
+				<div class="timeline">
+					<div class="timeline-item">
+						<div class="timeline-year">1996</div>
+						<div class="timeline-content">
+							<strong>Founded by Howard & Sheri Schultz</strong><br>
+							Focus: Economic mobility for underserved populations
+						</div>
+					</div>
+
+					<div class="timeline-item">
+						<div class="timeline-year">2015</div>
+						<div class="timeline-content">
+							<strong>100,000 Opportunities Initiative Launched</strong><br>
+							Partnership with Starbucks<br>
+							Impact: 200,000+ opportunity youth hired
+						</div>
+					</div>
+
+					<div class="timeline-item">
+						<div class="timeline-year">2024</div>
+						<div class="timeline-content">
+							<strong>National Governors Association Partnership</strong><br>
+							State-led service-to-career programs<br><br>
+							<strong>Mayo Clinic AI Partnership</strong><br>
+							$5M over 5 years for AI educational materials<br><br>
+							<strong>SkillUp Coalition Merger</strong><br>
+							Expanded employer network from 100,000 Opportunities Initiative
+						</div>
+					</div>
+
+					<div class="timeline-item">
+						<div class="timeline-year">2025</div>
+						<div class="timeline-content">
+							<strong>$3M+ AI Career Navigation Investment</strong><br>
+							Four organizations funded:
+							<ul style="margin-top: 10px; padding-left: 20px;">
+								<li>CareerNet (Renaissance Philanthropy)</li>
+								<li>Coach Platform (CareerVillage)</li>
+								<li>Seekr Tool (Basta)</li>
+								<li>AI-Native Education (CodePath)</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- AI Strategy Section -->
+		<div id="ai-strategy" class="content-section">
+			<div class="card">
+				<h2 class="card-title">AI Strategy & Investments</h2>
+				<p style="font-size: 1.1rem; color: #4b5563; margin-bottom: 30px;">
+					<strong>Total Documented AI Investment: $8M+ (2024-2025)</strong>
+				</p>
+
+				<h3 class="card-subtitle">Recent AI Investments</h3>
+				<div class="investment-grid">
+					<div class="investment-card">
+						<div class="investment-title">CareerNet</div>
+						<div class="investment-org">Renaissance Philanthropy</div>
+						<div class="investment-description">
+							AI Benchmarking Innovation - Task-specific benchmarks to drive competitive algorithm development
+							for commercial career platforms
+						</div>
+						<ul class="investment-features">
+							<li>Anchor funding recipient</li>
+							<li>Competitive AI development model</li>
+							<li>Commercial platform integration</li>
+						</ul>
+						<div class="evidence-toggle" onclick="toggleEvidence(this)">
+							<span>📊 View Evidence</span>
+							<span class="evidence-icon">▼</span>
+						</div>
+						<div class="evidence-content">
+							<div class="evidence-item">
+								<div class="evidence-label">Innovation Approach</div>
+								<div class="evidence-text">
+									Harnessing competitive spirit among AI developers for social impact applications
+								</div>
+								<span class="confidence-badge confidence-high">High Confidence</span>
+							</div>
+							<div class="evidence-item">
+								<div class="evidence-label">Details</div>
+								<div class="evidence-text">
+									Task-specific AI benchmarks to drive cutting-edge algorithms for commercial career platforms
+								</div>
+							</div>
+							<div class="evidence-item">
+								<div class="evidence-label">Source</div>
+								<div class="evidence-text">
+									Web search 2025 - Foundation announcement
+								</div>
+								<a href="https://renaissancephilanthropy.org/news-and-insights/schultz-family-foundation-invests-more-than-3-million-in-ai-driven-career-navigation-tools/" target="_blank" class="source-link">View announcement →</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="investment-card">
+						<div class="investment-title">Coach Platform</div>
+						<div class="investment-org">CareerVillage</div>
+						<div class="investment-description">
+							Revolutionary platform harnessing AI and sector collaboration for scalable career support
+						</div>
+						<ul class="investment-features">
+							<li>Resume writing assistance</li>
+							<li>Mock interview practice</li>
+							<li>Internship discovery</li>
+							<li>Crowdsourced career advice</li>
+						</ul>
+						<div class="evidence-toggle" onclick="toggleEvidence(this)">
+							<span>📊 View Evidence</span>
+							<span class="evidence-icon">▼</span>
+						</div>
+						<div class="evidence-content">
+							<div class="evidence-item">
+								<div class="evidence-label">Target Population</div>
+								<div class="evidence-text">
+									Young people (youth-focused) - aligns with foundation's 16-24 age group mission
+								</div>
+								<span class="confidence-badge confidence-high">High Confidence</span>
+							</div>
+							<div class="evidence-item">
+								<div class="evidence-label">Services Provided</div>
+								<div class="evidence-text">
+									Finding internships, resume writing assistance, mock interviews, career advice at scale through AI and crowdsourcing
+								</div>
+							</div>
+							<div class="evidence-item">
+								<div class="evidence-label">Source</div>
+								<div class="evidence-text">
+									Web search 2025 - Foundation announcement
+								</div>
+								<a href="https://www.businesswire.com/news/home/20250407121927/en/Schultz-Family-Foundation-Invests-More-Than-$3-Million-in-AI-Driven-Career-Navigation-Tools" target="_blank" class="source-link">View announcement →</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="investment-card">
+						<div class="investment-title">Seekr Tool</div>
+						<div class="investment-org">Basta</div>
+						<div class="investment-description">
+							Job match scoring using large language models and American Opportunity Index data
+						</div>
+						<ul class="investment-features">
+							<li>First-generation college students</li>
+							<li>"Best fit" position matching</li>
+							<li>Resume upload analysis</li>
+							<li>Job quality metrics</li>
+						</ul>
+						<div class="evidence-toggle" onclick="toggleEvidence(this)">
+							<span>📊 View Evidence</span>
+							<span class="evidence-icon">▼</span>
+						</div>
+						<div class="evidence-content">
+							<div class="evidence-item">
+								<div class="evidence-label">Target Population</div>
+								<div class="evidence-text">
+									First-generation college students seeking first jobs, early-career job seekers
+								</div>
+								<span class="confidence-badge confidence-high">High Confidence</span>
+							</div>
+							<div class="evidence-item">
+								<div class="evidence-label">Innovation</div>
+								<div class="evidence-text">
+									Job match score powered by American Opportunity Index data - emphasizes job quality metrics, not just any job placement
+								</div>
+							</div>
+							<div class="evidence-item">
+								<div class="evidence-label">User Experience</div>
+								<div class="evidence-text">
+									Resume upload with "best fit" position matching using large language models
+								</div>
+							</div>
+							<div class="evidence-item">
+								<div class="evidence-label">Source</div>
+								<div class="evidence-text">
+									Web search 2025 - Foundation and Basta announcements
+								</div>
+								<a href="https://schultzfamilyfoundation.org/career-success-nonprofit-basta-the-schultz-family-foundation-tap-into-ai-solutions-to-create-career-advancement-opportunities/" target="_blank" class="source-link">View announcement →</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="investment-card">
+						<div class="investment-title">AI-Native Education</div>
+						<div class="investment-org">CodePath</div>
+						<div class="investment-description">
+							Creating the first AI-native generation of engineers, CTOs, and founders
+						</div>
+						<ul class="investment-features">
+							<li>AI-focused courses</li>
+							<li>Personalized career support</li>
+							<li>Washington state expansion</li>
+							<li>Immersive work experiences</li>
+						</ul>
+						<div class="evidence-toggle" onclick="toggleEvidence(this)">
+							<span>📊 View Evidence</span>
+							<span class="evidence-icon">▼</span>
+						</div>
+						<div class="evidence-content">
+							<div class="evidence-item">
+								<div class="evidence-label">Focus</div>
+								<div class="evidence-text">
+									National expansion of AI courses, personalized career support, immersive work experiences
+								</div>
+								<span class="confidence-badge confidence-high">High Confidence</span>
+							</div>
+							<div class="evidence-item">
+								<div class="evidence-label">Geographic Expansion</div>
+								<div class="evidence-text">
+									Deepening partnerships with Washington state higher education institutions while expanding nationally
+								</div>
+							</div>
+							<div class="evidence-item">
+								<div class="evidence-label">Innovation</div>
+								<div class="evidence-text">
+									Integration of AI tools to bolster student support services - creating AI-native engineers
+								</div>
+							</div>
+							<div class="evidence-item">
+								<div class="evidence-label">Source</div>
+								<div class="evidence-text">
+									Web search 2025 - Foundation announcement
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="investment-card">
+						<div class="investment-title">Mayo Clinic Partnership</div>
+						<div class="investment-org">Mayo Clinic</div>
+						<div class="investment-description">
+							$5M over 5 years for AI educational material development across Mayo system
+						</div>
+						<ul class="investment-features">
+							<li>5-year commitment (2024-2029)</li>
+							<li>Institutional AI education</li>
+							<li>Educational content development</li>
+						</ul>
+						<div class="evidence-toggle" onclick="toggleEvidence(this)">
+							<span>📊 View Evidence</span>
+							<span class="evidence-icon">▼</span>
+						</div>
+						<div class="evidence-content">
+							<div class="evidence-item">
+								<div class="evidence-label">Investment Details</div>
+								<div class="evidence-text">
+									$5 million over 5 years (spring 2024) for AI educational material development across Mayo system
+								</div>
+								<span class="confidence-badge confidence-high">High Confidence</span>
+							</div>
+							<div class="evidence-item">
+								<div class="evidence-label">Note</div>
+								<div class="evidence-text">
+									⚠️ May be health/education focused rather than workforce focused - requires clarification
+								</div>
+								<span class="confidence-badge confidence-medium">Medium Clarity</span>
+							</div>
+							<div class="evidence-item">
+								<div class="evidence-label">Significance</div>
+								<div class="evidence-text">
+									Demonstrates willingness to invest in AI education at institutional scale with multi-year commitments
+								</div>
+							</div>
+							<div class="evidence-item">
+								<div class="evidence-label">Source</div>
+								<div class="evidence-text">
+									Web search 2024 - Spring 2024 announcement
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<h3 class="card-subtitle">AI Sophistication Indicators</h3>
+				<div class="accordion-item">
+					<div class="accordion-header" onclick="toggleAccordion(this)">
+						<span>Technical Understanding</span>
+						<span class="accordion-icon">▼</span>
+					</div>
+					<div class="accordion-content">
+						<ul class="styled-list">
+							<li>Explicit reference to large language models (LLMs)</li>
+							<li>Understanding of AI benchmarking methodologies</li>
+							<li>Knowledge of competitive algorithm development dynamics</li>
+							<li>Awareness of task-specific AI approaches vs. general AI</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="accordion-item">
+					<div class="accordion-header" onclick="toggleAccordion(this)">
+						<span>Strategic Positioning</span>
+						<span class="accordion-icon">▼</span>
+					</div>
+					<div class="accordion-content">
+						<ul class="styled-list">
+							<li>Recognizing LLM popularity wave and riding it for social impact</li>
+							<li>Year-long research before making AI investments (thoughtful approach)</li>
+							<li>Multi-partner ecosystem strategy rather than single bet</li>
+							<li>Focus on commercial platform integration for sustainability</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="accordion-item">
+					<div class="accordion-header" onclick="toggleAccordion(this)">
+						<span>Implementation Maturity</span>
+						<span class="accordion-icon">▼</span>
+					</div>
+					<div class="accordion-content">
+						<ul class="styled-list">
+							<li>Funding production-ready tools (not just pilots)</li>
+							<li>Focus on scaling and deployment</li>
+							<li>Integration with established data sources (American Opportunity Index)</li>
+							<li>Multi-year commitments suggesting sustained AI strategy</li>
+						</ul>
+					</div>
+				</div>
+
+				<h3 class="card-subtitle">Strategic Partnerships</h3>
+				<div class="partner-grid">
+					<div class="partner-card">
+						<div class="partner-name">Renaissance Philanthropy</div>
+						<div class="partner-role">CareerNet AI Benchmarking</div>
+					</div>
+					<div class="partner-card">
+						<div class="partner-name">CareerVillage</div>
+						<div class="partner-role">Coach Platform</div>
+					</div>
+					<div class="partner-card">
+						<div class="partner-name">Basta</div>
+						<div class="partner-role">Seekr Job Matching</div>
+					</div>
+					<div class="partner-card">
+						<div class="partner-name">CodePath</div>
+						<div class="partner-role">AI-Native Education</div>
+					</div>
+					<div class="partner-card">
+						<div class="partner-name">Mayo Clinic</div>
+						<div class="partner-role">AI Educational Materials</div>
+					</div>
+					<div class="partner-card">
+						<div class="partner-name">National Governors Assoc.</div>
+						<div class="partner-role">State Service Programs</div>
+					</div>
+					<div class="partner-card">
+						<div class="partner-name">SkillUp Coalition</div>
+						<div class="partner-role">Employer Network (200K+ hires)</div>
+					</div>
+					<div class="partner-card">
+						<div class="partner-name">MENTOR</div>
+						<div class="partner-role">Youth Mentorship</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Taxonomy Section -->
+		<div id="taxonomy" class="content-section">
+			<div class="card">
+				<h2 class="card-title">Complete Taxonomy Classification</h2>
+
+				<h3 class="card-subtitle">Foundation Identity & Structure</h3>
+				<div class="taxonomy-grid">
+					<div class="taxonomy-item">
+						<div class="taxonomy-label">Foundation Type</div>
+						<div class="taxonomy-value">Family</div>
+						<div class="evidence-toggle" onclick="toggleEvidence(this)" style="margin-top: 10px; padding: 8px 12px; font-size: 0.85rem;">
+							<span>📊 Evidence</span>
+							<span class="evidence-icon">▼</span>
+						</div>
+						<div class="evidence-content">
+							<div class="evidence-item">
+								<div class="evidence-label">Rationale</div>
+								<div class="evidence-text">
+									Founded and controlled by Howard and Sheri Schultz family
+								</div>
+								<span class="confidence-badge confidence-high">High Confidence</span>
+							</div>
+						</div>
+					</div>
+					<div class="taxonomy-item">
+						<div class="taxonomy-label">Foundation Age</div>
+						<div class="taxonomy-value">Established (1980-2010)</div>
+						<div class="evidence-toggle" onclick="toggleEvidence(this)" style="margin-top: 10px; padding: 8px 12px; font-size: 0.85rem;">
+							<span>📊 Evidence</span>
+							<span class="evidence-icon">▼</span>
+						</div>
+						<div class="evidence-content">
+							<div class="evidence-item">
+								<div class="evidence-label">Rationale</div>
+								<div class="evidence-text">
+									Founded in 1996 (29 years old as of 2025)
+								</div>
+								<span class="confidence-badge confidence-high">High Confidence</span>
+							</div>
+						</div>
+					</div>
+					<div class="taxonomy-item">
+						<div class="taxonomy-label">Decision-Making Structure</div>
+						<div class="taxonomy-value">Founder-led</div>
+						<div class="evidence-toggle" onclick="toggleEvidence(this)" style="margin-top: 10px; padding: 8px 12px; font-size: 0.85rem;">
+							<span>📊 Evidence</span>
+							<span class="evidence-icon">▼</span>
+						</div>
+						<div class="evidence-content">
+							<div class="evidence-item">
+								<div class="evidence-label">Rationale</div>
+								<div class="evidence-text">
+									Howard and Sheri Schultz maintain control with professional CEO (Vivek Varma) and managing director executing vision
+								</div>
+								<span class="confidence-badge confidence-high">High Confidence</span>
+							</div>
+						</div>
+					</div>
+					<div class="taxonomy-item">
+						<div class="taxonomy-label">Grant Sourcing Strategy</div>
+						<div class="taxonomy-value">Program-officer initiated</div>
+						<div class="evidence-toggle" onclick="toggleEvidence(this)" style="margin-top: 10px; padding: 8px 12px; font-size: 0.85rem;">
+							<span>📊 Evidence</span>
+							<span class="evidence-icon">▼</span>
+						</div>
+						<div class="evidence-content">
+							<div class="evidence-item">
+								<div class="evidence-label">Rationale</div>
+								<div class="evidence-text">
+									No unsolicited proposals policy, strategic selectivity in partnerships
+								</div>
+								<span class="confidence-badge confidence-high">High Confidence</span>
+							</div>
+						</div>
+					</div>
+					<div class="taxonomy-item">
+						<div class="taxonomy-label">Endowment Size</div>
+						<div class="taxonomy-value">Medium ($100M-$500M)</div>
+						<div class="evidence-toggle" onclick="toggleEvidence(this)" style="margin-top: 10px; padding: 8px 12px; font-size: 0.85rem;">
+							<span>📊 Evidence</span>
+							<span class="evidence-icon">▼</span>
+						</div>
+						<div class="evidence-content">
+							<div class="evidence-item">
+								<div class="evidence-label">Rationale</div>
+								<div class="evidence-text">
+									$225M assets as of 2020, $14.6M annual giving
+								</div>
+								<span class="confidence-badge confidence-high">High Confidence</span>
+							</div>
+						</div>
+					</div>
+					<div class="taxonomy-item">
+						<div class="taxonomy-label">Geographic Focus</div>
+						<div class="taxonomy-value">National</div>
+						<div class="evidence-toggle" onclick="toggleEvidence(this)" style="margin-top: 10px; padding: 8px 12px; font-size: 0.85rem;">
+							<span>📊 Evidence</span>
+							<span class="evidence-icon">▼</span>
+						</div>
+						<div class="evidence-content">
+							<div class="evidence-item">
+								<div class="evidence-label">Rationale</div>
+								<div class="evidence-text">
+									US-focused with Washington state roots, national service partnerships, Miami hiring days, multi-state programs
+								</div>
+								<span class="confidence-badge confidence-high">High Confidence</span>
+							</div>
+						</div>
+					</div>
+					<div class="taxonomy-item">
+						<div class="taxonomy-label">Funding Approach</div>
+						<div class="taxonomy-value">Multi-year, high engagement</div>
+						<div class="evidence-toggle" onclick="toggleEvidence(this)" style="margin-top: 10px; padding: 8px 12px; font-size: 0.85rem;">
+							<span>📊 Evidence</span>
+							<span class="evidence-icon">▼</span>
+						</div>
+						<div class="evidence-content">
+							<div class="evidence-item">
+								<div class="evidence-label">Rationale</div>
+								<div class="evidence-text">
+									Multi-year high engagement approach - 5-year Mayo Clinic partnership, sustained career navigation ecosystem development
+								</div>
+								<span class="confidence-badge confidence-high">High Confidence</span>
+							</div>
+							<div class="evidence-item">
+								<div class="evidence-label">Additional Characteristics</div>
+								<div class="evidence-text">
+									High engagement with grantees, proactive strategic partnerships, project-specific investments with clear outcomes
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<h3 class="card-subtitle">AI Strategy & Funding Style</h3>
+				<div class="taxonomy-grid">
+					<div class="taxonomy-item">
+						<div class="taxonomy-label">AI Outcome</div>
+						<div class="taxonomy-value">More use of AI for social impact</div>
+						<div class="evidence-toggle" onclick="toggleEvidence(this)" style="margin-top: 10px; padding: 8px 12px; font-size: 0.85rem;">
+							<span>📊 Evidence</span>
+							<span class="evidence-icon">▼</span>
+						</div>
+						<div class="evidence-content">
+							<div class="evidence-item">
+								<div class="evidence-label">Rationale</div>
+								<div class="evidence-text">
+									Explicitly leveraging AI to address career navigation gaps, opportunity gap closure, workforce development challenges
+								</div>
+								<span class="confidence-badge confidence-high">High Confidence</span>
+							</div>
+						</div>
+					</div>
+					<div class="taxonomy-item">
+						<div class="taxonomy-label">AI-Related Output</div>
+						<div class="taxonomy-value">AI solution creation</div>
+						<div class="evidence-toggle" onclick="toggleEvidence(this)" style="margin-top: 10px; padding: 8px 12px; font-size: 0.85rem;">
+							<span>📊 Evidence</span>
+							<span class="evidence-icon">▼</span>
+						</div>
+						<div class="evidence-content">
+							<div class="evidence-item">
+								<div class="evidence-label">Rationale</div>
+								<div class="evidence-text">
+									Funding development of AI-powered tools (Coach, Seekr, CareerNet benchmarks), not just capacity building
+								</div>
+								<span class="confidence-badge confidence-high">High Confidence</span>
+							</div>
+							<div class="evidence-item">
+								<div class="evidence-label">Secondary Outputs</div>
+								<div class="evidence-text">
+									Capacity building (CodePath education), Framework/knowledge creation (AI benchmarking methodology)
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="taxonomy-item">
+						<div class="taxonomy-label">AI Product Lifecycle Stage</div>
+						<div class="taxonomy-value">Product / Scale</div>
+						<div class="evidence-toggle" onclick="toggleEvidence(this)" style="margin-top: 10px; padding: 8px 12px; font-size: 0.85rem;">
+							<span>📊 Evidence</span>
+							<span class="evidence-icon">▼</span>
+						</div>
+						<div class="evidence-content">
+							<div class="evidence-item">
+								<div class="evidence-label">Rationale</div>
+								<div class="evidence-text">
+									Funding mature products being scaled (Coach, Seekr) and production deployment of AI career navigation tools
+								</div>
+								<span class="confidence-badge confidence-high">High Confidence</span>
+							</div>
+							<div class="evidence-item">
+								<div class="evidence-label">Additional Stages</div>
+								<div class="evidence-text">
+									Scale (CareerNet expansion across commercial platforms), Beta (CodePath AI integration into student services)
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="taxonomy-item">
+						<div class="taxonomy-label">AI Funding Integration</div>
+						<div class="taxonomy-value">Focused in a few issue areas</div>
+						<div class="evidence-toggle" onclick="toggleEvidence(this)" style="margin-top: 10px; padding: 8px 12px; font-size: 0.85rem;">
+							<span>📊 Evidence</span>
+							<span class="evidence-icon">▼</span>
+						</div>
+						<div class="evidence-content">
+							<div class="evidence-item">
+								<div class="evidence-label">Rationale</div>
+								<div class="evidence-text">
+									AI integrated specifically into economic mobility and workforce development vertical, not horizontal across all programs
+								</div>
+								<span class="confidence-badge confidence-high">High Confidence</span>
+							</div>
+							<div class="evidence-item">
+								<div class="evidence-label">Details</div>
+								<div class="evidence-text">
+									AI deeply embedded in career navigation and opportunity youth programs, not present in all foundation activities (veterans, entrepreneurship, etc.)
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="taxonomy-item">
+						<div class="taxonomy-label">Internal AI Investment</div>
+						<div class="taxonomy-value">High</div>
+						<div class="evidence-toggle" onclick="toggleEvidence(this)" style="margin-top: 10px; padding: 8px 12px; font-size: 0.85rem;">
+							<span>📊 Evidence</span>
+							<span class="evidence-icon">▼</span>
+						</div>
+						<div class="evidence-content">
+							<div class="evidence-item">
+								<div class="evidence-label">Rationale</div>
+								<div class="evidence-text">
+									Strategic understanding of LLMs, AI benchmarking, competitive AI development. CEO articulates clear AI transformation vision
+								</div>
+								<span class="confidence-badge confidence-high">High Confidence</span>
+							</div>
+							<div class="evidence-item">
+								<div class="evidence-label">Evidence</div>
+								<div class="evidence-text">
+									Sophisticated grasp of AI ecosystem, multiple AI partnerships, year-long research into career navigation barriers
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="taxonomy-item">
+						<div class="taxonomy-label">AI Funding Budget Size</div>
+						<div class="taxonomy-value">$1M-10M</div>
+						<div class="evidence-toggle" onclick="toggleEvidence(this)" style="margin-top: 10px; padding: 8px 12px; font-size: 0.85rem;">
+							<span>📊 Evidence</span>
+							<span class="evidence-icon">▼</span>
+						</div>
+						<div class="evidence-content">
+							<div class="evidence-item">
+								<div class="evidence-label">Rationale</div>
+								<div class="evidence-text">
+									$3M+ documented in 2025 AI career navigation investment, $5M Mayo Clinic AI education (though Mayo may be health-focused, not workforce)
+								</div>
+								<span class="confidence-badge confidence-high">High Confidence</span>
+							</div>
+							<div class="evidence-item">
+								<div class="evidence-label">Total Documented</div>
+								<div class="evidence-text">
+									$8M+ in AI-specific grants across 2024-2025
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="taxonomy-item">
+						<div class="taxonomy-label">Innovation Focus</div>
+						<div class="taxonomy-value">High</div>
+						<div class="evidence-toggle" onclick="toggleEvidence(this)" style="margin-top: 10px; padding: 8px 12px; font-size: 0.85rem;">
+							<span>📊 Evidence</span>
+							<span class="evidence-icon">▼</span>
+						</div>
+						<div class="evidence-content">
+							<div class="evidence-item">
+								<div class="evidence-label">Rationale</div>
+								<div class="evidence-text">
+									"At the forefront" - investing in cutting-edge LLMs, AI benchmarking to drive competitive algorithm development, first-mover on AI career tools
+								</div>
+								<span class="confidence-badge confidence-high">High Confidence</span>
+							</div>
+							<div class="evidence-item">
+								<div class="evidence-label">Evidence</div>
+								<div class="evidence-text">
+									CareerNet innovation, AI-native engineering education (CodePath), task-specific AI benchmarks, LLM integration across portfolio
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<h3 class="card-subtitle">Economic Opportunity Strategy</h3>
+				<div style="margin-bottom: 30px;">
+					<strong style="color: #1e3a8a; font-size: 1.1rem;">Primary Focus Areas:</strong>
+					<div style="margin-top: 10px;">
+						<span class="tag primary">Skill acquisition (Secondary)</span>
+						<span class="tag primary">Reduce time to find and acquire job</span>
+						<span class="tag primary">Ensure a good, safe job</span>
+					</div>
+				</div>
+
+				<div style="margin-bottom: 30px;">
+					<strong style="color: #1e3a8a; font-size: 1.1rem;">Primary Levers:</strong>
+					<div style="margin-top: 10px;">
+						<span class="tag secondary">Innovation</span>
+						<span class="tag secondary">Direct Service</span>
+						<span class="tag secondary">Capacity Building</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Engagement Section -->
+		<div id="engagement" class="content-section">
+			<div class="card">
+				<h2 class="card-title">Top 3 Engagement Opportunities</h2>
+
+				<div class="opportunity-card">
+					<div>
+						<span class="opportunity-number">1</span>
+						<span class="opportunity-title">AI Career Navigation Ecosystem Expansion</span>
+					</div>
+					<div style="margin-top: 15px;">
+						<strong style="color: #14b8a6;">Why This Works:</strong>
+						<p class="opportunity-rationale">
+							$3M+ investment in 2025 demonstrates appetite for scaling AI workforce tools nationally.
+							CareerNet benchmarking shows sophisticated understanding of competitive AI development.
+						</p>
+						<strong style="color: #14b8a6;">Approach:</strong>
+						<div class="opportunity-approach">
+							Propose AI applications that complement existing portfolio (CareerVillage, Basta, CodePath)
+							or expand to new underserved populations while maintaining focus on ages 16-24.
+						</div>
+					</div>
+				</div>
+
+				<div class="opportunity-card">
+					<div>
+						<span class="opportunity-number">2</span>
+						<span class="opportunity-title">Veterans-to-Civilian AI Career Tools</span>
+					</div>
+					<div style="margin-top: 15px;">
+						<strong style="color: #14b8a6;">Why This Works:</strong>
+						<p class="opportunity-rationale">
+							Foundation serves 250K annual military transitions but current AI investments focus on opportunity youth.
+							Veteran career navigation is underserved by AI applications.
+						</p>
+						<strong style="color: #14b8a6;">Approach:</strong>
+						<div class="opportunity-approach">
+							Pitch AI solution for military skill translation, civilian job matching, and career pathway
+							recommendations specifically for veteran population.
+						</div>
+					</div>
+				</div>
+
+				<div class="opportunity-card">
+					<div>
+						<span class="opportunity-number">3</span>
+						<span class="opportunity-title">SkillUp Coalition AI Integration</span>
+					</div>
+					<div style="margin-top: 15px;">
+						<strong style="color: #14b8a6;">Why This Works:</strong>
+						<p class="opportunity-rationale">
+							Recent merger (2024-2025) of 100,000 Opportunities Initiative with SkillUp Coalition created expanded
+							employer partnership network. Proven framework (200K+ hires) could be enhanced with AI.
+						</p>
+						<strong style="color: #14b8a6;">Approach:</strong>
+						<div class="opportunity-approach">
+							Propose AI-powered employer-employee matching, skills gap analysis, or career advancement tracking
+							to scale impact of coalition beyond current capabilities.
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card">
+				<h2 class="card-title">Engagement Considerations</h2>
+
+				<h3 class="card-subtitle">✅ Strengths for Partnership</h3>
+				<ul class="styled-list">
+					<li>$225M assets provide sustained investment capacity</li>
+					<li>Multi-year, high-engagement funding approach</li>
+					<li>Proven ability to scale (200K+ hires through 100,000 Opportunities Initiative)</li>
+					<li>Washington state location = access to tech ecosystem</li>
+					<li>Demonstrated collaborative approach with multiple AI partners</li>
+				</ul>
+
+				<h3 class="card-subtitle">⚠️ Important Notes</h3>
+				<ul class="styled-list">
+					<li><strong>No unsolicited proposals</strong> - requires warm introduction or invitation</li>
+					<li>Strategic selectivity in partnerships</li>
+					<li>Must demonstrate clear alignment with opportunity youth (ages 16-24) mission</li>
+					<li>Preference for solutions with national scaling potential</li>
+					<li>Focus on <strong>production-ready</strong> or <strong>near-scale</strong> AI products, not early R&D</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Leadership Section -->
+		<div id="leadership" class="content-section">
+			<div class="card">
+				<h2 class="card-title">Leadership Team</h2>
+
+				<div class="investment-grid">
+					<div class="investment-card">
+						<div class="investment-title">Vivek Varma</div>
+						<div class="investment-org">Chief Executive Officer</div>
+						<div class="investment-description">
+							Leads strategic direction and articulates AI transformation vision for the foundation
+						</div>
+						<div class="quote-box" style="margin-top: 20px; padding: 20px;">
+							<div class="quote-text" style="font-size: 1rem; padding-left: 20px;">
+								AI's influence and technology is rapidly transforming the way each of us work and live
+								and we believe there is a significant opportunity to leverage this technology to address
+								the gaps in career navigation.
+							</div>
+						</div>
+					</div>
+
+					<div class="investment-card">
+						<div class="investment-title">Marie Groark</div>
+						<div class="investment-org">Managing Director</div>
+						<div class="investment-description">
+							Oversees career navigation resources and young adult empowerment initiatives
+						</div>
+						<div class="quote-box" style="margin-top: 20px; padding: 20px;">
+							<div class="quote-text" style="font-size: 1rem; padding-left: 20px;">
+								We believe that with the right tools and career navigation resources, young adults
+								can fully tap into their potential and achieve career success.
+							</div>
+						</div>
+					</div>
+
+					<div class="investment-card">
+						<div class="investment-title">Howard D. Schultz</div>
+						<div class="investment-org">Founder</div>
+						<div class="investment-description">
+							Former Starbucks CEO with deep workforce development and scaling expertise. Active in strategic
+							direction and major initiatives. Strong advocate for veterans support.
+						</div>
+					</div>
+
+					<div class="investment-card">
+						<div class="investment-title">Sheri Schultz</div>
+						<div class="investment-org">Co-Founder</div>
+						<div class="investment-description">
+							Co-founded the foundation in 1996. Involved in family foundation governance and oversight.
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card">
+				<h2 class="card-title">Contact Information</h2>
+				<p style="font-size: 1.1rem; color: #4b5563; margin-bottom: 20px;">
+					<strong>Website:</strong> <a href="https://schultzfamilyfoundation.org/" target="_blank"
+					style="color: #14b8a6; text-decoration: none;">schultzfamilyfoundation.org</a>
+				</p>
+				<p style="font-size: 1.1rem; color: #4b5563; margin-bottom: 20px;">
+					<strong>Location:</strong> Washington State
+				</p>
+				<p style="background: #fef3c7; padding: 20px; border-radius: 10px; border-left: 5px solid #f59e0b;">
+					<strong>⚠️ Important:</strong> No unsolicited proposals accepted. Warm introduction required.
+				</p>
+			</div>
+		</div>
+
+		<!-- Mock Interview Section -->
+		<div id="interview" class="content-section">
+			<div class="card">
+				<h2 class="card-title">Mock Interview: Program Officer Perspective</h2>
+				<p style="background: #fef3c7; padding: 15px; border-radius: 10px; border-left: 5px solid #f59e0b; margin-bottom: 30px;">
+					<strong>Role-Play Context:</strong> This interview simulates responses from a Schultz Family Foundation program officer
+					based on extensive research into the foundation's strategy, grants, and public statements. Responses reflect
+					documented evidence and strategic positions.
+				</p>
+
+				<div style="margin-bottom: 40px;">
+					<h3 style="color: #1e3a8a; font-size: 1.3rem; margin-bottom: 15px;">
+						<strong>Q1:</strong> What is your foundation's Economic Opportunity vision? What does massive success look like?
+					</h3>
+					<div>
+						<div style="background: #f0f9ff; padding: 20px; border-radius: 10px; border-left: 5px solid #14b8a6;">
+							<p style="margin-bottom: 15px;">
+								Our vision is centered on creating pathways of opportunity for populations facing barriers to success—specifically
+								the 4.6 million opportunity youth ages 16-24 who are out of school and work, and the 250,000 service members
+								transitioning from military to civilian careers annually.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>Massive success for us looks like this:</strong>
+							</p>
+							<ul style="margin-left: 20px; margin-bottom: 15px;">
+								<li style="margin-bottom: 10px;"><strong>Economic Mobility at Scale:</strong> Young adults and veterans don't just
+								find any job—they find meaningful, economically mobile careers with clear pathways for advancement. We're not measuring
+								just employment rates; we're tracking career growth, wage progression, and long-term economic stability.</li>
+								<li style="margin-bottom: 10px;"><strong>Systemic Change:</strong> Career navigation becomes as accessible and
+								effective as GPS navigation. Every young person, regardless of their background or network, can discover career
+								pathways, understand skill requirements, and access opportunities that match their strengths and aspirations.</li>
+								<li style="margin-bottom: 10px;"><strong>Reduced Time to Career Success:</strong> The gap between "I need a career"
+								and "I have a career with growth potential" shrinks from years to months through AI-powered navigation tools that
+								provide personalized guidance at scale.</li>
+							</ul>
+							<p style="margin-bottom: 15px;">
+								We learned from our 100,000 Opportunities Initiative—which led to over 200,000 opportunity youth hired—that employer
+								connections work, but they're labor-intensive. AI allows us to maintain that personalized support while reaching
+								millions instead of thousands. That's the transformation we're after.
+							</p>
+							<p style="font-style: italic; color: #6b7280;">
+								Evidence: This vision is reflected in our $3M+ 2025 AI career navigation investment across four organizations,
+								our focus on "meaningful and economically mobile careers" (not just job placement), and our integration of
+								American Opportunity Index data to ensure job quality metrics.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div style="margin-bottom: 40px;">
+					<h3 style="color: #1e3a8a; font-size: 1.3rem; margin-bottom: 15px;">
+						<strong>Q2:</strong> How would you describe your foundation's overall approach to giving?
+					</h3>
+					<div>
+						<div style="background: #f0f9ff; padding: 20px; border-radius: 10px; border-left: 5px solid #14b8a6;">
+							<p style="margin-bottom: 15px;">
+								We're highly strategic and deeply engaged. Here's how I'd characterize our approach:
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>1. Multi-Year, High-Engagement Partnerships</strong><br>
+								We don't do one-year pilot funding. Our Mayo Clinic partnership is 5 years, $5M. Our AI career navigation
+								investments are structured for scaling, not experimenting. We're in it for the long haul with our partners,
+								providing both funding and strategic support.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>2. Program-Officer Initiated (No Unsolicited Proposals)</strong><br>
+								We proactively identify organizations aligned with our strategy rather than responding to incoming proposals.
+								This allows us to build ecosystems—like our four-organization AI career navigation investment—where partners
+								complement rather than duplicate each other's work.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>3. Production-Ready, Not Early R&D</strong><br>
+								We fund solutions ready for deployment and scaling. Coach (CareerVillage), Seekr (Basta), CodePath's AI-native
+								education—these are mature products being scaled, not proofs of concept. We did the year-long research into
+								career navigation barriers before investing, so when we commit, we're confident about impact potential.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>4. Ecosystem Building Over Single Bets</strong><br>
+								Look at our AI strategy: CareerNet builds benchmarks for competitive algorithm development. CareerVillage's Coach
+								provides career advice at scale. Basta's Seekr matches jobs with quality metrics. CodePath creates AI-native
+								engineers. These investments work together, not in silos.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>5. Founder-Led with Professional Execution</strong><br>
+								Howard and Sheri Schultz remain actively involved in strategic direction, bringing Howard's Starbucks experience
+								with workforce development at national scale. But Vivek Varma as CEO and Marie Groark as Managing Director execute
+								with deep program expertise and AI sophistication.
+							</p>
+							<p style="font-style: italic; color: #6b7280;">
+								Evidence: $225M assets, $14.6M annual giving, program-officer initiated grant sourcing, multi-year commitments
+								documented across portfolio, founder-led decision structure with professional management.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div style="margin-bottom: 40px;">
+					<h3 style="color: #1e3a8a; font-size: 1.3rem; margin-bottom: 15px;">
+						<strong>Q3:</strong> What programs or funds address Economic Opportunity? What are the biggest challenges? How do you measure success?
+					</h3>
+					<div>
+						<div style="background: #f0f9ff; padding: 20px; border-radius: 10px; border-left: 5px solid #14b8a6;">
+							<p style="margin-bottom: 15px;">
+								<strong>Our Core Economic Opportunity Programs:</strong>
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>1. AI Career Navigation Initiative ($3M+, 2025)</strong><br>
+								Four organizations creating AI-powered tools to close the opportunity gap for young adults with limited education
+								and experience. This addresses skill acquisition (secondary education), reducing time to find jobs, and ensuring
+								good, safe jobs with career growth potential.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>2. SkillUp Coalition (formerly 100,000 Opportunities Initiative)</strong><br>
+								Our merger with SkillUp Coalition in 2024-2025 expanded our employer partnership network. We've hired 200,000+
+								opportunity youth to date. This is ripe for AI enhancement—imagine AI-powered matching across that entire coalition.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>3. Veterans Transition Support (250K annual transitions)</strong><br>
+								We support military-to-civilian career transitions, though we haven't yet applied AI here the way we have with
+								opportunity youth. That's a gap we're conscious of.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>4. National Service Pathways</strong><br>
+								Our 2024 National Governors Association partnership supports state-led civilian service programs as pathways to
+								careers for underrepresented communities.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>Biggest Challenges We See:</strong>
+							</p>
+							<ul style="margin-left: 20px; margin-bottom: 15px;">
+								<li style="margin-bottom: 10px;"><strong>Information Asymmetry:</strong> Opportunity youth don't know what careers
+								exist, what skills they need, or how to access opportunities. Traditional career counseling doesn't scale.</li>
+								<li style="margin-bottom: 10px;"><strong>Underemployment, Not Just Unemployment:</strong> First-generation college
+								students get degrees but end up in jobs that don't utilize their skills or provide advancement. That's why we
+								fund Basta's job quality matching.</li>
+								<li style="margin-bottom: 10px;"><strong>Network Gaps:</strong> Young adults from underrepresented backgrounds lack
+								the professional networks that middle-class youth take for granted. AI can partially democratize access to career
+								guidance previously available only through personal connections.</li>
+								<li style="margin-bottom: 10px;"><strong>Scaling Effective Models:</strong> We proved employer partnerships work
+								(200K+ hires), but they're labor-intensive. How do we maintain quality while reaching 4.6 million opportunity youth?</li>
+							</ul>
+							<p style="margin-bottom: 15px;">
+								<strong>How We Measure Success:</strong>
+							</p>
+							<ul style="margin-left: 20px; margin-bottom: 15px;">
+								<li style="margin-bottom: 10px;"><strong>Economic Mobility Outcomes:</strong> Not just "did they get a job" but
+								"are they on track for career advancement?" We track wages, career progression, and long-term stability.</li>
+								<li style="margin-bottom: 10px;"><strong>Job Quality Metrics:</strong> That's why we integrate American Opportunity
+								Index data—we care about whether jobs provide privacy protections, career growth, and fair wages.</li>
+								<li style="margin-bottom: 10px;"><strong>Scale and Reach:</strong> How many opportunity youth can we serve? How
+								quickly can they access career guidance?</li>
+								<li style="margin-bottom: 10px;"><strong>Time to Career Success:</strong> Reducing the gap between "seeking career"
+								and "established in career pathway."</li>
+								<li style="margin-bottom: 10px;"><strong>System Change:</strong> Are we making career navigation infrastructure better
+								for everyone, not just our direct grantees' users?</li>
+							</ul>
+							<p style="font-style: italic; color: #6b7280;">
+								Evidence: Focus areas documented across grants, American Opportunity Index integration (Basta/Seekr), 200K+ hires
+								through 100,000 Opportunities Initiative, emphasis on "meaningful and economically mobile careers."
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div style="margin-bottom: 40px;">
+					<h3 style="color: #1e3a8a; font-size: 1.3rem; margin-bottom: 15px;">
+						<strong>Q4:</strong> How would you characterize your foundation's perspective on AI?
+					</h3>
+					<div>
+						<div style="background: #f0f9ff; padding: 20px; border-radius: 10px; border-left: 5px solid #14b8a6;">
+							<p style="margin-bottom: 15px;">
+								We see AI as a transformational opportunity for social impact—not a threat to be mitigated, but a tool to be
+								strategically deployed for economic mobility at scale.
+							</p>
+							<p style="margin-bottom: 15px;">
+								As our CEO Vivek Varma put it: <em>"AI's influence and technology is rapidly transforming the way each of us work
+								and live and we believe there is a significant opportunity to leverage this technology to address the gaps in
+								career navigation."</em>
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>Here's what makes our AI perspective distinctive:</strong>
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>1. Technical Sophistication Without Tech Sector Baggage</strong><br>
+								We understand LLMs, AI benchmarking, and competitive algorithm development at a technical level. But we're not a
+								tech foundation—we're a workforce development foundation that happens to be extremely tech-savvy. That combination
+								is rare. We can evaluate AI tools critically while staying mission-focused.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>2. Strategic Positioning, Not Reactive Adoption</strong><br>
+								We didn't jump on AI because it's trendy. We spent a year researching career navigation barriers, identified where
+								AI uniquely solves problems traditional approaches can't, then invested strategically. The growing popularity of
+								LLMs created a timing opportunity—we're riding that wave deliberately.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>3. Ecosystem Thinking, Not Silver Bullet Mentality</strong><br>
+								AI isn't replacing human career advisors or employer partnerships—it's scaling their impact. CareerVillage's Coach
+								combines AI with crowdsourced human wisdom. Our CareerNet investment harnesses competitive AI development to improve
+								ALL commercial career platforms, not just one. That's systems thinking.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>4. Production Deployment Focus</strong><br>
+								We're funding tools being deployed now, not research projects. Coach, Seekr, CodePath's AI integration—these are
+								serving users today. We're at the "Product" and "Scale" stages of AI lifecycle, not "R&D" or "Proof of Concept."
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>5. Competitive AI Development as Social Impact Strategy</strong><br>
+								Our CareerNet investment is particularly innovative: creating task-specific AI benchmarks that drive competitive
+								algorithm development for career platforms. We're using competition dynamics among AI developers to accelerate
+								innovation for social good. That's sophisticated.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>What We're Not:</strong><br>
+								- We're not funding AI harm reduction or AI ethics research<br>
+								- We're not spreading AI thin across all our programs<br>
+								- We're not treating AI as its own vertical separate from workforce development<br>
+								- We're not satisfied with pilots that never scale
+							</p>
+							<p style="font-style: italic; color: #6b7280;">
+								Evidence: AI Readiness Score 9/10, $8M+ AI investment 2024-2025, sophisticated LLM and AI benchmarking strategy,
+								production/scale lifecycle focus, year-long research before investments.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div style="margin-bottom: 40px;">
+					<h3 style="color: #1e3a8a; font-size: 1.3rem; margin-bottom: 15px;">
+						<strong>Q5:</strong> Do you currently have an AI giving strategy? If so, what are its goals and how are grants structured?
+					</h3>
+					<div>
+						<div style="background: #f0f9ff; padding: 20px; border-radius: 10px; border-left: 5px solid #14b8a6;">
+							<p style="margin-bottom: 15px;">
+								<strong>Yes, we absolutely have an AI giving strategy.</strong> It's not a side project—it's core to our economic
+								mobility mission.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>Goals and Objectives:</strong>
+							</p>
+							<ul style="margin-left: 20px; margin-bottom: 15px;">
+								<li style="margin-bottom: 10px;"><strong>Primary Goal:</strong> Leverage AI to close the opportunity gap for
+								4.6 million youth ages 16-24 out of school and work through dramatically improved career navigation at scale.</li>
+								<li style="margin-bottom: 10px;"><strong>Strategic Objective:</strong> Move from labor-intensive, boutique career
+								support (100,000 Opportunities Initiative model) to AI-powered tools that maintain personalization while reaching
+								millions.</li>
+								<li style="margin-bottom: 10px;"><strong>Ecosystem Objective:</strong> Improve career navigation infrastructure
+								systemically—not just build proprietary tools, but elevate the entire field through open benchmarks and competitive
+								development.</li>
+								<li style="margin-bottom: 10px;"><strong>Outcome Focus:</strong> More use of AI for social impact (not AI harm
+								reduction). We're expanding AI's benefits, not just containing its risks.</li>
+							</ul>
+							<p style="margin-bottom: 15px;">
+								<strong>How Grants Are Structured:</strong>
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>Investment Model: Multi-Year, Ecosystem Approach</strong><br>
+								Our 2025 AI career navigation initiative invested $3M+ across four complementary organizations:
+							</p>
+							<ul style="margin-left: 20px; margin-bottom: 15px;">
+								<li style="margin-bottom: 10px;"><strong>Renaissance Philanthropy (CareerNet):</strong> Anchor funding for AI
+								benchmarking infrastructure. This is framework/knowledge creation that benefits the entire sector.</li>
+								<li style="margin-bottom: 10px;"><strong>CareerVillage (Coach platform):</strong> Multi-phase growth support for
+								scaling AI-powered career advice that combines LLMs with crowdsourced human wisdom.</li>
+								<li style="margin-bottom: 10px;"><strong>Basta (Seekr tool):</strong> Funding to integrate job match scoring using
+								LLMs and American Opportunity Index data—emphasizing job quality, not just placement.</li>
+								<li style="margin-bottom: 10px;"><strong>CodePath:</strong> Supporting AI-native engineering education with
+								personalized career support, particularly deepening Washington state higher education partnerships.</li>
+							</ul>
+							<p style="margin-bottom: 15px;">
+								<strong>Grant Characteristics:</strong>
+							</p>
+							<ul style="margin-left: 20px; margin-bottom: 15px;">
+								<li style="margin-bottom: 10px;"><strong>Multi-Year Commitment:</strong> Mayo Clinic AI partnership is 5 years, $5M.
+								We're not doing one-year pilots.</li>
+								<li style="margin-bottom: 10px;"><strong>Scaling Focus:</strong> We fund organizations moving from Beta to Product
+								to Scale stages—not early R&D.</li>
+								<li style="margin-bottom: 10px;"><strong>High Engagement:</strong> We're strategic partners, not just funders.
+								Grantees get funding plus our workforce development expertise and network.</li>
+								<li style="margin-bottom: 10px;"><strong>Complementary Portfolio:</strong> Partners strengthen each other rather than
+								competing. CareerNet benchmarks improve Coach, Seekr, and other platforms.</li>
+							</ul>
+							<p style="margin-bottom: 15px;">
+								<strong>Budget Allocation:</strong><br>
+								$8M+ documented 2024-2025 in AI-specific grants, putting us solidly in the $1M-10M annual AI funding budget category.
+								This is focused investment—all in workforce development and career navigation, not scattered across multiple issue areas.
+							</p>
+							<p style="font-style: italic; color: #6b7280;">
+								Evidence: $3M+ 2025 AI career navigation initiative across four organizations, $5M Mayo Clinic 5-year partnership,
+								multi-year high-engagement approach documented, production/scale focus, ecosystem portfolio strategy.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div style="margin-bottom: 40px;">
+					<h3 style="color: #1e3a8a; font-size: 1.3rem; margin-bottom: 15px;">
+						<strong>Q6:</strong> What are some examples of grants given? What lessons have you learned so far?
+					</h3>
+					<div>
+						<div style="background: #f0f9ff; padding: 20px; border-radius: 10px; border-left: 5px solid #14b8a6;">
+							<p style="margin-bottom: 15px;">
+								<strong>Grant Examples (2024-2025):</strong>
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>1. CareerNet (Renaissance Philanthropy) - Anchor Funding</strong><br>
+								<em>What:</em> Task-specific AI benchmarks to drive competitive algorithm development for commercial career platforms.<br>
+								<em>Innovation:</em> Rather than building proprietary AI tools, we're creating open benchmarks that make ALL commercial
+								platforms better by harnessing competitive spirit among AI developers.<br>
+								<em>Why This Matters:</em> Systemic impact—improving the infrastructure, not just one tool.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>2. Coach Platform (CareerVillage) - Multi-Phase Growth Support</strong><br>
+								<em>What:</em> Scaling AI-powered career support combining LLMs with crowdsourced career advice.<br>
+								<em>Services:</em> Resume writing, mock interviews, internship discovery, career advice at scale.<br>
+								<em>Target:</em> Young people navigating career decisions.<br>
+								<em>Why This Matters:</em> Maintains human wisdom (crowdsourcing) while adding AI scale. Not pure AI replacement.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>3. Seekr Tool (Basta) - Job Match Scoring Enhancement</strong><br>
+								<em>What:</em> AI-enabled job matching using LLMs with American Opportunity Index data integration.<br>
+								<em>Target:</em> First-generation college students and early-career job seekers.<br>
+								<em>Innovation:</em> "Best fit" position matching that emphasizes job QUALITY—wages, privacy, career growth—not just
+								any employment.<br>
+								<em>Why This Matters:</em> Addresses underemployment, not just unemployment. Economic mobility focus.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>4. CodePath - AI-Native Engineering Education</strong><br>
+								<em>What:</em> Creating the first AI-native generation of engineers, CTOs, and founders.<br>
+								<em>Innovation:</em> AI courses + personalized career support + immersive work experiences.<br>
+								<em>Geographic Strategy:</em> National expansion while deepening Washington state higher education partnerships.<br>
+								<em>Why This Matters:</em> Building AI talent while using AI for career support—full circle strategy.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>5. Mayo Clinic - AI Educational Materials ($5M / 5 years, 2024)</strong><br>
+								<em>What:</em> AI educational material development across Mayo system.<br>
+								<em>Note:</em> May be health/education focused rather than workforce; demonstrates willingness to invest in institutional
+								AI education at scale.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>Lessons Learned:</strong>
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>1. Ecosystem Beats Single Bet</strong><br>
+								Our four-organization AI career navigation investment is deliberately complementary. CareerNet improves the algorithms
+								that power Coach, Seekr, and others. This creates network effects. Lesson: Build ecosystems, not isolated solutions.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>2. LLM Timing Window Is Now</strong><br>
+								The growing popularity of large language models creates unprecedented opportunity for career navigation tools. But this
+								window won't stay open forever—we need to move from pilots to production while LLMs are capturing public attention and
+								investment. Lesson: Strategic timing matters.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>3. Job Quality > Job Quantity</strong><br>
+								Our integration of American Opportunity Index data with Basta's Seekr tool reflects a critical insight: getting
+								opportunity youth into ANY job isn't success if it's underemployment. We need to match them to jobs with advancement
+								potential, fair wages, and career growth. Lesson: Measure economic mobility, not just employment rates.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>4. Production Readiness Is Critical</strong><br>
+								We're funding mature products (Coach, Seekr) and production deployment, not R&D. This came from our 100,000 Opportunities
+								Initiative experience: pilots that don't scale don't create lasting impact. Lesson: Fund deployment and scaling, not
+								endless experimentation.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>5. Human + AI > Pure AI</strong><br>
+								CareerVillage's Coach combines AI with crowdsourced human career advice. This hybrid approach often works better than
+								pure AI solutions. Lesson: AI augments human expertise; it doesn't always replace it.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>6. Year-Long Research Paid Off</strong><br>
+								We spent a year researching career navigation barriers before making AI investments. That deep understanding helped us
+								identify exactly where AI uniquely solves problems traditional approaches can't. Lesson: Strategic patience creates
+								better investments.
+							</p>
+							<p style="font-style: italic; color: #6b7280;">
+								Evidence: Grant details from 2024-2025 announcements, documented AI career navigation strategy, American Opportunity Index
+								integration, year-long research into career navigation barriers, emphasis on production readiness and scaling.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div style="margin-bottom: 40px;">
+					<h3 style="color: #1e3a8a; font-size: 1.3rem; margin-bottom: 15px;">
+						<strong>Q7:</strong> What do you feel is most missing from the EO x AI investment space? What support do you need specifically?
+					</h3>
+					<div>
+						<div style="background: #f0f9ff; padding: 20px; border-radius: 10px; border-left: 5px solid #14b8a6;">
+							<p style="margin-bottom: 15px;">
+								<strong>What's Missing from the EO x AI Investment Space Generally:</strong>
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>1. Shared Outcome Measurement Frameworks</strong><br>
+								Everyone's measuring different things. We track economic mobility, but what indicators matter most? How do we compare
+								effectiveness across different AI career tools? We need sector-wide agreement on what success looks like beyond just
+								"number of users."
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>2. Job Quality Infrastructure</strong><br>
+								The American Opportunity Index is a start, but we need more robust, real-time data on job quality metrics—not just
+								wages, but career advancement potential, skills development opportunities, workplace conditions. AI career tools can
+								only optimize for what we can measure.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>3. Bridges Between Employer-Side and Job-Seeker-Side AI</strong><br>
+								We have AI tools helping job seekers (Coach, Seekr). Employers are using AI for hiring. But these systems don't talk
+								to each other. How do we create interoperability that benefits both sides while protecting job seekers from algorithmic
+								bias?
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>4. Veterans-Specific AI Applications</strong><br>
+								We serve 250K annual military transitions, but AI career tools are designed for opportunity youth. Military skill
+								translation to civilian careers is its own unique challenge. Where are the AI solutions for this population?
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>5. Evidence of Long-Term Economic Mobility, Not Just Job Placement</strong><br>
+								We need longitudinal studies showing that AI career navigation actually leads to better economic outcomes 3-5 years
+								later. Right now, we're investing based on logic and early indicators, but the field needs rigorous long-term evidence.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>6. Scale Economics That Work</strong><br>
+								LLM costs are a challenge. How do we maintain AI career tool sustainability as we scale from thousands to millions of
+								users? We need shared learning about unit economics, cost optimization strategies, and paths to financial sustainability.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>What Support We Need Specifically:</strong>
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>1. Peer Learning on AI Career Tool Effectiveness</strong><br>
+								We're investing $8M+ in AI career navigation, but we're learning in somewhat of a silo. What are other foundations
+								funding? What's working? What's failing? We'd benefit from structured peer learning with other program officers making
+								similar investments.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>2. Co-Funding Opportunities for Scaling</strong><br>
+								Our AI career navigation grantees (CareerVillage, Basta, CodePath, Renaissance) could benefit from additional funders
+								joining to accelerate scaling. But coordination is complex. How do we collaborate with other foundations on co-funding
+								without creating grantee burden?
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>3. Technical Due Diligence Capacity</strong><br>
+								We're sophisticated about AI, but we're not AI researchers. When evaluating technical claims about LLM approaches,
+								algorithm effectiveness, or benchmarking methodologies, we could use access to independent technical advisors who
+								understand both AI and workforce development.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>4. Policy Engagement on AI + Labor Markets</strong><br>
+								As AI transforms hiring and career development, policy frameworks matter. We're not a policy foundation, but we have
+								on-the-ground implementation experience. How do we ensure policymakers understand what's working in AI-powered career
+								navigation as they develop regulations?
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>5. Veterans AI Career Navigation Landscape Analysis</strong><br>
+								We've identified veterans as a gap in our AI strategy, but we don't want to reinvent the wheel. What AI solutions exist
+								for military-to-civilian transition? What's missing? We'd value a landscape analysis to inform potential investments.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>6. SkillUp Coalition AI Integration Strategy Support</strong><br>
+								Our SkillUp Coalition merger created a massive employer network (200K+ hires). How might AI enhance employer-employee
+								matching across this coalition? We'd benefit from strategic thinking about AI integration into existing proven
+								infrastructure.
+							</p>
+							<p style="font-style: italic; color: #6b7280;">
+								Evidence: Documented gaps in veterans AI applications, SkillUp Coalition merger creating AI enhancement opportunity,
+								emphasis on economic mobility measurement challenges, LLM cost sustainability questions, ecosystem coordination needs.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div style="margin-bottom: 40px;">
+					<h3 style="color: #1e3a8a; font-size: 1.3rem; margin-bottom: 15px;">
+						<strong>Q8:</strong> What foundations do you most commonly work with or would consider working with on this topic?
+					</h3>
+					<div>
+						<div style="background: #f0f9ff; padding: 20px; border-radius: 10px; border-left: 5px solid #14b8a6;">
+							<p style="margin-bottom: 15px;">
+								We're strategic about partnerships—we don't collaborate just to collaborate, but when it creates genuine value for
+								our grantees and our mission.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>Foundations We'd Consider Working With (Based on Strategic Alignment):</strong>
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>1. Tech-Forward Corporate Foundations with Workforce Development Focus</strong><br>
+								<em>Examples:</em> Microsoft Philanthropies, Google.org<br>
+								<em>Why:</em> They have AI technical sophistication comparable to ours and workforce development missions. Potential
+								for co-funding AI career navigation tools, sharing technical due diligence, or coordinating on AI benchmarking
+								standards (like our CareerNet investment).<br>
+								<em>Caveat:</em> Need to ensure our opportunity youth focus (ages 16-24) doesn't get diluted by broader workforce
+								development mandates.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>2. Veterans-Focused Foundations Interested in AI</strong><br>
+								<em>Why:</em> We serve 250K annual military transitions but haven't applied AI the way we have with opportunity youth.
+								Foundations focused on veterans who are exploring AI applications for military-to-civilian transition would be natural
+								partners.<br>
+								<em>What We'd Bring:</em> Our AI career navigation infrastructure and lessons learned could translate to veteran
+								populations with the right partnerships.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>3. Economic Mobility Foundations with AI Curiosity</strong><br>
+								<em>Why:</em> Foundations focused on economic mobility who are AI-curious but haven't yet made significant AI
+								investments might value learning from our experience. We could share our year-long research process, our grantee
+								vetting approach, and our ecosystem strategy.<br>
+								<em>What We'd Want:</em> Partners who share our emphasis on economic mobility OUTCOMES (not just employment rates)
+								and job quality metrics.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>4. Community Foundations in Washington State</strong><br>
+								<em>Why:</em> Our Washington state location and CodePath's deepening partnerships with higher education institutions
+								in the state create natural collaboration opportunities. Local community foundations could help scale AI career tools
+								regionally while we drive national scaling.<br>
+								<em>Added Value:</em> Our tech ecosystem access (Microsoft, Amazon nearby) benefits local partnerships.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>5. Education Technology Foundations</strong><br>
+								<em>Why:</em> Our CodePath partnership (AI-native engineering education) bridges workforce development and education.
+								Foundations focused on ed-tech who see career readiness as core to their mission could be natural collaborators.<br>
+								<em>Alignment Needed:</em> Must focus on career outcomes, not just educational attainment. We care about where
+								students end up professionally.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>What Makes a Good Partner for Us:</strong>
+							</p>
+							<ul style="margin-left: 20px; margin-bottom: 15px;">
+								<li style="margin-bottom: 10px;"><strong>Multi-Year Commitment Mindset:</strong> We don't do one-year pilots.
+								Partners need to think in 3-5 year timeframes.</li>
+								<li style="margin-bottom: 10px;"><strong>Production/Scale Focus:</strong> We're not funding early R&D. Partners
+								should value deployment and scaling over experimentation.</li>
+								<li style="margin-bottom: 10px;"><strong>Grantee-Centric Approach:</strong> Coordination should reduce grantee
+								burden, not increase it. Foundations who over-coordinate and create administrative overhead aren't good partners.</li>
+								<li style="margin-bottom: 10px;"><strong>Economic Mobility over Job Placement:</strong> Must care about long-term
+								career success, not just immediate employment.</li>
+								<li style="margin-bottom: 10px;"><strong>AI Sophistication:</strong> Need to understand AI at a technical level,
+								not just treat it as buzzword.</li>
+							</ul>
+							<p style="margin-bottom: 15px;">
+								<strong>Current Indirect Partnerships:</strong><br>
+								Through our National Governors Association partnership (2024), we're indirectly collaborating with state-level
+								funders supporting service-to-career programs. That's proven valuable for scaling across states.
+							</p>
+							<p style="font-style: italic; color: #6b7280;">
+								Evidence: Washington state location, National Governors Association 2024 partnership, focus on multi-year
+								high-engagement partnerships, AI sophistication level (comparable to tech corporate foundations), opportunity
+								youth and veterans focus, production/scale emphasis.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div style="margin-bottom: 40px;">
+					<h3 style="color: #1e3a8a; font-size: 1.3rem; margin-bottom: 15px;">
+						<strong>Q9:</strong> Who do you think is doing the best economic opportunity x AI investing today?
+					</h3>
+					<div>
+						<div style="background: #f0f9ff; padding: 20px; border-radius: 10px; border-left: 5px solid #14b8a6;">
+							<p style="margin-bottom: 15px;">
+								This is a really thoughtful question. Honestly, we're seeing more AI applications for social good GENERALLY than
+								we're seeing strategic, sustained investment in AI specifically for economic opportunity. Here's my assessment:
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>Tech Corporate Foundations: Strong AI Capacity, Broad Workforce Mandates</strong><br>
+								<em>Microsoft Philanthropies, Google.org</em><br>
+								<strong>What They Do Well:</strong> Massive resources, deep AI technical expertise, commitment to AI for social good
+								through initiatives like AI.org.<br>
+								<strong>Where We Differ:</strong> Their workforce development mandates are broader (all ages, all populations). We're
+								hyper-focused on opportunity youth ages 16-24 and veterans. That focus allows us to go deeper on specific use cases
+								like career navigation for first-generation college students.<br>
+								<strong>Verdict:</strong> They're doing excellent work at scale, but we're more targeted.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>Our Own Approach: Deep Focus, Ecosystem Strategy</strong><br>
+								<strong>What We Think We Do Well:</strong>
+							</p>
+							<ul style="margin-left: 20px; margin-bottom: 15px;">
+								<li style="margin-bottom: 10px;">Year-long research before investing (most foundations don't have that patience)</li>
+								<li style="margin-bottom: 10px;">Ecosystem approach—four complementary organizations, not just one-off grants</li>
+								<li style="margin-bottom: 10px;">AI benchmarking infrastructure investment (CareerNet) that improves the field,
+								not just one tool</li>
+								<li style="margin-bottom: 10px;">Production/scale focus—we're deploying tools NOW, not researching possibilities</li>
+								<li style="margin-bottom: 10px;">Job quality emphasis (American Opportunity Index integration) vs. just job placement</li>
+								<li style="margin-bottom: 10px;">Integration with proven non-AI infrastructure (SkillUp Coalition's 200K+ hires)</li>
+							</ul>
+							<p style="margin-bottom: 15px;">
+								<strong>What's Missing Broadly (Our Opinion on the Field):</strong>
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>1. Most AI + Workforce Investing Is Still Pilot-Stage</strong><br>
+								Too many foundations funding proofs of concept that never scale. We need more production deployment, less experimentation.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>2. Not Enough Focus on Economic Mobility vs. Employment</strong><br>
+								Getting someone into ANY job isn't success if it's underemployment. Where's the emphasis on career advancement potential,
+								wage progression, job quality? We're trying to change this conversation.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>3. Veterans Population Is Underserved</strong><br>
+								250K annual military transitions, and AI career tools are designed for general populations or opportunity youth.
+								Where's the AI specifically for military skill translation to civilian careers? That's a gap we see clearly.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>4. Infrastructure vs. Tools Imbalance</strong><br>
+								Lots of investment in individual AI career tools, not enough in infrastructure that improves ALL tools (like our
+								CareerNet AI benchmarking). The field needs more ecosystem thinking.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>Organizations Doing Interesting Work (Not Necessarily Foundations):</strong>
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>Renaissance Philanthropy</strong> - Our CareerNet partner. Their AI benchmarking approach is genuinely innovative—
+								using competition dynamics among AI developers for social impact. More foundations should fund this kind of infrastructure.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>Opportunity@Work</strong> - Not AI-specific, but their STARs (workers Skilled Through Alternative Routes)
+								framework creates the foundation for AI-powered skills-based hiring. Complementary to our approach.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>Honest Assessment:</strong><br>
+								The EO x AI investment space is still emerging. We're among the leaders, but that says more about how early the field
+								is than about how far ahead we are. There's enormous room for more foundations to make strategic, sustained investments
+								in AI for economic opportunity.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>What Would "Best in Class" Look Like?</strong><br>
+								- Multi-year, $10M+ sustained investment in AI for economic opportunity<br>
+								- Both infrastructure (benchmarks, standards) AND tools (direct service)<br>
+								- Longitudinal outcome measurement focused on economic mobility, not just employment<br>
+								- Integration with proven non-AI approaches (not replacing everything with AI)<br>
+								- Ecosystem coordination across multiple complementary organizations<br>
+								- Production deployment focus with clear paths to financial sustainability<br>
+								- Specific population focus (opportunity youth, veterans, etc.) allowing deep impact
+							</p>
+							<p style="margin-bottom: 15px;">
+								We're working toward that vision, but we're not claiming we're there yet.
+							</p>
+							<p style="font-style: italic; color: #6b7280;">
+								Evidence: $8M+ AI investment 2024-2025, ecosystem approach across four organizations, CareerNet infrastructure investment,
+								production/scale focus, American Opportunity Index integration for job quality, year-long research process, AI Readiness
+								Score 9/10 (top 15% nationally).
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div style="margin-bottom: 40px;">
+					<h3 style="color: #1e3a8a; font-size: 1.3rem; margin-bottom: 15px;">
+						<strong>Q10:</strong> Is there anything Opportunity AI could do specifically to help you advance your work in economic opportunity x AI?
+					</h3>
+					<div>
+						<div style="background: #f0f9ff; padding: 20px; border-radius: 10px; border-left: 5px solid #14b8a6;">
+							<p style="margin-bottom: 15px;">
+								Yes! Here are specific ways Opportunity AI could provide value to us:
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>1. Peer Learning on "What's Working" in AI Career Navigation</strong><br>
+								<strong>What We Need:</strong> We're investing $8M+ in AI career navigation across four organizations. What are other
+								foundations funding in this space? What's working? What's failing? What are the unexpected challenges?<br>
+								<strong>How Opportunity AI Could Help:</strong> Facilitate structured peer learning sessions where program officers
+								share real data on AI career tool effectiveness, unit economics, scaling challenges, and outcome measurement approaches.
+								Not just "here's what we funded" but "here's what we're learning."<br>
+								<strong>Format:</strong> Quarterly deep-dive sessions with 5-7 foundations actively investing in AI + EO, Chatham House
+								rules to encourage honest sharing.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>2. Landscape Analysis: Veterans x AI Career Navigation</strong><br>
+								<strong>The Gap We See:</strong> We serve 250K annual military transitions but haven't applied AI the way we have with
+								opportunity youth. What AI solutions exist for military-to-civilian career transition? What's missing?<br>
+								<strong>How Opportunity AI Could Help:</strong> Conduct a landscape analysis of AI applications for veterans career
+								transition, identifying existing tools, gaps in coverage, and investment opportunities.<br>
+								<strong>Value to Us:</strong> Would inform potential AI investments in our veterans programs without us having to build
+								this knowledge from scratch.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>3. Co-Funding Coordination for AI Career Tool Scaling</strong><br>
+								<strong>The Challenge:</strong> Our AI career navigation grantees (CareerVillage, Basta, CodePath) could scale faster
+								with additional funding, but coordinating multiple funders creates grantee burden.<br>
+								<strong>How Opportunity AI Could Help:</strong> Create a "co-funding facilitation" service where foundations interested
+								in supporting the same AI career tools coordinate through a single point of contact, reducing grantee administrative
+								overhead.<br>
+								<strong>Model:</strong> Something like a lightweight pooled fund or coordination platform for AI + EO investments.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>4. Shared Outcome Measurement Framework Development</strong><br>
+								<strong>The Problem:</strong> Every foundation measures AI career tool success differently. We need sector-wide agreement
+								on key indicators for economic mobility outcomes.<br>
+								<strong>How Opportunity AI Could Help:</strong> Convene foundations, researchers, and AI career tool developers to
+								develop shared outcome measurement frameworks for AI + economic opportunity.<br>
+								<strong>What We'd Contribute:</strong> Our American Opportunity Index integration approach and emphasis on economic
+								mobility vs. just employment.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>5. Technical Due Diligence Network</strong><br>
+								<strong>The Need:</strong> We're sophisticated about AI but not AI researchers. When evaluating technical claims about
+								LLM approaches or algorithm effectiveness, we'd value independent technical advisors.<br>
+								<strong>How Opportunity AI Could Help:</strong> Create a network of AI technical advisors (academics, practitioners)
+								who understand both AI and workforce development and can provide due diligence support to foundation program officers.<br>
+								<strong>Model:</strong> On-call technical review service for grant proposals, similar to how some foundations use
+								external evaluators.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>6. Policy Engagement Bridge</strong><br>
+								<strong>The Opportunity:</strong> As AI transforms hiring and career development, policy frameworks matter. We have
+								implementation experience but aren't a policy foundation.<br>
+								<strong>How Opportunity AI Could Help:</strong> Facilitate connections between program officers funding AI + EO
+								initiatives and policymakers developing AI and labor market regulations.<br>
+								<strong>Format:</strong> Policy briefings where foundations share "what's working on the ground" to inform better
+								policy design. Not lobbying, but knowledge sharing.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>7. SkillUp Coalition AI Integration Strategy Session</strong><br>
+								<strong>The Context:</strong> Our SkillUp Coalition merger created an employer network responsible for 200K+ hires.
+								How might AI enhance employer-employee matching across this coalition?<br>
+								<strong>How Opportunity AI Could Help:</strong> Facilitate a strategic planning session with AI experts, workforce
+								development practitioners, and employers to explore AI integration into proven employer partnership infrastructure.<br>
+								<strong>Value:</strong> External expertise helping us think through AI enhancement of existing successful programs,
+								not just creating new AI programs from scratch.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>8. "Failures and Lessons Learned" Honest Dialogue</strong><br>
+								<strong>The Reality:</strong> Not every AI investment works perfectly. But foundations rarely share failures publicly.<br>
+								<strong>How Opportunity AI Could Help:</strong> Create safe spaces (Chatham House rules) for program officers to share
+								what DIDN'T work in AI + EO investments—technical failures, scaling challenges, unexpected costs, etc.<br>
+								<strong>Why This Matters:</strong> Learning from failures prevents other foundations from making the same mistakes and
+								accelerates the field.
+							</p>
+							<p style="margin-bottom: 15px;">
+								<strong>What We'd Bring to Opportunity AI:</strong>
+							</p>
+							<ul style="margin-left: 20px; margin-bottom: 15px;">
+								<li style="margin-bottom: 10px;">Our year-long research process into career navigation barriers</li>
+								<li style="margin-bottom: 10px;">Our ecosystem investment approach (four complementary organizations)</li>
+								<li style="margin-bottom: 10px;">Our AI benchmarking strategy (CareerNet infrastructure investment)</li>
+								<li style="margin-bottom: 10px;">Our production/scale focus and lessons from moving beyond pilots</li>
+								<li style="margin-bottom: 10px;">Our integration of job quality metrics (American Opportunity Index)</li>
+								<li style="margin-bottom: 10px;">Howard Schultz's Starbucks experience with national-scale workforce development</li>
+								<li style="margin-bottom: 10px;">Our Washington state tech ecosystem connections</li>
+							</ul>
+							<p style="margin-bottom: 15px;">
+								<strong>Bottom Line:</strong><br>
+								We're committed to AI + economic opportunity and making significant investments. Opportunity AI could help us learn
+								faster, coordinate better, avoid mistakes, and ultimately achieve greater impact. We'd be active, engaged participants
+								in such a community.
+							</p>
+							<p style="font-style: italic; color: #6b7280;">
+								Evidence: $8M+ AI investment creating clear learning needs, veterans program gap creating research need, SkillUp Coalition
+								merger creating AI integration opportunity, emphasis on outcome measurement challenges, multi-year high-engagement approach
+								enabling knowledge sharing, documented AI sophistication level enabling peer learning contributions.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// Tab Navigation
+		function showSection(sectionId) {
+			// Hide all sections
+			const sections = document.querySelectorAll('.content-section');
+			sections.forEach(section => {
+				section.classList.remove('active');
+			});
+
+			// Remove active class from all tabs
+			const tabs = document.querySelectorAll('.tab');
+			tabs.forEach(tab => {
+				tab.classList.remove('active');
+			});
+
+			// Show selected section
+			document.getElementById(sectionId).classList.add('active');
+
+			// Add active class to clicked tab
+			event.target.classList.add('active');
+
+			// Scroll to top
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		}
+
+		// Accordion Toggle
+		function toggleAccordion(header) {
+			const content = header.nextElementSibling;
+			const isActive = header.classList.contains('active');
+
+			// Close all accordions
+			const allHeaders = document.querySelectorAll('.accordion-header');
+			const allContents = document.querySelectorAll('.accordion-content');
+			allHeaders.forEach(h => h.classList.remove('active'));
+			allContents.forEach(c => c.classList.remove('active'));
+
+			// Open clicked accordion if it was closed
+			if (!isActive) {
+				header.classList.add('active');
+				content.classList.add('active');
+			}
+		}
+
+		// Evidence Toggle
+		function toggleEvidence(toggle) {
+			const content = toggle.nextElementSibling;
+			const isActive = toggle.classList.contains('active');
+
+			// Toggle clicked evidence section
+			if (!isActive) {
+				toggle.classList.add('active');
+				content.classList.add('active');
+			} else {
+				toggle.classList.remove('active');
+				content.classList.remove('active');
+			}
+		}
+
+		// Animate progress bar on load
+		window.addEventListener('load', function() {
+			const progressBars = document.querySelectorAll('.progress-bar');
+			progressBars.forEach(bar => {
+				const width = bar.style.width;
+				bar.style.width = '0%';
+				setTimeout(() => {
+					bar.style.width = width;
+				}, 500);
+			});
+		});
+
+		// Print functionality
+		function printPage() {
+			window.print();
+		}
+
+		// Smooth scroll for internal links
+		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+			anchor.addEventListener('click', function (e) {
+				e.preventDefault();
+				const target = document.querySelector(this.getAttribute('href'));
+				if (target) {
+					target.scrollIntoView({
+						behavior: 'smooth',
+						block: 'start'
+					});
+				}
+			});
+		});
+	</script>
+</body>
+</html>

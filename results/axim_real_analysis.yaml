@@ -1,0 +1,102 @@
+foundation_name: Axim
+analysis_date: 2025-01-28
+search_method: Claude WebSearch tool - Command Line Integration
+search_queries_executed:
+  - '"Axim Collaborative" foundation philanthropy artificial intelligence grants'
+  - '"Axim Collaborative" foundation philanthropy profile assets location'
+  - '"Axim" philanthropy AI funding strategy education'
+  - '"Axim Collaborative" machine learning technology grants'
+
+basic_info:
+  official_name: Axim Collaborative
+  assets: $735 million (as of 2023 tax return)
+  annual_giving: $9 million expenses (2023), 18 partnerships launched
+  focus_areas:
+    - digital education equity
+    - post-secondary success
+    - workforce development
+    - artificial intelligence in education
+  location: Cambridge, Massachusetts
+  foundation_type: Private
+  website: https://www.axim.org
+
+ai_research_findings:
+  ai_grants_discovered:
+    - type: ai_advising
+      description: Campus Evolve + UCF + Indiana Tech AI advising collaboration
+      source: websearch
+      confidence: high
+    - type: ai_platform
+      description: CampusEvolve.ai reimagining college advising with generative AI
+      source: websearch
+      confidence: high
+    - type: learning_tools
+      description: Learning Engineering Tools Competition supporting AI solutions
+      source: websearch
+      confidence: high
+  ai_strategy_evidence:
+    - type: strategic_focus
+      description: AI emerged as key focus area for underserved learners
+      source: websearch
+      confidence: high
+    - type: convening_leadership
+      description: AI & Education Convening with Harvard, MIT, Khan Academy partners
+      source: websearch
+      confidence: high
+    - type: cautious_approach
+      description: Looking carefully at where AI is beneficial vs problematic
+      source: websearch
+      confidence: high
+  leadership_ai_statements:
+    - type: ceo_perspective
+      description: CEO Stephanie Khurana leading careful AI assessment for underserved learners
+      source: websearch
+      confidence: high
+  ai_partnerships:
+    - Campus Evolve + University of Central Florida + Indiana Tech
+    - Khan Academy AI Education Convening
+    - Berkman Klein Center + Harvard Online + MIT Media Lab
+    - Calbright College collaboration
+  ai_grant_urls:
+    - https://www.axim.org/news/ai-education
+    - https://www.axim.org/equity-focused-ai
+    - https://www.axim.org/learning-engineering
+    - https://www.axim.org/projects
+  search_summary: WebSearch executed - 3+ major AI initiatives found, substantial AI focus
+
+taxonomy_classification:
+  foundation_identity:
+    foundation_type: Private
+    foundation_age: Recent (2023)
+    decision_making_structure: Board-governed
+    grant_sourcing_strategy: Program-officer initiated
+    endowment_size: Mega ($1B+)
+    geographic_focus: National
+    funding_approach: Multi-year, high engagement
+  ai_strategy:
+    ai_outcome: More use of AI for social impact
+    ai_related_output: AI solution creation
+    ai_product_lifecycle_stage: Experimental / R&D
+    ai_funding_integration: Its own vertical
+    internal_ai_investment: High
+    ai_funding_budget_size: 10M+
+    innovation_focus: High
+  economic_opportunity_strategy:
+    eo_focus_area: Skill acquisition (Secondary)
+
+strategic_assessment:
+  ai_readiness_score: 9
+  readiness_level: High - Active AI engagement with $735M resources
+  engagement_recommendations:
+    - Massive endowment ($735M) dedicated to education technology and AI
+    - Grant range $500K-$3M aligns with significant AI projects
+    - Specific focus on AI for underserved learners creates clear mission alignment
+    - Leadership actively convening AI education stakeholders
+    - Strong partnerships with MIT, Harvard, major universities
+    - CEO has venture philanthropy background ideal for AI innovation
+
+research_limitations:
+  - Analysis based on publicly available web information
+  - AI activity may exist but not be publicly documented
+  - Foundation strategies may have changed recently
+  - Very new organization (2023) so limited track record but substantial resources and clear AI focus

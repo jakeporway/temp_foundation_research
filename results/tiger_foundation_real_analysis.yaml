@@ -1,0 +1,100 @@
+foundation_name: Tiger Foundation
+analysis_date: 2025-01-28
+search_method: Claude WebSearch tool - Command Line Integration
+search_queries_executed:
+  - '"Tiger Foundation" artificial intelligence AI grants'
+  - '"Tiger Foundation" philanthropy profile assets location'
+  - '"Tiger Foundation" AI funding strategy technology'
+  - '"Tiger Foundation" machine learning grants'
+
+basic_info:
+  official_name: Tiger Foundation
+  assets: Unknown (substantial based on $364M+ in historical grants since 1989)
+  annual_giving: $50K-$300K grants (average $200K), focus on proven high-impact direct human services
+  focus_areas:
+    - Breaking the cycle of poverty in New York City
+    - Education and workforce development
+    - Family support services
+    - Youth development and criminal justice
+    - Direct human services delivery
+    - Organizational capacity building
+    - Measurable outcomes and cost-effectiveness
+  location: New York, New York (101 Park Avenue, founded 1989)
+  foundation_type: Private (founded by Julian H. Robertson Jr. of Tiger Management)
+  website: https://tigerfoundation.org/
+
+ai_research_findings:
+  ai_grants_discovered: []
+  ai_strategy_evidence: []
+  leadership_ai_statements: []
+  ai_partnerships: []
+  ai_grant_urls: []
+  search_summary: WebSearch executed - No AI grants or activities found; focus on traditional direct human services and poverty alleviation
+
+taxonomy_classification:
+  foundation_identity:
+    foundation_type: Private (founded by hedge fund manager)
+    foundation_age: Established (1989)
+    decision_making_structure: Founder-controlled (Julian H. Robertson Jr.)
+    grant_sourcing_strategy: Application-based (website application process)
+    endowment_size: Unknown (substantial based on giving history)
+    geographic_focus: Local (NYC five boroughs)
+    funding_approach: Annual grants, high engagement
+  ai_strategy:
+    ai_outcome: Unknown
+    ai_related_output: Unknown
+    ai_product_lifecycle_stage: Unknown
+    ai_funding_integration: Not integrated (no AI focus found)
+    internal_ai_investment: None
+    ai_funding_budget_size: None (no AI activities identified)
+    innovation_focus: Low
+  economic_opportunity_strategy:
+    eo_focus_area: Both (skill acquisition through education + job creation through workforce development)
+
+strategic_assessment:
+  ai_readiness_score: 2
+  readiness_level: Low - Traditional social services foundation with no documented AI activities or technology focus
+  engagement_recommendations:
+    - $364M+ in historical grants demonstrates substantial long-term giving capacity and foundation stability
+    - NYC focus provides access to world-class AI research institutions and technology ecosystem
+    - Workforce development portfolio creates natural pathway for AI skills training and career transition programs
+    - Education focus could expand to include AI literacy and computational thinking initiatives
+    - Julian Robertson's hedge fund background (Tiger Management) brings sophisticated understanding of technology and data analytics
+    - Youth development programs could incorporate AI education and digital skills training
+    - Criminal justice portfolio could benefit from AI applications in rehabilitation and recidivism prevention
+    - Staff technical assistance model (10% time supporting grantees) demonstrates hands-on engagement suitable for AI implementation support
+    - Focus on measurable outcomes and cost-effectiveness aligns with AI's potential for data-driven impact measurement
+    - Family support services could incorporate AI applications for service delivery and case management
+    - Average $200K grant size provides sufficient capacity for pilot AI programs and technology implementations
+    - 35+ years of foundation experience provides sophisticated grantmaking infrastructure for new program areas
+
+interview_simulation:
+  questions:
+    - q1: "How might your workforce development programs expand to include AI skills training for economic mobility?"
+      confidence: 3
+    - q2: "Could your education portfolio incorporate AI literacy and computational thinking initiatives?"
+      confidence: 3
+    - q3: "What role might AI play in improving the effectiveness of your direct human services approach?"
+      confidence: 3
+    - q4: "How do you evaluate new approaches to breaking the cycle of poverty, including technology solutions?"
+      confidence: 4
+    - q5: "Could your youth development programs benefit from AI education and digital skills training?"
+      confidence: 3
+    - q6: "What partnerships could connect your NYC focus with local AI research institutions?"
+      confidence: 3
+    - q7: "How might AI applications enhance your family support and case management services?"
+      confidence: 3
+    - q8: "What criteria determine which innovative approaches receive Tiger Foundation support?"
+      confidence: 4
+    - q9: "Could your criminal justice work benefit from AI applications in rehabilitation and reentry programs?"
+      confidence: 3
+    - q10: "How would you assess technology initiatives for their alignment with breaking cycles of poverty?"
+      confidence: 4
+
+research_limitations:
+  - Analysis based on publicly available web information
+  - AI activity may exist but not be publicly documented
+  - Foundation strategies may have changed recently
+  - Traditional focus areas may include technology components not specifically documented as AI initiatives
+  - Private foundation structure may limit transparency into emerging program interests
+  - Julian Robertson's technology background may influence future strategic directions not yet publicly visible

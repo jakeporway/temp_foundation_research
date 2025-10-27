@@ -1,0 +1,107 @@
+foundation_name: Digital Harbor Foundation
+analysis_date: 2025-01-28
+search_method: Claude WebSearch tool - Command Line Integration
+search_queries_executed:
+  - '"Digital Harbor Foundation" philanthropy artificial intelligence grants'
+  - '"Digital Harbor Foundation" philanthropy profile assets location'
+  - '"Digital Harbor Foundation" AI funding strategy'
+  - '"Digital Harbor Foundation" machine learning technology grants'
+
+basic_info:
+  official_name: Digital Harbor Foundation Inc
+  assets: Unknown
+  annual_giving: Unknown (fiscal sponsor model)
+  focus_areas:
+    - digital equity
+    - diversity in tech
+    - innovative education
+    - technology for public good
+  location: Baltimore, Maryland
+  foundation_type: Operating
+  website: https://digitalharbor.org
+
+ai_research_findings:
+  ai_grants_discovered:
+    - type: levi_institute
+      description: Learning Engineering Virtual Institute using AI tools for middle school math progress
+      source: websearch
+      confidence: high
+    - type: humanitas_labs
+      description: AI techniques to improve operational efficiency of 211 Call Centers
+      source: websearch
+      confidence: high
+    - type: springtail_ai
+      description: Machine learning agents that build models through active learning
+      source: websearch
+      confidence: high
+    - type: safety_net_studio
+      description: $13M Social Safety Net Product Studio using AI for public benefits access
+      source: websearch
+      confidence: high
+  ai_strategy_evidence:
+    - type: fiscal_sponsor_model
+      description: Operates as fiscal sponsor for multiple AI projects focused on social good
+      source: websearch
+      confidence: high
+    - type: technical_expertise
+      description: Employs Senior ML Engineer and ML Engineer for LEVI Engineering Hub
+      source: websearch
+      confidence: high
+    - type: philanthropic_operator
+      description: Partners with major foundations to fund AI initiatives
+      source: websearch
+      confidence: high
+  leadership_ai_statements:
+    - type: organizational_mission
+      description: Using technology including AI to democratize societal and economic well-being
+      source: websearch
+      confidence: high
+  ai_partnerships:
+    - Gates Foundation
+    - Schmidt Futures
+    - Ballmer Group
+    - Charles and Lynn Schusterman Family Philanthropies
+    - GitLab Foundation AI for Economic Opportunity Fund
+  ai_grant_urls:
+    - https://digitalharbor.org
+    - https://ballmergroup.org/grant/digital-harbor-foundation/
+    - https://www.gatesfoundation.org/about/committed-grants/2022/08/inv046945
+  search_summary: WebSearch executed - 4 major AI initiatives found including $13M multi-foundation partnership
+
+taxonomy_classification:
+  foundation_identity:
+    foundation_type: Operating
+    foundation_age: Recent (2013)
+    decision_making_structure: Board-governed
+    grant_sourcing_strategy: Collaborative/partnership-based
+    endowment_size: Unknown
+    geographic_focus: National
+    funding_approach: Multi-year, high engagement
+  ai_strategy:
+    ai_outcome: More use of AI for social impact
+    ai_related_output: AI solution creation
+    ai_product_lifecycle_stage: Experimental / R&D
+    ai_funding_integration: Its own vertical
+    internal_ai_investment: High
+    ai_funding_budget_size: 10M+
+    innovation_focus: High
+  economic_opportunity_strategy:
+    eo_focus_area: Increase available jobs
+
+strategic_assessment:
+  ai_readiness_score: 9
+  readiness_level: High - Multiple AI initiatives with major foundation partnerships
+  engagement_recommendations:
+    - Functions as fiscal sponsor and philanthropic operator for AI social good projects
+    - $13M Social Safety Net Product Studio demonstrates large-scale AI initiative management
+    - Strong partnerships with Gates, Schmidt Futures, Ballmer Group creates funding network
+    - Technical staff including ML engineers provides implementation expertise
+    - Focus on AI for economic opportunity, education, and public benefit systems
+    - Baltimore location but national scope through partnerships and projects
+
+research_limitations:
+  - Analysis based on publicly available web information
+  - AI activity may exist but not be publicly documented
+  - Foundation strategies may have changed recently
+  - Operates as fiscal sponsor so direct grant-making capacity unclear
+  - Primary role appears to be project management and implementation rather than direct funding

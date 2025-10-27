@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strada Education - Foundation Detail</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            padding: 3rem 0;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: white;
+        }
+
+        .foundation-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .foundation-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .readiness-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .overview-main {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .overview-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .info-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card h3 {
+            color: #1e293b;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .info-value {
+            color: #1e293b;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .taxonomy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .taxonomy-category {
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            background: #f8fafc;
+        }
+
+        .taxonomy-category h4 {
+            color: #3b82f6;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .ai-grants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .grant-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+        }
+
+        .grant-type {
+            color: #7c3aed;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .grant-description {
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        .partnerships-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .partnership-tag {
+            background: #3b82f6;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .recommendations-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .recommendations-list li {
+            background: #f0f9ff;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .interview-questions {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .question-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .question-text {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .question-confidence {
+            font-size: 0.85rem;
+            color: #059669;
+            font-weight: 500;
+        }
+
+        .focus-areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .focus-area {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 0.75rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .search-summary {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .search-summary-text {
+            color: #92400e;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .taxonomy-grid,
+            .ai-grants-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .foundation-title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <a href="enhanced_dashboard_normalized.html" class="back-link">← Back to Dashboard</a>
+            <h1 class="foundation-title">Strada Education</h1>
+            <p class="foundation-subtitle">Strada Education Foundation Inc</p>
+            <div class="readiness-badge">
+                🎯 AI Readiness Score: 6/10
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Overview Section -->
+        <div class="overview-grid">
+            <div class="overview-main">
+                <h2 class="section-title">📋 Foundation Overview</h2>
+                <p><strong>Location:</strong> Indianapolis, Indiana (headquarters), Washington D.C. (office)</p>
+                <p><strong>Assets:</strong> Unknown (substantial endowment-funded organization based on grant activity)</p>
+                <p><strong>Annual Giving:</strong> $25M HBCU initiative, $10M Beyond Completion Challenge, $8M innovative solutions grants, $6M student success programs</p>
+                
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Focus Areas</h3>
+                <div class="focus-areas-grid">
+                    <div class="focus-area">Education-to-employment pathway strengthening</div>
+<div class="focus-area">Technology workforce development and training</div>
+<div class="focus-area">Data systems and analytics for student guidance</div>
+<div class="focus-area">Career coaching and work-based learning</div>
+<div class="focus-area">Adult learner workforce transitions</div>
+<div class="focus-area">HBCU support and capacity building</div>
+<div class="focus-area">Innovation in career services</div>
+<div class="focus-area">Strategic investments in education technology companies</div>
+                </div>
+
+                
+                <p style="margin-top: 2rem;"><strong>Website:</strong> <a href="https://stradaeducation.org/" target="_blank">https://stradaeducation.org/</a></p>
+                
+            </div>
+
+            <div class="overview-sidebar">
+                <div class="info-card">
+                    <h3>📊 Key Metrics</h3>
+                    <div class="info-item">
+                        <span class="info-label">AI Grants Found</span>
+                        <span class="info-value">3</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">AI Partnerships</span>
+                        <span class="info-value">5</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Readiness Level</span>
+                        <span class="info-value">Medium-High - Education foundation with strong technology workforce focus, substantial grant capacity, and emerging recognition of AI's impact</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>🏛️ Foundation Profile</h3>
+                    <div class="info-item">
+                        <span class="info-label">Type</span>
+                        <span class="info-value">Private (independent nonprofit private foundation)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Age</span>
+                        <span class="info-value">Established (1960, rebranded 2022)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Endowment</span>
+                        <span class="info-value">Large (substantial based on major grant programs)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Taxonomy Classification -->
+        <div class="section">
+            <h2 class="section-title">🏷️ Taxonomy Classification</h2>
+            <div class="taxonomy-grid">
+                <div class="taxonomy-category">
+                    <h4>Foundation Identity</h4>
+                    <div class="info-item">
+                        <span class="info-label">Foundation Type</span>
+                        <span class="info-value">Private (independent nonprofit private foundation)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Foundation Age</span>
+                        <span class="info-value">Established (1960, rebranded 2022)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Decision Making</span>
+                        <span class="info-value">Board-controlled (independent foundation governance)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Grant Sourcing</span>
+                        <span class="info-value">Program-officer initiated (strategic grants and challenges)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Geographic Focus</span>
+                        <span class="info-value">National (US education-to-employment focus)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Funding Approach</span>
+                        <span class="info-value">Multi-year, high engagement</span>
+                    </div>
+                </div>
+
+                <div class="taxonomy-category">
+                    <h4>AI Strategy</h4>
+                    <div class="info-item">
+                        <span class="info-label">AI Outcome</span>
+                        <span class="info-value">More use of AI for social impact</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">AI Output</span>
+                        <span class="info-value">AI solution creation</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Lifecycle Stage</span>
+                        <span class="info-value">Experimental / R&D</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">AI Integration</span>
+                        <span class="info-value">Integrated into workforce development vertical</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Internal Investment</span>
+                        <span class="info-value">Medium</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Budget Size</span>
+                        <span class="info-value">1-10M (portion of broader technology workforce grants)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Innovation Focus</span>
+                        <span class="info-value">High</span>
+                    </div>
+                </div>
+
+                <div class="taxonomy-category">
+                    <h4>Economic Opportunity Strategy</h4>
+                    <div class="info-item">
+                        <span class="info-label">EO Focus Area</span>
+                        <span class="info-value">Both (skill acquisition through education + job creation through workforce development)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Grants Discovered -->
+        <div class="section">
+            <h2 class="section-title">🎯 AI Grants & Initiatives</h2>
+            <div class="ai-grants-grid">
+                
+                <div class="grant-card">
+                    <div class="grant-type">Technology Workforce Training Grants</div>
+                    <div class="grant-description">$8M in grants including San Diego Workforce Partnership to train 500+ adult learners in data mining, business intelligence, Java programming, and Front End Web Design</div>
+                    <div style="margin-top: 0.75rem; font-size: 0.8rem; color: #64748b;">
+                        <strong>Source:</strong> websearch | <strong>Confidence:</strong> high
+                    </div>
+                </div>
+            
+
+                <div class="grant-card">
+                    <div class="grant-type">Cybersecurity Technology Education Support</div>
+                    <div class="grant-description">Support for American Women's College SOUL program helping low-income working women earn cybersecurity and technology degrees</div>
+                    <div style="margin-top: 0.75rem; font-size: 0.8rem; color: #64748b;">
+                        <strong>Source:</strong> websearch | <strong>Confidence:</strong> high
+                    </div>
+                </div>
+            
+
+                <div class="grant-card">
+                    <div class="grant-type">Data Analytics Career Transition Programs</div>
+                    <div class="grant-description">Georgia State College-to-Career program using scalable technologies including data scraping tools and job skills tagging</div>
+                    <div style="margin-top: 0.75rem; font-size: 0.8rem; color: #64748b;">
+                        <strong>Source:</strong> websearch | <strong>Confidence:</strong> high
+                    </div>
+                </div>
+            
+            </div>
+            
+            
+            <div class="search-summary">
+                <div class="search-summary-text">WebSearch executed - Moderate AI focus through technology workforce development grants and recognition of ML/AI impact on future of work</div>
+            </div>
+            
+        </div>
+
+        <!-- AI Partnerships -->
+        
+        <div class="section">
+            <h2 class="section-title">🤝 AI Partnerships</h2>
+            <div class="partnerships-list">
+                <div class="partnership-tag">San Diego Workforce Partnership (data mining and programming training)</div>
+<div class="partnership-tag">Georgia State University (data analytics and job skills technology)</div>
+<div class="partnership-tag">American Women's College (cybersecurity and technology education)</div>
+<div class="partnership-tag">Taskforce on Higher Education and Opportunity (Beyond Completion Challenge)</div>
+<div class="partnership-tag">28 Historically Black Colleges and Universities (HBCU initiative)</div>
+            </div>
+        </div>
+        
+
+        <!-- Engagement Recommendations -->
+        <div class="section">
+            <h2 class="section-title">💡 Engagement Recommendations</h2>
+            <ul class="recommendations-list">
+                <li>$25M+ in major grant programs demonstrates exceptional capacity for workforce development initiatives including AI applications</li>
+<li>Focus on adult learners and workforce transitions directly addresses AI's impact on employment and reskilling needs</li>
+<li>Technology workforce training emphasis (data mining, programming, cybersecurity) provides natural pathway for AI education expansion</li>
+<li>Strada Education Innovation Fund investing in education technology companies creates opportunity for AI startup partnerships</li>
+<li>Data systems strengthening work provides foundation for AI applications in educational analytics and career guidance</li>
+<li>60+ years of education foundation experience with recent strategic refocus positions organization for AI workforce challenges</li>
+<li>HBCU partnership network ($25M initiative) creates opportunity for AI education in underserved communities</li>
+<li>Beyond Completion Challenge model ($10M) could be adapted for AI workforce transition and reskilling programs</li>
+<li>Indianapolis location provides opportunity to develop AI workforce initiatives in underrepresented geographic region</li>
+<li>Recognition of machine learning impact on adult learners shows strategic awareness of AI workforce implications</li>
+<li>Innovation Fund approach enables both grant and investment strategies for comprehensive AI ecosystem support</li>
+<li>Partnership with employer networks ensures AI education programs aligned with actual industry needs</li>
+            </ul>
+        </div>
+
+        <!-- Interview Simulation Questions -->
+        
+        <div class="section">
+            <h2 class="section-title">❓ Interview Simulation Questions</h2>
+            <div class="interview-questions">
+                
+            </div>
+        </div>
+        
+
+        <!-- Research Analysis Details -->
+        <div class="section">
+            <h2 class="section-title">🔍 Research Analysis Details</h2>
+            <p><strong>Analysis Date:</strong> 2025-01-28</p>
+            <p><strong>Search Method:</strong> Claude WebSearch tool - Command Line Integration</p>
+            
+            <h3 style="margin-top: 1.5rem; margin-bottom: 1rem;">Search Queries Executed</h3>
+            <ul style="margin-left: 1.5rem;">
+                <li>""Strada Education" artificial intelligence AI grants"</li>
+<li>""Strada Education" philanthropy profile assets location"</li>
+<li>""Strada Education" AI funding strategy technology"</li>
+<li>""Strada Education" machine learning grants"</li>
+            </ul>
+
+            
+            <h3 style="margin-top: 1.5rem; margin-bottom: 1rem;">Research Limitations</h3>
+            <ul style="margin-left: 1.5rem;">
+                <li>Analysis based on publicly available web information</li>
+<li>AI activity may exist but not be publicly documented</li>
+<li>Foundation strategies may have changed recently given 2022 rebranding</li>
+<li>Technology workforce development activities may incorporate AI applications not explicitly identified</li>
+<li>Innovation Fund portfolio companies may include AI applications not publicly documented</li>
+<li>Strategic planning for AI workforce challenges may be in development but not yet publicly announced</li>
+            </ul>
+            
+        </div>
+    </div>
+</body>
+</html>

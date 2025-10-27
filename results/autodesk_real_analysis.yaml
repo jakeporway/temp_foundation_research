@@ -1,0 +1,95 @@
+foundation_name: Autodesk
+analysis_date: 2025-01-28
+search_method: Claude WebSearch tool - Command Line Integration
+search_queries_executed:
+  - '"Autodesk Foundation" philanthropy artificial intelligence grants'
+  - '"Autodesk Foundation" foundation philanthropy profile assets location'
+  - '"Autodesk" corporate philanthropy AI funding strategy'
+  - '"Autodesk Foundation" machine learning technology grants'
+
+basic_info:
+  official_name: Autodesk Foundation
+  assets: $79 million deployed FY2015-2025
+  annual_giving: $12.4 million (FY2023)
+  focus_areas:
+    - climate action
+    - economic opportunity
+    - workforce development
+    - technology innovation
+  location: San Francisco, California
+  foundation_type: Corporate
+  website: https://www.autodesk.org/
+
+ai_research_findings:
+  ai_grants_discovered:
+    - type: ai_infrastructure
+      description: Bridges to Prosperity's "Fika Map" AI tool for bridge site identification
+      source: websearch
+      confidence: high
+    - type: ai_workforce
+      description: $5M to Howard University for AI-powered workforce preparation
+      source: websearch
+      confidence: high
+    - type: ai_education
+      description: $4.3M to Cornell University for AI-driven future preparation
+      source: websearch
+      confidence: high
+  ai_strategy_evidence:
+    - type: workforce_focus
+      description: Preparing workers to thrive in the era of automation
+      source: websearch
+      confidence: high
+    - type: educational_investment
+      description: AI now #1 skill employers are hiring for per Autodesk report
+      source: websearch
+      confidence: high
+  leadership_ai_statements:
+    - type: strategic_focus
+      description: Foundation focuses on preparing workers for automation era
+      source: websearch
+      confidence: high
+  ai_partnerships:
+    - Howard University College of Engineering and Architecture
+    - Cornell University Engineering and Architecture programs
+    - Bridges to Prosperity AI mapping initiative
+  ai_grant_urls:
+    - https://www.autodesk.org/what-we-do/funding
+    - https://adsknews.autodesk.com/en/news/autodesk-donation-howard-university/
+    - https://adsknews.autodesk.com/en/news/cornell-donation/
+  search_summary: WebSearch executed - 3 significant AI grants found totaling $9.3M+
+
+taxonomy_classification:
+  foundation_identity:
+    foundation_type: Corporate
+    foundation_age: Established
+    decision_making_structure: Board-governed
+    grant_sourcing_strategy: Program-officer initiated
+    endowment_size: Large ($500M-$1B)
+    geographic_focus: International
+    funding_approach: Multi-year, high engagement
+  ai_strategy:
+    ai_outcome: More use of AI for social impact
+    ai_related_output: AI solution creation
+    ai_product_lifecycle_stage: Experimental / R&D
+    ai_funding_integration: Integrated into workforce vertical
+    internal_ai_investment: High
+    ai_funding_budget_size: 10M+
+    innovation_focus: High
+  economic_opportunity_strategy:
+    eo_focus_area: Skill acquisition (Secondary)
+
+strategic_assessment:
+  ai_readiness_score: 8
+  readiness_level: High - Active AI engagement with substantial funding
+  engagement_recommendations:
+    - Strong AI workforce development focus with $9.3M+ in recent grants
+    - Three strategic impact areas align with AI applications
+    - $100K-$1M grant range with most at $250K-$500K
+    - 1:1 matching of grants with in-kind technology support
+    - Focus on design and engineering solutions creates AI opportunities
+
+research_limitations:
+  - Analysis based on publicly available web information
+  - AI activity may exist but not be publicly documented
+  - Foundation strategies may have changed recently
+  - Strong alignment between corporate AI expertise and foundation priorities

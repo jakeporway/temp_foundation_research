@@ -1,0 +1,288 @@
+{% extends "base.html" %}
+
+{% block title %}{{ foundation.foundation_name or foundation.name }} - Foundation Detail{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Navigation -->
+    <div class="breadcrumb">
+        <a href="{{ url_for('dashboard') }}">← Back to Dashboard</a>
+    </div>
+
+    <!-- Foundation Header -->
+    <div class="foundation-header">
+        <div class="foundation-title">
+            <h1>{{ foundation.foundation_name or foundation.name }}</h1>
+            {% if foundation.website %}
+            <a href="{{ foundation.website }}" target="_blank" class="website-link">{{ foundation.website }}</a>
+            {% endif %}
+        </div>
+        
+        <div class="foundation-meta">
+            <div class="meta-item">
+                <span class="meta-label">AI Readiness Score</span>
+                <span class="ai-score score-{{ foundation.ai_readiness_score }}">{{ foundation.ai_readiness_score }}/10</span>
+            </div>
+            {% if foundation.foundation_type %}
+            <div class="meta-item">
+                <span class="meta-label">Type</span>
+                <span class="meta-value">{{ foundation.foundation_type }}</span>
+            </div>
+            {% endif %}
+            {% if foundation.location %}
+            <div class="meta-item">
+                <span class="meta-label">Location</span>
+                <span class="meta-value">{{ foundation.location }}</span>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Foundation Overview -->
+    <div class="foundation-sections">
+        
+        <!-- Basic Information -->
+        <section class="detail-section">
+            <h2>Overview</h2>
+            <div class="detail-grid">
+                {% if foundation.readiness_level %}
+                <div class="detail-item">
+                    <h3>AI Readiness Level</h3>
+                    <p>{{ foundation.readiness_level }}</p>
+                </div>
+                {% endif %}
+                
+                {% if foundation.assets %}
+                <div class="detail-item">
+                    <h3>Assets</h3>
+                    <p>{{ foundation.assets }}</p>
+                </div>
+                {% endif %}
+                
+                {% if foundation.annual_giving %}
+                <div class="detail-item">
+                    <h3>Annual Giving</h3>
+                    <p>{{ foundation.annual_giving }}</p>
+                </div>
+                {% endif %}
+                
+                {% if foundation.focus_areas %}
+                <div class="detail-item full-width">
+                    <h3>Focus Areas</h3>
+                    <div class="focus-areas">
+                        {% for area in foundation.focus_areas %}
+                        <span class="focus-tag">{{ area }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </section>
+
+        <!-- AI Strategy Analysis -->
+        {% if foundation.has_yaml %}
+        <section class="detail-section">
+            <h2>AI Strategy Analysis</h2>
+            
+            {% if foundation.ai_research_findings %}
+            <div class="ai-section">
+                <h3>AI Grants & Initiatives</h3>
+                {% if foundation.ai_research_findings.ai_grants_discovered %}
+                <div class="ai-grants">
+                    {% for grant in foundation.ai_research_findings.ai_grants_discovered %}
+                    <div class="grant-item">
+                        <h4>{{ grant.type|title }}</h4>
+                        <p>{{ grant.description }}</p>
+                        {% if grant.confidence %}
+                        <span class="confidence confidence-{{ grant.confidence }}">Confidence: {{ grant.confidence|title }}</span>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                
+                {% if foundation.ai_research_findings.ai_partnerships %}
+                <div class="ai-partnerships">
+                    <h4>AI Partnerships</h4>
+                    <ul>
+                        {% for partnership in foundation.ai_research_findings.ai_partnerships %}
+                        <li>{{ partnership }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+        </section>
+        {% endif %}
+
+        <!-- Taxonomy Classification -->
+        <section class="detail-section">
+            <h2>Foundation Profile</h2>
+            
+            {% if foundation.taxonomy_classification or foundation %}
+            <div class="taxonomy-sections">
+                
+                <!-- Foundation Identity -->
+                <div class="taxonomy-group">
+                    <h3>Foundation Identity</h3>
+                    <div class="taxonomy-grid">
+                        {% set identity_data = foundation.taxonomy_classification.foundation_identity if foundation.taxonomy_classification else foundation %}
+                        
+                        {% if identity_data.foundation_type or foundation.foundation_type %}
+                        <div class="taxonomy-item">
+                            <span class="taxonomy-label">Foundation Type</span>
+                            <span class="taxonomy-value">{{ identity_data.foundation_type or foundation.foundation_type }}</span>
+                        </div>
+                        {% endif %}
+                        
+                        {% if identity_data.geographic_focus or foundation.geographic_focus %}
+                        <div class="taxonomy-item">
+                            <span class="taxonomy-label">Geographic Focus</span>
+                            <span class="taxonomy-value">{{ identity_data.geographic_focus or foundation.geographic_focus }}</span>
+                        </div>
+                        {% endif %}
+                        
+                        {% if identity_data.decision_making_structure or foundation.decision_making_structure %}
+                        <div class="taxonomy-item">
+                            <span class="taxonomy-label">Decision Making</span>
+                            <span class="taxonomy-value">{{ identity_data.decision_making_structure or foundation.decision_making_structure }}</span>
+                        </div>
+                        {% endif %}
+                        
+                        {% if identity_data.grant_sourcing_strategy or foundation.grant_sourcing_strategy %}
+                        <div class="taxonomy-item">
+                            <span class="taxonomy-label">Grant Sourcing</span>
+                            <span class="taxonomy-value">{{ identity_data.grant_sourcing_strategy or foundation.grant_sourcing_strategy }}</span>
+                        </div>
+                        {% endif %}
+                        
+                        {% if identity_data.endowment_size or foundation.endowment_size %}
+                        <div class="taxonomy-item">
+                            <span class="taxonomy-label">Endowment Size</span>
+                            <span class="taxonomy-value">{{ identity_data.endowment_size or foundation.endowment_size }}</span>
+                        </div>
+                        {% endif %}
+                        
+                        {% if identity_data.funding_approach or foundation.funding_approach %}
+                        <div class="taxonomy-item">
+                            <span class="taxonomy-label">Funding Approach</span>
+                            <span class="taxonomy-value">{{ identity_data.funding_approach or foundation.funding_approach }}</span>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- AI Strategy -->
+                <div class="taxonomy-group">
+                    <h3>AI Strategy</h3>
+                    <div class="taxonomy-grid">
+                        {% set ai_data = foundation.taxonomy_classification.ai_strategy if foundation.taxonomy_classification else foundation %}
+                        
+                        {% if ai_data.ai_funding_integration or foundation.ai_funding_integration %}
+                        <div class="taxonomy-item">
+                            <span class="taxonomy-label">AI Funding Integration</span>
+                            <span class="taxonomy-value">{{ ai_data.ai_funding_integration or foundation.ai_funding_integration }}</span>
+                        </div>
+                        {% endif %}
+                        
+                        {% if ai_data.ai_outcome or foundation.ai_outcome %}
+                        <div class="taxonomy-item">
+                            <span class="taxonomy-label">AI Outcome</span>
+                            <span class="taxonomy-value">{{ ai_data.ai_outcome or foundation.ai_outcome }}</span>
+                        </div>
+                        {% endif %}
+                        
+                        {% if ai_data.ai_related_output or foundation.ai_related_output %}
+                        <div class="taxonomy-item">
+                            <span class="taxonomy-label">AI Output</span>
+                            <span class="taxonomy-value">{{ ai_data.ai_related_output or foundation.ai_related_output }}</span>
+                        </div>
+                        {% endif %}
+                        
+                        {% if ai_data.ai_product_lifecycle_stage or foundation.ai_product_lifecycle_stage %}
+                        <div class="taxonomy-item">
+                            <span class="taxonomy-label">AI Lifecycle Stage</span>
+                            <span class="taxonomy-value">{{ ai_data.ai_product_lifecycle_stage or foundation.ai_product_lifecycle_stage }}</span>
+                        </div>
+                        {% endif %}
+                        
+                        {% if ai_data.internal_ai_investment or foundation.internal_ai_investment %}
+                        <div class="taxonomy-item">
+                            <span class="taxonomy-label">Internal AI Investment</span>
+                            <span class="taxonomy-value">{{ ai_data.internal_ai_investment or foundation.internal_ai_investment }}</span>
+                        </div>
+                        {% endif %}
+                        
+                        {% if ai_data.innovation_focus or foundation.innovation_focus %}
+                        <div class="taxonomy-item">
+                            <span class="taxonomy-label">Innovation Focus</span>
+                            <span class="taxonomy-value">{{ ai_data.innovation_focus or foundation.innovation_focus }}</span>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Economic Opportunity -->
+                {% if foundation.taxonomy_classification and foundation.taxonomy_classification.economic_opportunity_strategy %}
+                <div class="taxonomy-group">
+                    <h3>Economic Opportunity Strategy</h3>
+                    <div class="taxonomy-grid">
+                        {% set eo_data = foundation.taxonomy_classification.economic_opportunity_strategy %}
+                        
+                        {% if eo_data.eo_focus_area %}
+                        <div class="taxonomy-item">
+                            <span class="taxonomy-label">Focus Area</span>
+                            <span class="taxonomy-value">{{ eo_data.eo_focus_area }}</span>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+        </section>
+
+        <!-- Data Quality Indicators -->
+        <section class="detail-section data-quality">
+            <h2>Data Quality & Sources</h2>
+            <div class="quality-indicators">
+                <div class="quality-item">
+                    <span class="quality-label">Complete Analysis Available</span>
+                    <span class="quality-value {{ 'yes' if foundation.has_yaml else 'no' }}">
+                        {{ 'Yes' if foundation.has_yaml else 'No' }}
+                    </span>
+                </div>
+                {% if foundation.filename %}
+                <div class="quality-item">
+                    <span class="quality-label">Source File</span>
+                    <span class="quality-value">{{ foundation.filename }}</span>
+                </div>
+                {% endif %}
+                {% if foundation.analysis_date %}
+                <div class="quality-item">
+                    <span class="quality-label">Analysis Date</span>
+                    <span class="quality-value">{{ foundation.analysis_date }}</span>
+                </div>
+                {% endif %}
+                {% if foundation.ai_grants_count is defined %}
+                <div class="quality-item">
+                    <span class="quality-label">AI Grants Found</span>
+                    <span class="quality-value">{{ foundation.ai_grants_count }}</span>
+                </div>
+                {% endif %}
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Foundation detail specific JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add any foundation-specific interactions here
+        console.log('Foundation detail page loaded');
+    });
+</script>
+{% endblock %}

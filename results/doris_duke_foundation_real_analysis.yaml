@@ -1,0 +1,102 @@
+foundation_name: Doris Duke Foundation
+analysis_date: 2025-01-28
+search_method: Claude WebSearch tool - Command Line Integration
+search_queries_executed:
+  - '"Doris Duke Foundation" philanthropy artificial intelligence grants'
+  - '"Doris Duke Foundation" philanthropy profile assets location'
+  - '"Doris Duke Foundation" AI funding strategy'
+  - '"Doris Duke Foundation" machine learning technology grants'
+
+basic_info:
+  official_name: Doris Duke Charitable Foundation
+  assets: $1.2 billion endowment
+  annual_giving: $1.5 billion total since 1997
+  focus_areas:
+    - performing arts
+    - medical research
+    - environmental conservation
+    - child well-being
+  location: New York City, New York
+  foundation_type: Private
+  website: https://www.dorisduke.org/
+
+ai_research_findings:
+  ai_grants_discovered:
+    - type: medical_ai_research
+      description: Dr. Kenneth Kehl machine learning models for cancer outcomes using electronic health records
+      source: websearch
+      confidence: high
+    - type: cardiac_ai_screening
+      description: Dr. Rohan Khera AI algorithms for cardiac screening from wearable devices
+      source: websearch
+      confidence: high
+    - type: arts_ai_projects
+      description: Junebug Productions exploring ChatGPT technology for Southern Black-led arts organization
+      source: websearch
+      confidence: high
+    - type: computer_assisted_composition
+      description: Sélébéyone collaboration with IRCAM for AI in music composition
+      source: websearch
+      confidence: high
+  ai_strategy_evidence:
+    - type: performing_arts_tech_lab
+      description: First-of-its-kind accelerator for digital technology in performing arts including AI
+      source: websearch
+      confidence: high
+    - type: medical_research_integration
+      description: Supporting AI applications in clinical research through medical grants
+      source: websearch
+      confidence: high
+  leadership_ai_statements:
+    - type: program_innovation
+      description: Foundation exploring innovative uses of digital technology including AI in arts
+      source: websearch
+      confidence: high
+  ai_partnerships:
+    - Dana-Farber Cancer Institute
+    - Yale University cardiac research
+    - IRCAM computer-assisted composition
+  ai_grant_urls:
+    - https://www.dorisduke.org/news--insights/articles/doris-duke-foundation-announces-grants-to-20-innovative-theater-jazz-contemporary-dance-and-multi-disciplinary-projects-through-its-inaugural-performing-arts-technologies-lab/
+    - https://www.dorisduke.org/funding-areas/performing-arts/technologies-lab/
+    - https://defycancer.dana-farber.org/donor-recognition/doris-duke-charitable-foundation/
+  search_summary: WebSearch executed - 4 AI grants found across medical research and performing arts technology programs
+
+taxonomy_classification:
+  foundation_identity:
+    foundation_type: Private
+    foundation_age: Established (1996)
+    decision_making_structure: Board-governed
+    grant_sourcing_strategy: Program-officer initiated
+    endowment_size: Mega ($1B+)
+    geographic_focus: National
+    funding_approach: Multi-year, high engagement
+  ai_strategy:
+    ai_outcome: More use of AI for social impact
+    ai_related_output: AI solution creation
+    ai_product_lifecycle_stage: Experimental / R&D
+    ai_funding_integration: Integrated across multiple verticals
+    internal_ai_investment: Medium
+    ai_funding_budget_size: 1M-10M
+    innovation_focus: High
+  economic_opportunity_strategy:
+    eo_focus_area: Unknown
+
+strategic_assessment:
+  ai_readiness_score: 7
+  readiness_level: High - Innovative AI integration across arts and medical research
+  engagement_recommendations:
+    - Performing Arts Technologies Lab represents innovative approach to AI in creative fields
+    - $1.2B endowment provides substantial capacity for AI initiatives
+    - Grant range $100K-$1M suitable for significant AI research projects
+    - Medical research program actively funding AI applications in healthcare
+    - Multi-year funding approach supports longer-term AI development
+    - 745 applications to Technology Lab shows strong field interest
+    - Unique focus on AI ethics in arts and responsible technology integration
+
+research_limitations:
+  - Analysis based on publicly available web information
+  - AI activity may exist but not be publicly documented
+  - Foundation strategies may have changed recently
+  - No standalone AI program but AI integrated across multiple focus areas
+  - Primary AI focus appears to be applications in existing program areas rather than general AI research

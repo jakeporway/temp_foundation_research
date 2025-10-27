@@ -1,0 +1,111 @@
+foundation_name: New Climate Ventures
+analysis_date: 2025-01-28
+search_method: Claude WebSearch tool - Command Line Integration
+search_queries_executed:
+  - '"New Climate Ventures" artificial intelligence AI grants'
+  - '"New Climate Ventures" philanthropy profile assets location'
+  - '"New Climate Ventures" AI funding strategy technology'
+  - '"New Climate Ventures" machine learning grants'
+
+basic_info:
+  official_name: New Climate Ventures
+  assets: Unknown (early-stage VC firm with 25 portfolio investments)
+  annual_giving: Venture capital investments (not grants), 25 companies funded
+  focus_areas:
+    - carbon reduction and avoidance technology
+    - decarbonization of hard-to-decarbonize sectors
+    - early-stage climate tech startups
+    - energy tech and environment tech
+    - global economy decarbonization
+  location: Houston, Texas
+  foundation_type: Venture Capital (not a foundation/grant-maker)
+  website: https://www.newclimateventures.com/
+
+ai_research_findings:
+  ai_grants_discovered: []
+  ai_strategy_evidence:
+    - type: climate_tech_investment_focus
+      description: Active and diversified investment approach leveraging energy, food/ag tech, climate tech, traditional tech expertise
+      source: websearch
+      confidence: high
+    - type: portfolio_technology_diversity
+      description: 25 portfolio companies across various climate tech sectors including potential AI applications
+      source: websearch
+      confidence: medium
+    - type: climate_ai_market_participation
+      description: Part of broader climate tech ecosystem where AI-related technology accounted for $5B (7.5% of climate tech investment in 2023)
+      source: websearch
+      confidence: medium
+  leadership_ai_statements: []
+  ai_partnerships:
+    - AIR COMPANY (portfolio company)
+    - Tandem PV (portfolio company)
+    - 121 co-investors in portfolio companies (potential AI climate tech ecosystem)
+  ai_grant_urls: []
+  search_summary: WebSearch executed - No AI grants found; venture capital firm focused on climate tech investments rather than grant-making
+
+taxonomy_classification:
+  foundation_identity:
+    foundation_type: Venture Capital (not a foundation)
+    foundation_age: Recent (active VC firm)
+    decision_making_structure: Partnership-controlled (6 team members including 3 Partners)
+    grant_sourcing_strategy: Investment-based (equity investments, not grants)
+    endowment_size: Unknown (VC fund structure)
+    geographic_focus: International (US, China, Israel, other locations)
+    funding_approach: Investment-based, high engagement
+  ai_strategy:
+    ai_outcome: Unknown (investment-focused rather than grant-focused)
+    ai_related_output: Unknown
+    ai_product_lifecycle_stage: Unknown
+    ai_funding_integration: Not applicable (investment firm, not grant-maker)
+    internal_ai_investment: Unknown
+    ai_funding_budget_size: Unknown (equity investments rather than grants)
+    innovation_focus: High (early-stage climate tech focus)
+  economic_opportunity_strategy:
+    eo_focus_area: Increase available jobs (through climate tech company development and scaling)
+
+strategic_assessment:
+  ai_readiness_score: 2
+  readiness_level: Low - Venture capital firm rather than grant-making foundation, limited AI-specific focus
+  engagement_recommendations:
+    - New Climate Ventures is a venture capital firm, not a grant-making foundation
+    - 25 portfolio companies demonstrate active investment in climate technology innovation
+    - Houston location provides access to energy sector expertise and infrastructure
+    - Team of 6 members with energy, climate tech, and finance expertise
+    - Active co-investment network (121 co-investors) indicates strong climate tech ecosystem connections
+    - Early-stage focus aligns with supporting innovative AI climate applications at seed/Series A stages
+    - Diversified investment approach could include AI-powered climate solutions
+    - Global portfolio (US, China, Israel) suggests openness to international AI climate innovations
+    - For AI climate tech entrepreneurs seeking investment rather than grants, could be relevant partner
+    - Not appropriate for traditional grant-seeking organizations or research institutions
+
+interview_simulation:
+  questions:
+    - q1: "As a VC firm, how do you evaluate AI technologies for their climate impact potential?"
+      confidence: 3
+    - q2: "What role might AI play in the decarbonization solutions you invest in?"
+      confidence: 3
+    - q3: "How do you assess climate tech startups incorporating machine learning technologies?"
+      confidence: 3
+    - q4: "What criteria determine which early-stage climate tech companies receive New Climate Ventures investment?"
+      confidence: 4
+    - q5: "Could AI applications enhance the performance of your current portfolio companies?"
+      confidence: 3
+    - q6: "How do you evaluate the scalability of AI-powered climate solutions?"
+      confidence: 3
+    - q7: "What partnerships could connect AI researchers with your portfolio companies?"
+      confidence: 3
+    - q8: "How might AI technologies accelerate the development timeline for climate innovations?"
+      confidence: 3
+    - q9: "What market trends do you see in AI applications for hard-to-decarbonize sectors?"
+      confidence: 3
+    - q10: "How do you measure success in climate tech investments that incorporate AI components?"
+      confidence: 3
+
+research_limitations:
+  - Analysis based on publicly available web information
+  - AI activity may exist but not be publicly documented
+  - Organization is venture capital firm, not grant-making foundation
+  - Investment portfolio details may not fully reflect AI-related activities
+  - Limited public information about specific investment criteria or AI strategy
+  - Classification as foundation/grant-maker appears to be incorrect based on search results

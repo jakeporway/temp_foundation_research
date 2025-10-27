@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <!-- Search and Filter Section -->
+    <div class="search-filter-section">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search foundations by name, type, location..." autocomplete="off">
+            <button id="clearSearch" class="clear-btn" title="Clear search">&times;</button>
+        </div>
+        
+        <div class="filter-toggle">
+            <button id="filterToggle" class="btn-secondary">
+                <span class="filter-icon">⚙</span> Filters
+                <span id="activeFilterCount" class="filter-count"></span>
+            </button>
+            <button id="clearAllFilters" class="btn-outline">Clear All</button>
+        </div>
+    </div>
+
+    <!-- Filter Panel -->
+    <div id="filterPanel" class="filter-panel">
+        <div class="filter-sections">
+            
+            <!-- Available Filters -->
+            <div class="filter-section">
+                <h3>Filter by Category</h3>
+                <div class="filter-grid">
+                    <!-- AI Readiness Score Range -->
+                    {% if taxonomy_data.ai_readiness_range %}
+                    <div class="filter-group">
+                        <h4>{{ taxonomy_data.ai_readiness_range.display_name }}</h4>
+                        <div class="checkbox-group">
+                            {% for option in taxonomy_data.ai_readiness_range.options %}
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="ai_readiness_range" value="{{ option }}">
+                                <span class="checkmark"></span>
+                                {{ option }}
+                                <span class="count">({{ taxonomy_data.ai_readiness_range.counts[option] }})</span>
+                            </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    
+                    <!-- Dynamic taxonomy filters -->
+                    {% for field, data in taxonomy_data.items() %}
+                        {% if field != 'ai_readiness_range' and data.options %}
+                        <div class="filter-group">
+                            <h4>{{ data.display_name }}</h4>
+                            <div class="checkbox-group">
+                                {% for option in data.options %}
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="{{ field }}" value="{{ option }}">
+                                    <span class="checkmark"></span>
+                                    {{ option }}
+                                    <span class="count">({{ data.counts[option] }})</span>
+                                </label>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Summary -->
+    <div class="results-summary">
+        <div class="summary-stats">
+            <div class="stat-card">
+                <h3>Showing</h3>
+                <div class="stat-value">
+                    <span id="currentCount">{{ foundation_count }}</span> / <span id="totalCount">{{ foundation_count }}</span>
+                </div>
+                <div class="stat-label">foundations</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Avg AI Readiness</h3>
+                <div class="stat-value" id="avgReadiness">-</div>
+                <div class="stat-label">score (0-10)</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>High AI Ready</h3>
+                <div class="stat-value" id="highReadinessCount">-</div>
+                <div class="stat-label">foundations (8-10)</div>
+            </div>
+        </div>
+        
+        <div class="active-filters" id="activeFilters">
+            <!-- Active filters will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Foundation Cards Grid -->
+    <div class="foundations-grid" id="foundationsGrid">
+        <div class="loading-spinner">Loading foundations...</div>
+    </div>
+
+    <!-- Load More Button (if needed for pagination) -->
+    <div class="load-more-section" id="loadMoreSection" style="display: none;">
+        <button id="loadMoreBtn" class="btn-primary">Load More Foundations</button>
+    </div>
+</div>
+
+<!-- Foundation Detail Modal (optional - for quick preview) -->
+<div id="foundationModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modalBody">
+            <!-- Foundation details loaded here -->
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Pass initial data to JavaScript
+    window.foundationDashboard = {
+        totalFoundations: {{ foundation_count }},
+        taxonomyData: {{ taxonomy_data|tojson }},
+        apiEndpoints: {
+            foundations: '{{ url_for("api_foundations") }}',
+            foundationDetail: '{{ url_for("api_foundation_detail", foundation_name="PLACEHOLDER") }}',
+            stats: '{{ url_for("api_stats") }}'
+        }
+    };
+</script>
+{% endblock %}

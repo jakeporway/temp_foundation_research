@@ -1,0 +1,64 @@
+foundation_name: Black Dog Group
+analysis_date: 2025-01-28
+search_method: Claude WebSearch tool - Command Line Integration
+search_queries_executed:
+  - '"Black Dog Group" foundation philanthropy artificial intelligence grants'
+  - '"Black Dog Group" foundation philanthropy profile assets location'
+  - '"Black Dog Group" philanthropy AI funding strategy'
+  - '"Black Dog Group" machine learning technology grants'
+
+basic_info:
+  official_name: Black Dog Group (unclear which specific organization)
+  assets: Unknown
+  annual_giving: Unknown
+  focus_areas: []
+  location: Unknown
+  foundation_type: Unknown
+  website: Unknown
+
+ai_research_findings:
+  ai_grants_discovered: []
+  ai_strategy_evidence: []
+  leadership_ai_statements: []
+  ai_partnerships: []
+  ai_grant_urls: []
+  search_summary: WebSearch executed - 0 AI grants found. Multiple "Black Dog" organizations found but no clear "Black Dog Group" entity.
+
+taxonomy_classification:
+  foundation_identity:
+    foundation_type: Unknown
+    foundation_age: Unknown
+    decision_making_structure: Unknown
+    grant_sourcing_strategy: Unknown
+    endowment_size: Unknown
+    geographic_focus: Unknown
+    funding_approach: Unknown
+  ai_strategy:
+    ai_outcome: Unknown
+    ai_related_output: Unknown
+    ai_product_lifecycle_stage: Unknown
+    ai_funding_integration: Unknown
+    internal_ai_investment: Unknown
+    ai_funding_budget_size: Unknown
+    innovation_focus: Unknown
+  economic_opportunity_strategy:
+    eo_focus_area: Unknown
+
+strategic_assessment:
+  ai_readiness_score: 0
+  readiness_level: Unknown - No clear organization identified
+  engagement_recommendations:
+    - Search revealed multiple "Black Dog" organizations but no specific "Black Dog Group"
+    - Organizations found include Black Dog Private Foundation Inc, Black Dog Foundation (VA), Black Dog Institute (AU mental health), Black Dog Philanthropic Consulting
+    - Black Dog Foundation (VA) gave $107,000 in grants in 2023 across 17 awards
+    - Black Dog Venture Partners exists as investment firm but different focus
+    - No search results returned for machine learning technology grants query
+    - May need clarification on which specific organization intended
+
+research_limitations:
+  - Analysis based on publicly available web information
+  - AI activity may exist but not be publicly documented
+  - Foundation strategies may have changed recently
+  - No clear single "Black Dog Group" entity identified in search results
+  - Multiple organizations with similar names create identification challenges
+  - One search query returned no results, suggesting limited online presence

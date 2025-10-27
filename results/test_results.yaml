@@ -1,0 +1,564 @@
+- name: Gates Foundation
+  basic_info:
+    assets: Unknown
+    focus_areas: []
+    location: Unknown
+    type: Unknown
+  ai_research:
+    ai_grants_found: []
+    ai_strategy_mentions: []
+    leadership_ai_statements: []
+    tech_partnerships: []
+    search_queries_used:
+    - '"Gates Foundation" artificial intelligence grants'
+    - '"Gates Foundation" AI funding strategy'
+    - '"Gates Foundation" machine learning technology grants'
+    - '"Gates Foundation" innovation technology program'
+    raw_search_results:
+    - query: '"Gates Foundation" artificial intelligence grants'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+    - query: '"Gates Foundation" AI funding strategy'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+    - query: '"Gates Foundation" machine learning technology grants'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+    - query: '"Gates Foundation" innovation technology program'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+  taxonomy:
+    foundation_identity:
+      foundation_type: Unknown
+      foundation_age: Unknown
+      decision_making_structure: Unknown
+      grant_sourcing_strategy: Unknown
+      endowment_size: Unknown
+      geographic_focus: Unknown
+      funding_approach: Unknown
+    ai_strategy:
+      ai_outcome: Unknown
+      ai_related_output: Unknown
+      ai_product_lifecycle_stage: Unknown
+      ai_funding_integration: Unknown
+      internal_ai_investment: Unknown
+      ai_funding_budget_size: Unknown
+      innovation_focus: Unknown
+    economic_opportunity_strategy:
+      eo_focus_area: Unknown
+  interview_simulation:
+    Economic Opportunity Vision:
+      response: Based on available research about Gates Foundation...
+      confidence: 3
+      evidence: []
+    Grantmaking Approach:
+      response: Based on available research about Gates Foundation...
+      confidence: 3
+      evidence: []
+    Program Analysis:
+      response: Based on available research about Gates Foundation...
+      confidence: 3
+      evidence: []
+    AI Perspective:
+      response: Based on available research about Gates Foundation...
+      confidence: 3
+      evidence: []
+    AI Strategy Status:
+      response: Based on available research about Gates Foundation...
+      confidence: 3
+      evidence: []
+    AI Examples:
+      response: Based on available research about Gates Foundation...
+      confidence: 3
+      evidence: []
+    Investment Gaps:
+      response: Based on available research about Gates Foundation...
+      confidence: 3
+      evidence: []
+    Partnership Network:
+      response: Based on available research about Gates Foundation...
+      confidence: 3
+      evidence: []
+    Best Practices:
+      response: Based on available research about Gates Foundation...
+      confidence: 3
+      evidence: []
+    Opportunity AI Role:
+      response: Based on available research about Gates Foundation...
+      confidence: 3
+      evidence: []
+  confidence_scores: null
+- name: Ford Foundation
+  basic_info:
+    assets: Unknown
+    focus_areas: []
+    location: Unknown
+    type: Unknown
+  ai_research:
+    ai_grants_found: []
+    ai_strategy_mentions: []
+    leadership_ai_statements: []
+    tech_partnerships: []
+    search_queries_used:
+    - '"Ford Foundation" artificial intelligence grants'
+    - '"Ford Foundation" AI funding strategy'
+    - '"Ford Foundation" machine learning technology grants'
+    - '"Ford Foundation" innovation technology program'
+    raw_search_results:
+    - query: '"Ford Foundation" artificial intelligence grants'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+    - query: '"Ford Foundation" AI funding strategy'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+    - query: '"Ford Foundation" machine learning technology grants'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+    - query: '"Ford Foundation" innovation technology program'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+  taxonomy:
+    foundation_identity:
+      foundation_type: Unknown
+      foundation_age: Unknown
+      decision_making_structure: Unknown
+      grant_sourcing_strategy: Unknown
+      endowment_size: Unknown
+      geographic_focus: Unknown
+      funding_approach: Unknown
+    ai_strategy:
+      ai_outcome: Unknown
+      ai_related_output: Unknown
+      ai_product_lifecycle_stage: Unknown
+      ai_funding_integration: Unknown
+      internal_ai_investment: Unknown
+      ai_funding_budget_size: Unknown
+      innovation_focus: Unknown
+    economic_opportunity_strategy:
+      eo_focus_area: Unknown
+  interview_simulation:
+    Economic Opportunity Vision:
+      response: Based on available research about Ford Foundation...
+      confidence: 3
+      evidence: []
+    Grantmaking Approach:
+      response: Based on available research about Ford Foundation...
+      confidence: 3
+      evidence: []
+    Program Analysis:
+      response: Based on available research about Ford Foundation...
+      confidence: 3
+      evidence: []
+    AI Perspective:
+      response: Based on available research about Ford Foundation...
+      confidence: 3
+      evidence: []
+    AI Strategy Status:
+      response: Based on available research about Ford Foundation...
+      confidence: 3
+      evidence: []
+    AI Examples:
+      response: Based on available research about Ford Foundation...
+      confidence: 3
+      evidence: []
+    Investment Gaps:
+      response: Based on available research about Ford Foundation...
+      confidence: 3
+      evidence: []
+    Partnership Network:
+      response: Based on available research about Ford Foundation...
+      confidence: 3
+      evidence: []
+    Best Practices:
+      response: Based on available research about Ford Foundation...
+      confidence: 3
+      evidence: []
+    Opportunity AI Role:
+      response: Based on available research about Ford Foundation...
+      confidence: 3
+      evidence: []
+  confidence_scores: null
+- name: Robert Wood Johnson Foundation
+  basic_info:
+    assets: Unknown
+    focus_areas: []
+    location: Unknown
+    type: Unknown
+  ai_research:
+    ai_grants_found: []
+    ai_strategy_mentions: []
+    leadership_ai_statements: []
+    tech_partnerships: []
+    search_queries_used:
+    - '"Robert Wood Johnson Foundation" artificial intelligence grants'
+    - '"Robert Wood Johnson Foundation" AI funding strategy'
+    - '"Robert Wood Johnson Foundation" machine learning technology grants'
+    - '"Robert Wood Johnson Foundation" innovation technology program'
+    raw_search_results:
+    - query: '"Robert Wood Johnson Foundation" artificial intelligence grants'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+    - query: '"Robert Wood Johnson Foundation" AI funding strategy'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+    - query: '"Robert Wood Johnson Foundation" machine learning technology grants'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+    - query: '"Robert Wood Johnson Foundation" innovation technology program'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+  taxonomy:
+    foundation_identity:
+      foundation_type: Unknown
+      foundation_age: Unknown
+      decision_making_structure: Unknown
+      grant_sourcing_strategy: Unknown
+      endowment_size: Unknown
+      geographic_focus: Unknown
+      funding_approach: Unknown
+    ai_strategy:
+      ai_outcome: Unknown
+      ai_related_output: Unknown
+      ai_product_lifecycle_stage: Unknown
+      ai_funding_integration: Unknown
+      internal_ai_investment: Unknown
+      ai_funding_budget_size: Unknown
+      innovation_focus: Unknown
+    economic_opportunity_strategy:
+      eo_focus_area: Unknown
+  interview_simulation:
+    Economic Opportunity Vision:
+      response: Based on available research about Robert Wood Johnson Foundation...
+      confidence: 3
+      evidence: []
+    Grantmaking Approach:
+      response: Based on available research about Robert Wood Johnson Foundation...
+      confidence: 3
+      evidence: []
+    Program Analysis:
+      response: Based on available research about Robert Wood Johnson Foundation...
+      confidence: 3
+      evidence: []
+    AI Perspective:
+      response: Based on available research about Robert Wood Johnson Foundation...
+      confidence: 3
+      evidence: []
+    AI Strategy Status:
+      response: Based on available research about Robert Wood Johnson Foundation...
+      confidence: 3
+      evidence: []
+    AI Examples:
+      response: Based on available research about Robert Wood Johnson Foundation...
+      confidence: 3
+      evidence: []
+    Investment Gaps:
+      response: Based on available research about Robert Wood Johnson Foundation...
+      confidence: 3
+      evidence: []
+    Partnership Network:
+      response: Based on available research about Robert Wood Johnson Foundation...
+      confidence: 3
+      evidence: []
+    Best Practices:
+      response: Based on available research about Robert Wood Johnson Foundation...
+      confidence: 3
+      evidence: []
+    Opportunity AI Role:
+      response: Based on available research about Robert Wood Johnson Foundation...
+      confidence: 3
+      evidence: []
+  confidence_scores: null
+- name: Chan Zuckerberg Initiative
+  basic_info:
+    assets: Unknown
+    focus_areas: []
+    location: Unknown
+    type: Unknown
+  ai_research:
+    ai_grants_found: []
+    ai_strategy_mentions: []
+    leadership_ai_statements: []
+    tech_partnerships: []
+    search_queries_used:
+    - '"Chan Zuckerberg Initiative" artificial intelligence grants'
+    - '"Chan Zuckerberg Initiative" AI funding strategy'
+    - '"Chan Zuckerberg Initiative" machine learning technology grants'
+    - '"Chan Zuckerberg Initiative" innovation technology program'
+    raw_search_results:
+    - query: '"Chan Zuckerberg Initiative" artificial intelligence grants'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+    - query: '"Chan Zuckerberg Initiative" AI funding strategy'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+    - query: '"Chan Zuckerberg Initiative" machine learning technology grants'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+    - query: '"Chan Zuckerberg Initiative" innovation technology program'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+  taxonomy:
+    foundation_identity:
+      foundation_type: Unknown
+      foundation_age: Unknown
+      decision_making_structure: Unknown
+      grant_sourcing_strategy: Unknown
+      endowment_size: Unknown
+      geographic_focus: Unknown
+      funding_approach: Unknown
+    ai_strategy:
+      ai_outcome: Unknown
+      ai_related_output: Unknown
+      ai_product_lifecycle_stage: Unknown
+      ai_funding_integration: Unknown
+      internal_ai_investment: Unknown
+      ai_funding_budget_size: Unknown
+      innovation_focus: Unknown
+    economic_opportunity_strategy:
+      eo_focus_area: Unknown
+  interview_simulation:
+    Economic Opportunity Vision:
+      response: Based on available research about Chan Zuckerberg Initiative...
+      confidence: 3
+      evidence: []
+    Grantmaking Approach:
+      response: Based on available research about Chan Zuckerberg Initiative...
+      confidence: 3
+      evidence: []
+    Program Analysis:
+      response: Based on available research about Chan Zuckerberg Initiative...
+      confidence: 3
+      evidence: []
+    AI Perspective:
+      response: Based on available research about Chan Zuckerberg Initiative...
+      confidence: 3
+      evidence: []
+    AI Strategy Status:
+      response: Based on available research about Chan Zuckerberg Initiative...
+      confidence: 3
+      evidence: []
+    AI Examples:
+      response: Based on available research about Chan Zuckerberg Initiative...
+      confidence: 3
+      evidence: []
+    Investment Gaps:
+      response: Based on available research about Chan Zuckerberg Initiative...
+      confidence: 3
+      evidence: []
+    Partnership Network:
+      response: Based on available research about Chan Zuckerberg Initiative...
+      confidence: 3
+      evidence: []
+    Best Practices:
+      response: Based on available research about Chan Zuckerberg Initiative...
+      confidence: 3
+      evidence: []
+    Opportunity AI Role:
+      response: Based on available research about Chan Zuckerberg Initiative...
+      confidence: 3
+      evidence: []
+  confidence_scores: null
+- name: Open Philanthropy
+  basic_info:
+    assets: Unknown
+    focus_areas: []
+    location: Unknown
+    type: Unknown
+  ai_research:
+    ai_grants_found: []
+    ai_strategy_mentions: []
+    leadership_ai_statements: []
+    tech_partnerships: []
+    search_queries_used:
+    - '"Open Philanthropy" artificial intelligence grants'
+    - '"Open Philanthropy" AI funding strategy'
+    - '"Open Philanthropy" machine learning technology grants'
+    - '"Open Philanthropy" innovation technology program'
+    raw_search_results:
+    - query: '"Open Philanthropy" artificial intelligence grants'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+    - query: '"Open Philanthropy" AI funding strategy'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+    - query: '"Open Philanthropy" machine learning technology grants'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+    - query: '"Open Philanthropy" innovation technology program'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+  taxonomy:
+    foundation_identity:
+      foundation_type: Unknown
+      foundation_age: Unknown
+      decision_making_structure: Unknown
+      grant_sourcing_strategy: Unknown
+      endowment_size: Unknown
+      geographic_focus: Unknown
+      funding_approach: Unknown
+    ai_strategy:
+      ai_outcome: Unknown
+      ai_related_output: Unknown
+      ai_product_lifecycle_stage: Unknown
+      ai_funding_integration: Unknown
+      internal_ai_investment: Unknown
+      ai_funding_budget_size: Unknown
+      innovation_focus: Unknown
+    economic_opportunity_strategy:
+      eo_focus_area: Unknown
+  interview_simulation:
+    Economic Opportunity Vision:
+      response: Based on available research about Open Philanthropy...
+      confidence: 3
+      evidence: []
+    Grantmaking Approach:
+      response: Based on available research about Open Philanthropy...
+      confidence: 3
+      evidence: []
+    Program Analysis:
+      response: Based on available research about Open Philanthropy...
+      confidence: 3
+      evidence: []
+    AI Perspective:
+      response: Based on available research about Open Philanthropy...
+      confidence: 3
+      evidence: []
+    AI Strategy Status:
+      response: Based on available research about Open Philanthropy...
+      confidence: 3
+      evidence: []
+    AI Examples:
+      response: Based on available research about Open Philanthropy...
+      confidence: 3
+      evidence: []
+    Investment Gaps:
+      response: Based on available research about Open Philanthropy...
+      confidence: 3
+      evidence: []
+    Partnership Network:
+      response: Based on available research about Open Philanthropy...
+      confidence: 3
+      evidence: []
+    Best Practices:
+      response: Based on available research about Open Philanthropy...
+      confidence: 3
+      evidence: []
+    Opportunity AI Role:
+      response: Based on available research about Open Philanthropy...
+      confidence: 3
+      evidence: []
+  confidence_scores: null
+- name: Schmidt Futures
+  basic_info:
+    assets: Unknown
+    focus_areas: []
+    location: Unknown
+    type: Unknown
+  ai_research:
+    ai_grants_found: []
+    ai_strategy_mentions: []
+    leadership_ai_statements: []
+    tech_partnerships: []
+    search_queries_used:
+    - '"Schmidt Futures" artificial intelligence grants'
+    - '"Schmidt Futures" AI funding strategy'
+    - '"Schmidt Futures" machine learning technology grants'
+    - '"Schmidt Futures" innovation technology program'
+    raw_search_results:
+    - query: '"Schmidt Futures" artificial intelligence grants'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+    - query: '"Schmidt Futures" AI funding strategy'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+    - query: '"Schmidt Futures" machine learning technology grants'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+    - query: '"Schmidt Futures" innovation technology program'
+      results: 'Search failed: error: unknown option ''--web-search''
+
+        '
+  taxonomy:
+    foundation_identity:
+      foundation_type: Unknown
+      foundation_age: Unknown
+      decision_making_structure: Unknown
+      grant_sourcing_strategy: Unknown
+      endowment_size: Unknown
+      geographic_focus: Unknown
+      funding_approach: Unknown
+    ai_strategy:
+      ai_outcome: Unknown
+      ai_related_output: Unknown
+      ai_product_lifecycle_stage: Unknown
+      ai_funding_integration: Unknown
+      internal_ai_investment: Unknown
+      ai_funding_budget_size: Unknown
+      innovation_focus: Unknown
+    economic_opportunity_strategy:
+      eo_focus_area: Unknown
+  interview_simulation:
+    Economic Opportunity Vision:
+      response: Based on available research about Schmidt Futures...
+      confidence: 3
+      evidence: []
+    Grantmaking Approach:
+      response: Based on available research about Schmidt Futures...
+      confidence: 3
+      evidence: []
+    Program Analysis:
+      response: Based on available research about Schmidt Futures...
+      confidence: 3
+      evidence: []
+    AI Perspective:
+      response: Based on available research about Schmidt Futures...
+      confidence: 3
+      evidence: []
+    AI Strategy Status:
+      response: Based on available research about Schmidt Futures...
+      confidence: 3
+      evidence: []
+    AI Examples:
+      response: Based on available research about Schmidt Futures...
+      confidence: 3
+      evidence: []
+    Investment Gaps:
+      response: Based on available research about Schmidt Futures...
+      confidence: 3
+      evidence: []
+    Partnership Network:
+      response: Based on available research about Schmidt Futures...
+      confidence: 3
+      evidence: []
+    Best Practices:
+      response: Based on available research about Schmidt Futures...
+      confidence: 3
+      evidence: []
+    Opportunity AI Role:
+      response: Based on available research about Schmidt Futures...
+      confidence: 3
+      evidence: []
+  confidence_scores: null

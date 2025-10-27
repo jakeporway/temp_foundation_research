@@ -1,0 +1,84 @@
+foundation_name: Atlassian
+analysis_date: 2025-01-28
+search_method: Claude WebSearch tool - Command Line Integration
+search_queries_executed:
+  - '"Atlassian" foundation philanthropy artificial intelligence grants'
+  - '"Atlassian Foundation" philanthropy profile assets location'
+  - '"Atlassian" corporate philanthropy AI funding strategy'
+  - '"Atlassian Foundation" machine learning technology grants'
+
+basic_info:
+  official_name: Atlassian Foundation
+  assets: A$200+ million asset base
+  annual_giving: A$50+ million in total donations
+  focus_areas:
+    - education
+    - workforce development
+    - technology
+  location: Sydney, Australia (operates internationally)
+  foundation_type: Corporate
+  website: https://www.atlassianfoundation.org/
+
+ai_research_findings:
+  ai_grants_discovered:
+    - type: educational_ai
+      description: Code.org partnership for responsible AI in classroom use
+      source: websearch
+      confidence: high
+    - type: ai_workforce
+      description: TeachAI initiative to assist with AI understanding and policy
+      source: websearch
+      confidence: medium
+  ai_strategy_evidence:
+    - type: educational_focus
+      description: Code.org partnership renewed with $1.5M for AI in education
+      source: websearch
+      confidence: high
+    - type: workforce_preparation
+      description: Preparing disadvantaged youth for workforce of the future
+      source: websearch
+      confidence: medium
+  leadership_ai_statements: []
+  ai_partnerships:
+    - Code.org partnership for AI education
+    - TeachAI initiative support
+  ai_grant_urls:
+    - https://www.atlassianfoundation.org/
+    - https://www.atlassian.com/blog/announcements/calling-education-non-profits-atlassian-foundation-wants-give-25k
+  search_summary: WebSearch executed - 2 AI-related educational activities found
+
+taxonomy_classification:
+  foundation_identity:
+    foundation_type: Corporate
+    foundation_age: Established (founded with company)
+    decision_making_structure: Board-governed
+    grant_sourcing_strategy: Program-officer initiated
+    endowment_size: Large ($500M-$1B)
+    geographic_focus: International
+    funding_approach: Multi-year, high engagement
+  ai_strategy:
+    ai_outcome: More use of AI for social impact
+    ai_related_output: AI solution creation
+    ai_product_lifecycle_stage: Experimental / R&D
+    ai_funding_integration: Integrated into education vertical
+    internal_ai_investment: Medium
+    ai_funding_budget_size: 1M-10M
+    innovation_focus: High
+  economic_opportunity_strategy:
+    eo_focus_area: Skill acquisition (K-12)
+
+strategic_assessment:
+  ai_readiness_score: 4
+  readiness_level: Medium - Some AI activity through education focus
+  engagement_recommendations:
+    - Strong education focus aligns with AI workforce development needs
+    - Existing Code.org partnership shows openness to AI educational initiatives
+    - $10K-$30K grant programs available for education nonprofits
+    - 1% giving model provides substantial ongoing funding capacity
+    - Geographic presence in major tech hubs (SF, NYC, Sydney, Amsterdam)
+
+research_limitations:
+  - Analysis based on publicly available web information
+  - AI activity may exist but not be publicly documented
+  - Foundation strategies may have changed recently
+  - Primary focus on education rather than direct AI research funding

@@ -1,0 +1,427 @@
+{% extends "base.html" %}
+
+{% block title %}Foundation Chat - Foundation Dashboard{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="chat-header">
+        <h1>💬 Foundation Chat</h1>
+        <p>Ask questions about foundations in natural language</p>
+        <div class="example-queries">
+            <strong>Try asking:</strong>
+            <ul>
+                <li>"Who are the foundations most likely to fund capacity building for small nonprofits?"</li>
+                <li>"Show me foundations supporting worker rights and economic opportunity"</li>
+                <li>"Which foundations focus on AI ethics and trustworthy AI?"</li>
+                <li>"Find foundations that support environmental justice initiatives"</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="chat-interface">
+        <div class="query-section">
+            <div class="input-group">
+                <input type="text" id="query-input" placeholder="Ask a question about foundations..." maxlength="500">
+                <button id="submit-query" disabled>Ask</button>
+            </div>
+            <div class="query-status" id="query-status"></div>
+        </div>
+
+        <div class="response-section" id="response-section" style="display: none;">
+            <div class="response-content" id="response-content"></div>
+            <div class="processing-stats" id="processing-stats"></div>
+        </div>
+    </div>
+</div>
+
+<style>
+.chat-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 10px;
+}
+
+.chat-header h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2.5rem;
+}
+
+.chat-header p {
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.example-queries {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.example-queries strong {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.example-queries ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.example-queries li {
+    margin: 0.3rem 0;
+    font-style: italic;
+}
+
+.chat-interface {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.query-section {
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#query-input {
+    flex: 1;
+    padding: 1rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+#query-input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+#submit-query {
+    padding: 1rem 2rem;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#submit-query:hover:not(:disabled) {
+    background: #5a67d8;
+    transform: translateY(-1px);
+}
+
+#submit-query:disabled {
+    background: #cbd5e0;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.query-status {
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+    text-align: center;
+    min-height: 1.5rem;
+}
+
+.query-status.processing {
+    background: #fed7d7;
+    color: #c53030;
+}
+
+.query-status.success {
+    background: #c6f6d5;
+    color: #2f855a;
+}
+
+.query-status.error {
+    background: #fed7d7;
+    color: #c53030;
+}
+
+.response-section {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.response-content {
+    margin-bottom: 1.5rem;
+}
+
+.foundation-result {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.foundation-result:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.foundation-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.foundation-score {
+    display: inline-block;
+    background: #667eea;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+}
+
+.foundation-reasons {
+    margin: 1rem 0;
+}
+
+.foundation-reasons h4 {
+    margin: 0 0 0.5rem 0;
+    color: #4a5568;
+    font-size: 1rem;
+}
+
+.reason-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.reason-list li {
+    padding: 0.3rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.reason-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #48bb78;
+    font-weight: bold;
+}
+
+.foundation-programs {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.processing-stats {
+    padding: 1rem;
+    background: #edf2f7;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #4a5568;
+    text-align: center;
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .chat-header h1 {
+        font-size: 2rem;
+    }
+    
+    .response-section {
+        padding: 1rem;
+    }
+}
+</style>
+
+<script>
+class FoundationChat {
+    constructor() {
+        this.queryInput = document.getElementById('query-input');
+        this.submitButton = document.getElementById('submit-query');
+        this.queryStatus = document.getElementById('query-status');
+        this.responseSection = document.getElementById('response-section');
+        this.responseContent = document.getElementById('response-content');
+        this.processingStats = document.getElementById('processing-stats');
+        
+        this.initializeEventListeners();
+    }
+    
+    initializeEventListeners() {
+        this.queryInput.addEventListener('input', () => {
+            const query = this.queryInput.value.trim();
+            this.submitButton.disabled = query.length === 0;
+        });
+        
+        this.queryInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !this.submitButton.disabled) {
+                this.submitQuery();
+            }
+        });
+        
+        this.submitButton.addEventListener('click', () => {
+            this.submitQuery();
+        });
+    }
+    
+    async submitQuery() {
+        const query = this.queryInput.value.trim();
+        if (!query) return;
+        
+        // Update UI for processing state
+        this.submitButton.disabled = true;
+        this.queryStatus.innerHTML = '<span class="loading-spinner"></span>Processing your query...';
+        this.queryStatus.className = 'query-status processing';
+        this.responseSection.style.display = 'none';
+        
+        try {
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ query: query })
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            
+            const result = await response.json();
+            
+            if (result.error) {
+                throw new Error(result.error);
+            }
+            
+            this.displayResults(result);
+            this.queryStatus.innerHTML = 'Query processed successfully!';
+            this.queryStatus.className = 'query-status success';
+            
+        } catch (error) {
+            console.error('Chat error:', error);
+            this.queryStatus.innerHTML = `Error: ${error.message}`;
+            this.queryStatus.className = 'query-status error';
+        } finally {
+            this.submitButton.disabled = false;
+        }
+    }
+    
+    displayResults(result) {
+        // Clear previous results
+        this.responseContent.innerHTML = '';
+        
+        // Display main answer
+        if (result.answer) {
+            const answerDiv = document.createElement('div');
+            answerDiv.innerHTML = `<h3>Answer:</h3><p>${result.answer}</p>`;
+            answerDiv.style.marginBottom = '2rem';
+            this.responseContent.appendChild(answerDiv);
+        }
+        
+        // Display top foundations
+        if (result.top_foundations && result.top_foundations.length > 0) {
+            const foundationsDiv = document.createElement('div');
+            foundationsDiv.innerHTML = '<h3>Top Matching Foundations:</h3>';
+            
+            result.top_foundations.forEach(foundation => {
+                const foundationEl = this.createFoundationElement(foundation);
+                foundationsDiv.appendChild(foundationEl);
+            });
+            
+            this.responseContent.appendChild(foundationsDiv);
+        }
+        
+        // Display query insights
+        if (result.query_insights) {
+            const insightsDiv = document.createElement('div');
+            insightsDiv.innerHTML = `<h3>Insights:</h3><p>${result.query_insights}</p>`;
+            insightsDiv.style.marginTop = '2rem';
+            insightsDiv.style.fontStyle = 'italic';
+            insightsDiv.style.color = '#4a5568';
+            this.responseContent.appendChild(insightsDiv);
+        }
+        
+        // Display processing stats
+        if (result.processing_stats) {
+            const stats = result.processing_stats;
+            this.processingStats.innerHTML = `
+                Analyzed ${stats.total_foundations_analyzed} foundations across ${stats.batches_processed} batches 
+                (${stats.batch_size} foundations per batch)
+            `;
+        }
+        
+        this.responseSection.style.display = 'block';
+    }
+    
+    createFoundationElement(foundation) {
+        const foundationEl = document.createElement('div');
+        foundationEl.className = 'foundation-result';
+        
+        const score = Math.round(foundation.final_score * 100);
+        
+        foundationEl.innerHTML = `
+            <div class="foundation-name">
+                ${foundation.name}
+                <span class="foundation-score">${score}% match</span>
+            </div>
+            <div class="foundation-reasons">
+                <h4>Key Reasons:</h4>
+                <ul class="reason-list">
+                    ${foundation.key_reasons.map(reason => `<li>${reason}</li>`).join('')}
+                </ul>
+            </div>
+            ${foundation.specific_programs && foundation.specific_programs.length > 0 ? `
+                <div class="foundation-programs">
+                    <strong>Programs:</strong> ${foundation.specific_programs.join(', ')}
+                </div>
+            ` : ''}
+        `;
+        
+        return foundationEl;
+    }
+}
+
+// Initialize chat interface when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    new FoundationChat();
+});
+</script>
+{% endblock %}
